@@ -77,21 +77,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Каркас Инвест — металлоконструкции и сварочные работы в Сочи и Крыму" },
+      {
+        name: "description",
+        content:
+          "Производство и монтаж металлоконструкций: арматурные каркасы БНС, закладные детали, ёмкости и кольца, резка металла, ангары и фермы по чертежам заказчика. Собственное производство в Сочи.",
+      },
+      { name: "author", content: "ООО «Каркас Инвест»" },
+      { property: "og:title", content: "Каркас Инвест — металлоконструкции под ключ" },
+      {
+        property: "og:description",
+        content:
+          "Изготовление металлоконструкций по чертежам, арматурные каркасы БНС, закладные, резка и монтаж. Сочи, Краснодарский край, Крым.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
