@@ -918,17 +918,37 @@ function ContactCTA() {
 
 function FloatingActions() {
   return (
-    <div className="fixed inset-x-0 bottom-3 z-50 mx-auto flex w-[calc(100%-1.5rem)] max-w-sm items-center justify-center gap-2 rounded-full border border-border/70 bg-background/90 p-2 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:bottom-5 sm:w-auto sm:max-w-none">
+    <div className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-[28rem] -translate-x-1/2 grid-cols-[1.35fr_3rem_3rem_1.3fr] items-center gap-1.5 rounded-full border border-border/70 bg-background/92 p-2 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:bottom-5 sm:w-auto sm:max-w-none sm:grid-cols-[auto_auto_auto_auto] sm:gap-2 sm:bg-background/86 sm:shadow-[0_18px_46px_-28px_rgba(0,0,0,0.85)]">
       <a
         href={MAX_HREF}
-        className="btn-max inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold sm:flex-none"
+        className="btn-max inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold"
       >
         <MessageCircle className="h-4 w-4" />
         MAX
       </a>
       <a
+        href={WHATSAPP_HREF}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Написать в WhatsApp"
+        title="WhatsApp"
+        className="inline-flex min-h-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-surface"
+      >
+        <MessageCircle className="h-4 w-4" />
+      </a>
+      <a
+        href={TELEGRAM_HREF}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Написать в Telegram"
+        title="Telegram"
+        className="inline-flex min-h-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-surface"
+      >
+        <Send className="h-4 w-4" />
+      </a>
+      <a
         href={PHONE_HREF}
-        className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold text-foreground transition-colors hover:bg-surface sm:flex-none"
+        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-bold text-foreground transition-colors hover:bg-surface sm:px-5"
       >
         <Phone className="h-4 w-4" />
         Позвонить
