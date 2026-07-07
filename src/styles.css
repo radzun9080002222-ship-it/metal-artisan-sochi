@@ -125,6 +125,30 @@
   }
 }
 
+@utility btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 16px 34px -22px rgba(37, 211, 102, 0.85);
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease;
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+    box-shadow: 0 18px 40px -20px rgba(37, 211, 102, 0.95);
+  }
+}
+
+@utility btn-telegram {
+  background: #229ed9;
+  color: #ffffff;
+  box-shadow: 0 16px 34px -22px rgba(34, 158, 217, 0.85);
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease;
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+    box-shadow: 0 18px 40px -20px rgba(34, 158, 217, 0.95);
+  }
+}
+
 @utility surface-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);

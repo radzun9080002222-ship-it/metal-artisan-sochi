@@ -817,18 +817,18 @@ function ContactCTA() {
                   href={WHATSAPP_HREF}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
+                  className="btn-whatsapp inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4" />
                   WhatsApp
                 </a>
                 <a
                   href={TELEGRAM_HREF}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
+                  className="btn-telegram inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
                 >
-                  <Send className="h-4 w-4" />
+                  <TelegramIcon className="h-4 w-4" />
                   Telegram
                 </a>
                 <a
@@ -918,33 +918,13 @@ function ContactCTA() {
 
 function FloatingActions() {
   return (
-    <div className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-[28rem] -translate-x-1/2 grid-cols-[1.35fr_3rem_3rem_1.3fr] items-center gap-1.5 rounded-full border border-border/70 bg-background/92 p-2 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:bottom-5 sm:w-auto sm:max-w-none sm:grid-cols-[auto_auto_auto_auto] sm:gap-2 sm:bg-background/86 sm:shadow-[0_18px_46px_-28px_rgba(0,0,0,0.85)]">
+    <div className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-sm -translate-x-1/2 grid-cols-2 items-center gap-1.5 rounded-full border border-border/70 bg-background/92 p-2 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:bottom-5 sm:w-auto sm:max-w-none sm:gap-2 sm:bg-background/86 sm:shadow-[0_18px_46px_-28px_rgba(0,0,0,0.85)]">
       <a
         href={MAX_HREF}
         className="btn-max inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold"
       >
         <MessageCircle className="h-4 w-4" />
         MAX
-      </a>
-      <a
-        href={WHATSAPP_HREF}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Написать в WhatsApp"
-        title="WhatsApp"
-        className="inline-flex min-h-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-surface"
-      >
-        <MessageCircle className="h-4 w-4" />
-      </a>
-      <a
-        href={TELEGRAM_HREF}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Написать в Telegram"
-        title="Telegram"
-        className="inline-flex min-h-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-surface"
-      >
-        <Send className="h-4 w-4" />
       </a>
       <a
         href={PHONE_HREF}
@@ -954,6 +934,22 @@ function FloatingActions() {
         Позвонить
       </a>
     </div>
+  );
+}
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M12.04 2.5a9.43 9.43 0 0 0-8.14 14.2L2.8 21.5l4.9-1.05a9.43 9.43 0 1 0 4.34-17.95Zm0 1.73a7.7 7.7 0 0 1 6.48 11.86 7.67 7.67 0 0 1-9.96 2.43l-.36-.22-2.95.63.65-2.85-.24-.37a7.7 7.7 0 0 1 6.38-11.48Zm-3.28 3.9c-.17 0-.45.06-.68.33-.23.26-.9.88-.9 2.14 0 1.25.92 2.47 1.04 2.64.13.17 1.78 2.85 4.46 3.88 2.22.86 2.68.69 3.16.65.49-.05 1.58-.65 1.8-1.27.22-.62.22-1.15.15-1.27-.06-.1-.24-.17-.5-.3-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.17.26-.68.85-.83 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.4-2.09-1.29a7.86 7.86 0 0 1-1.44-1.8c-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.08-.17.04-.32-.02-.45-.07-.13-.58-1.44-.82-1.96-.2-.47-.42-.48-.62-.49h-.52Z" />
+    </svg>
+  );
+}
+
+function TelegramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M21.7 3.18c.3-.14.62.12.53.44l-3.1 16.22c-.08.41-.56.6-.9.36l-5.17-3.84-2.52 2.43c-.28.27-.75.15-.86-.22l-.96-3.22-4.73-1.56c-.42-.14-.45-.72-.04-.9L21.7 3.18Zm-3.95 4.09-8.27 6.08.68 2.34.38-1.23c.07-.2.2-.38.37-.51l7.3-5.72c.42-.33.02-1-.47-.75Z" />
+    </svg>
   );
 }
 
