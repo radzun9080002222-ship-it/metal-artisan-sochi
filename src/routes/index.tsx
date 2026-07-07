@@ -16,6 +16,18 @@ import {
   Clock,
   FileText,
   ArrowUpRight,
+  Building2,
+  Truck,
+  Landmark,
+  Hammer,
+  Boxes,
+  ClipboardCheck,
+  FileCheck2,
+  Send,
+  MessageCircle,
+  ChevronDown,
+  Menu,
+  X,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-karkas.webp.asset.json";
@@ -33,78 +45,153 @@ export const Route = createFileRoute("/")({
 
 const PHONE_DISPLAY = "+7 (988) 000-00-00";
 const PHONE_HREF = "tel:+79880000000";
+const WHATSAPP_HREF = "https://wa.me/79880000000";
+const TELEGRAM_HREF = "https://t.me/karkasinvest";
+const EMAIL = "info@karkas-invest.ru";
 
 const services = [
   {
     icon: Ruler,
     title: "Арматурные каркасы БНС",
-    desc: "Каркасы для буронабивных свай диаметром до 1500 мм. Собственная станция вязки, длина секции до 12 м, вес до 5,5 т.",
+    desc: "Каркасы для буронабивных свай Ø 650–1500 мм, секции до 12 м, вес до 5,5 т.",
+    objects: "Мосты, эстакады, фундаменты жилых и промышленных объектов.",
+    need: "Чертёж КЖ/КМ, диаметр и длина сваи, объём партии, сроки.",
     img: karkasYardImg.url,
   },
   {
     icon: Factory,
     title: "Ёмкости, кольца, трубы из листа",
-    desc: "Кольца и трубы диаметром до 2 метров из листового металла. Сварка ответственных швов, зачистка, антикоррозийная обработка.",
+    desc: "Кольца и трубы Ø до 2 м из листового металла, сварка ответственных швов, антикоррозийная обработка.",
+    objects: "Инженерные сети, промплощадки, резервуарные парки, ливневая канализация.",
+    need: "Диаметр, толщина стенки, требования к сварке и покрытию, объём.",
     img: kolcoImg.url,
   },
   {
     icon: Scissors,
     title: "Резка, рубка, плазменная резка",
-    desc: "Плазменная и механическая резка металла любой толщины. Художественная плазма для вывесок и декоративных изделий.",
+    desc: "Плазменная и механическая резка листа и профиля любой толщины, раскрой по DXF заказчика.",
+    objects: "Заготовки для производств, металлобазы, судостроение, декоративные изделия.",
+    need: "DXF/чертёж раскроя, марка и толщина металла, количество, срок.",
     img: rezkaImg.url,
   },
   {
     icon: Wrench,
     title: "Закладные детали по чертежам",
-    desc: "Закладные для монолитного строительства строго по чертежам заказчика. Контроль геометрии, паспорт на партию.",
+    desc: "Закладные для монолитного строительства строго по чертежам, контроль геометрии, паспорт на партию.",
+    objects: "Монолитные каркасы, промышленные здания, инфраструктурные объекты.",
+    need: "Чертежи КМ/КЖ, спецификация, объём, требования к антикору.",
     img: trubaImg.url,
   },
   {
     icon: HardHat,
     title: "Металлоконструкции под ключ",
-    desc: "Ангары, склады, фермы, каркасы, производственные и коммерческие объекты. Проектирование, изготовление, монтаж.",
+    desc: "Ангары, склады, фермы, площадки, каркасы промышленных и коммерческих объектов.",
+    objects: "Логистика, производство, торговые комплексы, сельхоз-объекты.",
+    need: "Чертежи КМ/КМД или ТЗ, площадь, нагрузки, регион монтажа.",
     img: montazh2Img.url,
   },
   {
     icon: Flame,
     title: "Сварочные работы и монтаж",
-    desc: "Аттестованные сварщики, монтаж на объекте, ворота, калитки, навесы. Работы по Краснодарскому краю и Крыму.",
+    desc: "Аттестованные сварщики, монтаж на объекте по РФ, ответственные и ГОСТ-сварные соединения.",
+    objects: "Промышленные площадки, объекты капстроительства, инфраструктура.",
+    need: "Объём работ, чертежи узлов, требования по НАКС/НК, график.",
     img: montazhImg.url,
   },
 ];
 
-const stats = [
-  { value: "2023", label: "год основания" },
-  { value: "248 млн ₽", label: "оборот за 2024 год" },
-  { value: "до 2 м", label: "диаметр колец и труб" },
-  { value: "5,5 т", label: "вес каркаса БНС" },
+const trustFacts = [
+  { label: "Оборот 2024", value: "248 млн ₽" },
+  { label: "География", value: "Работаем по РФ" },
+  { label: "Производство", value: "Собственный цех" },
+  { label: "Сварщики", value: "Аттестованные" },
+  { label: "Основа работы", value: "Чертежи заказчика" },
+  { label: "Документы", value: "Договор, счета, УПД" },
+  { label: "Контроль", value: "Геометрия и качество швов" },
+  { label: "На рынке с", value: "2023 года" },
+];
+
+const clients = [
+  { icon: Building2, title: "Генподрядчики", desc: "Поставка изделий и субподряд по металлу в графике объекта." },
+  { icon: Hammer, title: "Строительные компании", desc: "Каркасы БНС, закладные, металлоконструкции для монолита." },
+  { icon: Factory, title: "Промышленные предприятия", desc: "Ёмкости, площадки, ремонтные и штучные металлоизделия." },
+  { icon: Landmark, title: "Девелоперы", desc: "Комплексное обеспечение объектов металлом по чертежам." },
+  { icon: Truck, title: "Дорожные и инфраструктурные подрядчики", desc: "Каркасы для мостов, эстакад, свай, инженерных сетей." },
+  { icon: FileText, title: "Компании с изделиями по чертежам", desc: "Изготовление по КМД, DXF и спецификациям заказчика." },
 ];
 
 const workflow = [
-  { n: "01", title: "Заявка и ТЗ", desc: "Принимаем чертежи, спецификации или задачу словами. Уточняем сроки и объём." },
-  { n: "02", title: "Расчёт и договор", desc: "Считаем стоимость по металлу и работам, фиксируем цену и сроки в договоре." },
-  { n: "03", title: "Производство", desc: "Изготавливаем в собственном цеху в Сочи. Контроль качества на каждом этапе." },
-  { n: "04", title: "Доставка и монтаж", desc: "Отгружаем на объект, при необходимости — монтаж силами нашей бригады." },
+  { n: "01", title: "Получаем чертежи и ТЗ", desc: "Принимаем КМ/КМД, DXF, спецификации или задачу словами." },
+  { n: "02", title: "Считаем стоимость и сроки", desc: "Расчёт по металлу и работам за 1 рабочий день." },
+  { n: "03", title: "Согласуем договор и оплату", desc: "Договор, спецификация, счёт. Работаем с НДС и без." },
+  { n: "04", title: "Производим изделия", desc: "Изготовление в собственном цехе, планирование загрузки под сроки." },
+  { n: "05", title: "Контролируем качество", desc: "Геометрия, сварные швы, соответствие чертежу, маркировка партий." },
+  { n: "06", title: "Отгружаем или монтируем", desc: "Отгрузка на объект по РФ или монтаж силами нашей бригады." },
 ];
 
-const advantages = [
-  { icon: Factory, title: "Собственное производство", desc: "Цех в Сочи с оборудованием для вязки каркасов, резки, гибки и сварки." },
-  { icon: Shield, title: "Работаем по договору", desc: "Юрлицо с 2023 года, оборот более 240 млн ₽, работа с крупными подрядчиками." },
-  { icon: Clock, title: "Соблюдаем сроки", desc: "Планируем загрузку цеха и не срываем графики строительства объектов." },
-  { icon: FileText, title: "Документы и паспорта", desc: "Полный пакет: договор, спецификация, паспорт на изделия, закрывающие документы." },
+const qc = [
+  "Контроль геометрии изделий по чертежам",
+  "Проверка сварных швов, ВИК на каждом этапе",
+  "Соответствие маркам металла и спецификации",
+  "Маркировка партий и прослеживаемость",
+  "Фотоотчёт по этапам производства",
+  "Полный пакет документов по запросу",
+];
+
+const sendChecklist = [
+  "Чертежи КМ / КМД",
+  "Эскиз или схему изделия",
+  "Спецификацию металла",
+  "Ведомость расхода металла",
+  "Фото или описание задачи",
+  "Сроки и город объекта",
+];
+
+const faq = [
+  {
+    q: "Работаете ли по всей России?",
+    a: "Да. Производим в Сочи, отгружаем и монтируем по всей РФ. Логистику берём на себя или согласуем с заказчиком.",
+  },
+  {
+    q: "Можно ли прислать только чертежи для расчёта?",
+    a: "Да. Достаточно КМ/КМД, DXF или спецификации. Рассчитываем стоимость и сроки за 1 рабочий день.",
+  },
+  {
+    q: "Делаете ли монтаж на объекте?",
+    a: "Да. Собственная бригада аттестованных сварщиков и монтажников, выезд по РФ, работа по графику генподряда.",
+  },
+  {
+    q: "Работаете ли с НДС?",
+    a: "Работаем как с НДС, так и без — под требования заказчика. Полный пакет закрывающих документов.",
+  },
+  {
+    q: "Какие объёмы берёте?",
+    a: "От единичных штучных изделий до серийных партий металлоконструкций и каркасов на крупные объекты.",
+  },
+  {
+    q: "Можно ли изготовить нестандартные изделия?",
+    a: "Да, работаем строго по чертежам заказчика. Изготавливаем нестандартные конструкции, ёмкости, узлы.",
+  },
+  {
+    q: "Какие сроки расчёта?",
+    a: "Стоимость и срок производства считаем в течение 1 рабочего дня после получения чертежей и ТЗ.",
+  },
 ];
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <Nav />
       <Hero />
-      <Marquee />
+      <TrustBar />
+      <Clients />
       <Services />
-      <Stats />
+      <SendChecklist />
       <Workflow />
+      <Quality />
       <Gallery />
-      <Advantages />
+      <About />
+      <FAQ />
       <ContactCTA />
       <Footer />
     </div>
@@ -112,43 +199,82 @@ function Index() {
 }
 
 function Nav() {
+  const [open, setOpen] = useState(false);
+  const links = [
+    { href: "#services", label: "Услуги" },
+    { href: "#clients", label: "Для кого" },
+    { href: "#workflow", label: "Как работаем" },
+    { href: "#quality", label: "Качество" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#contacts", label: "Контакты" },
+  ];
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-ember text-ember-foreground">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
+        <a href="#top" className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-ember text-ember-foreground sm:h-10 sm:w-10">
             <Flame className="h-5 w-5" strokeWidth={2.5} />
           </div>
-          <div className="leading-tight">
-            <div className="text-display text-lg">Каркас Инвест</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              металлоконструкции · сочи
+          <div className="min-w-0 leading-tight">
+            <div className="text-display truncate text-base sm:text-lg">Каркас Инвест</div>
+            <div className="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:block">
+              металлоконструкции · по РФ
             </div>
           </div>
         </a>
-        <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-          <a href="#services" className="transition-colors hover:text-foreground">Услуги</a>
-          <a href="#workflow" className="transition-colors hover:text-foreground">Как работаем</a>
-          <a href="#gallery" className="transition-colors hover:text-foreground">Производство</a>
-          <a href="#about" className="transition-colors hover:text-foreground">О компании</a>
-          <a href="#contacts" className="transition-colors hover:text-foreground">Контакты</a>
+        <nav className="hidden items-center gap-6 text-sm text-muted-foreground lg:flex">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="transition-colors hover:text-foreground">
+              {l.label}
+            </a>
+          ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={PHONE_HREF}
-            className="hidden text-sm font-semibold text-foreground md:block"
+            className="hidden text-sm font-semibold text-foreground xl:block"
           >
             {PHONE_DISPLAY}
           </a>
           <a
             href="#contacts"
-            className="btn-ember inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold"
+            className="btn-ember hidden items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold sm:inline-flex"
           >
             Заявка
             <ArrowRight className="h-4 w-4" />
           </a>
+          <button
+            type="button"
+            aria-label="Меню"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground lg:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+      {open && (
+        <div className="border-t border-border bg-background lg:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 text-sm">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-3 text-foreground hover:bg-surface"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href={PHONE_HREF}
+              className="mt-1 rounded-md border border-border px-3 py-3 font-semibold text-foreground"
+            >
+              {PHONE_DISPLAY}
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
@@ -157,58 +283,64 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" aria-hidden />
-      <div className="pointer-events-none absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-ember/20 blur-[120px] ember-pulse" aria-hidden />
+      <div className="pointer-events-none absolute -right-40 top-20 h-[420px] w-[420px] rounded-full bg-ember/20 blur-[120px] ember-pulse sm:h-[520px] sm:w-[520px]" aria-hidden />
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-24">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-24">
         <div className="flex flex-col justify-center">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-ember" />
-            <span className="text-muted-foreground">Сочи · Краснодарский край · Крым</span>
+            <span className="text-muted-foreground">Производство в Сочи · Работаем по РФ</span>
           </div>
 
-          <h1 className="text-display mt-6 text-5xl leading-[0.95] sm:text-6xl lg:text-7xl">
-            Металлоконструкции,
-            <br />
-            <span className="text-ember">которые держат</span>
-            <br />
-            объект.
+          <h1 className="text-display mt-5 text-[2rem] leading-[1.05] sm:text-5xl lg:text-6xl xl:text-7xl">
+            Металлоконструкции,{" "}
+            <span className="text-ember">арматурные каркасы БНС</span>{" "}
+            и сварочные работы по чертежам заказчика
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Производим арматурные каркасы БНС, закладные, ёмкости, ангары и фермы
-            по чертежам заказчика. Свой цех в Сочи, монтаж на объекте, работа с
-            крупными подрядчиками.
+          <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
+            Производство, сварка и монтаж металлоконструкций по всей России.
+            Работаем с генподрядчиками, промышленными предприятиями и крупными
+            строительными компаниями. Берём объёмные и штучные заказы строго
+            по чертежам и ТЗ.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#contacts"
-              className="btn-ember inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
+              className="btn-ember inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold sm:w-auto"
             >
               Рассчитать проект
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
+              href="#contacts"
+              className="btn-ghost-line inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold sm:w-auto"
+            >
+              <Send className="h-4 w-4" />
+              Отправить чертёж
+            </a>
+            <a
               href={PHONE_HREF}
-              className="btn-ghost-line inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
+              className="btn-ghost-line inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold sm:w-auto"
             >
               <Phone className="h-4 w-4" />
-              {PHONE_DISPLAY}
+              Позвонить
             </a>
           </div>
 
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
-            <div>
+          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-border pt-6 sm:gap-6 sm:pt-8">
+            <div className="min-w-0">
               <dt className="text-eyebrow">Оборот 2024</dt>
-              <dd className="text-display mt-2 text-2xl">248 млн ₽</dd>
+              <dd className="text-display mt-2 text-lg sm:text-2xl">248 млн ₽</dd>
             </div>
-            <div>
-              <dt className="text-eyebrow">Производство</dt>
-              <dd className="text-display mt-2 text-2xl">Сочи</dd>
+            <div className="min-w-0">
+              <dt className="text-eyebrow">География</dt>
+              <dd className="text-display mt-2 text-lg sm:text-2xl">По РФ</dd>
             </div>
-            <div>
+            <div className="min-w-0">
               <dt className="text-eyebrow">На рынке с</dt>
-              <dd className="text-display mt-2 text-2xl">2023</dd>
+              <dd className="text-display mt-2 text-lg sm:text-2xl">2023</dd>
             </div>
           </dl>
         </div>
@@ -222,13 +354,12 @@ function Hero() {
               loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+            <div className="absolute inset-x-4 bottom-4 sm:inset-x-5 sm:bottom-5">
               <div className="surface-card px-4 py-3 backdrop-blur-md">
                 <div className="text-eyebrow">Собственный цех</div>
-                <div className="text-display text-lg">Вязка каркасов БНС Ø 650–1500 мм</div>
-              </div>
-              <div className="hidden rounded-full border border-border bg-background/70 px-4 py-3 text-xs text-muted-foreground backdrop-blur-md sm:block">
-                г. Сочи
+                <div className="text-display text-base sm:text-lg">
+                  Вязка каркасов БНС Ø 650–1500 мм
+                </div>
               </div>
             </div>
           </div>
@@ -238,56 +369,84 @@ function Hero() {
   );
 }
 
-function Marquee() {
-  const items = [
-    "Арматурные каркасы БНС",
-    "Закладные детали",
-    "Резка металла до 40 мм",
-    "Ёмкости и кольца до Ø 2 м",
-    "Ангары, склады, фермы",
-    "Плазменная резка",
-    "Ворота, навесы, калитки",
-    "Монтаж на объекте",
-  ];
+function TrustBar() {
   return (
-    <div className="border-y border-border bg-surface">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-4">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
-          {items.map((t) => (
-            <span key={t} className="inline-flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-ember" />
-              {t}
-            </span>
+    <section className="border-y border-border bg-surface">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+        <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
+          <div>
+            <div className="text-eyebrow">Факты о компании</div>
+            <h2 className="text-display mt-3 text-2xl sm:text-3xl">
+              Подрядчик для крупных B2B-заказов
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm text-muted-foreground">
+            Работаем с генподрядчиками и промышленными заказчиками.
+            Прозрачные документы, ответственность за сроки и качество.
+          </p>
+        </div>
+        <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
+          {trustFacts.map((f) => (
+            <div key={f.label} className="bg-surface p-4 sm:p-5">
+              <dt className="text-eyebrow">{f.label}</dt>
+              <dd className="text-display mt-1.5 text-base sm:text-lg">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
+function Clients() {
+  return (
+    <section id="clients" className="py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="text-eyebrow">Для кого работаем</div>
+        <h2 className="text-display mt-3 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
+          Крупные заказчики, подрядчики и производственные компании
+        </h2>
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {clients.map((c) => (
+            <div key={c.title} className="surface-card flex gap-4 p-5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
+                <c.icon className="h-5 w-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-display text-base sm:text-lg">{c.title}</div>
+                <p className="mt-1.5 text-sm text-muted-foreground">{c.desc}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function Services() {
   return (
-    <section id="services" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+    <section id="services" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <div className="text-eyebrow">Что делаем</div>
-            <h2 className="text-display mt-4 text-4xl sm:text-5xl">
+            <div className="text-eyebrow">Услуги</div>
+            <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
               Полный цикл работ с металлом — от чертежа до монтажа
             </h2>
           </div>
-          <p className="max-w-md text-muted-foreground">
+          <p className="max-w-md text-sm text-muted-foreground sm:text-base">
             Берём проекты любой сложности: типовые арматурные каркасы, штучные
             изделия по чертежам заказчика, крупные металлоконструкции для
             промышленного и коммерческого строительства.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <article
               key={s.title}
-              className="group surface-card overflow-hidden transition-all hover:border-ember/60 hover:shadow-[var(--shadow-ember)]"
+              className="group surface-card flex flex-col overflow-hidden transition-all hover:border-ember/60 hover:shadow-[var(--shadow-ember)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -301,9 +460,19 @@ function Services() {
                   <s.icon className="h-5 w-5 text-ember" />
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-display text-xl">{s.title}</h3>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <h3 className="text-display text-lg sm:text-xl">{s.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
+                <dl className="mt-4 space-y-2 border-t border-border pt-4 text-xs">
+                  <div>
+                    <dt className="text-eyebrow">Для объектов</dt>
+                    <dd className="mt-1 text-sm text-foreground/90">{s.objects}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-eyebrow">Нужно от заказчика</dt>
+                    <dd className="mt-1 text-sm text-foreground/90">{s.need}</dd>
+                  </div>
+                </dl>
                 <a
                   href="#contacts"
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ember"
@@ -320,16 +489,50 @@ function Services() {
   );
 }
 
-function Stats() {
+function SendChecklist() {
   return (
-    <section className="border-y border-border bg-surface">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-border sm:grid-cols-4">
-        {stats.map((s) => (
-          <div key={s.label} className="bg-surface p-8">
-            <div className="text-display text-3xl text-ember sm:text-4xl">{s.value}</div>
-            <div className="mt-2 text-sm text-muted-foreground">{s.label}</div>
+    <section className="border-y border-border bg-surface py-16 sm:py-20">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div>
+          <div className="text-eyebrow">Расчёт стоимости</div>
+          <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
+            Что можно отправить для расчёта
+          </h2>
+          <p className="mt-4 max-w-md text-sm text-muted-foreground sm:text-base">
+            Подойдёт любой из документов ниже. Если чертежей ещё нет — опишите
+            задачу словами и приложите фото. Рассчитаем стоимость и сроки за
+            1 рабочий день.
+          </p>
+          <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+            <a
+              href="#contacts"
+              className="btn-ember inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
+            >
+              Отправить чертёж на расчёт
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={WHATSAPP_HREF}
+              className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp
+            </a>
           </div>
-        ))}
+        </div>
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {sendChecklist.map((i) => (
+            <li
+              key={i}
+              className="flex items-start gap-3 rounded-lg border border-border bg-background p-4 text-sm"
+            >
+              <FileCheck2 className="mt-0.5 h-5 w-5 shrink-0 text-ember" />
+              <span>{i}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -337,21 +540,54 @@ function Stats() {
 
 function Workflow() {
   return (
-    <section id="workflow" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="workflow" className="py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-eyebrow">Как работаем</div>
-        <h2 className="text-display mt-4 max-w-3xl text-4xl sm:text-5xl">
+        <h2 className="text-display mt-3 max-w-3xl text-3xl sm:text-4xl lg:text-5xl">
           Прозрачный процесс — от заявки до сдачи объекта
         </h2>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {workflow.map((step) => (
-            <div key={step.n} className="surface-card p-6">
-              <div className="text-display text-ember text-4xl">{step.n}</div>
-              <div className="mt-4 text-display text-xl">{step.title}</div>
-              <p className="mt-3 text-sm text-muted-foreground">{step.desc}</p>
+            <div key={step.n} className="surface-card p-5 sm:p-6">
+              <div className="text-display text-3xl text-ember sm:text-4xl">{step.n}</div>
+              <div className="text-display mt-3 text-lg sm:text-xl">{step.title}</div>
+              <p className="mt-2 text-sm text-muted-foreground">{step.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Quality() {
+  return (
+    <section id="quality" className="border-y border-border bg-surface py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+          <div>
+            <div className="text-eyebrow">Контроль и ответственность</div>
+            <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
+              Изделия соответствуют чертежу и приёмке
+            </h2>
+            <p className="mt-4 max-w-md text-sm text-muted-foreground sm:text-base">
+              Каждое изделие проходит контроль геометрии и сварных швов.
+              По запросу передаём документы, фотоотчёт и маркировку партий —
+              удобно для генподряда и приёмки.
+            </p>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {qc.map((i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 rounded-lg border border-border bg-background p-4 text-sm"
+              >
+                <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-ember" />
+                <span>{i}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
@@ -367,17 +603,17 @@ function Gallery() {
     { src: trubaImg.url, label: "Ёмкость под сварку" },
   ];
   return (
-    <section id="gallery" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="gallery" className="py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-6">
           <div>
             <div className="text-eyebrow">Производство</div>
-            <h2 className="text-display mt-4 max-w-2xl text-4xl sm:text-5xl">
+            <h2 className="text-display mt-3 max-w-2xl text-3xl sm:text-4xl lg:text-5xl">
               Реальные фото из цеха и с объектов
             </h2>
           </div>
         </div>
-        <div className="mt-12 grid auto-rows-[220px] grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className="mt-10 grid auto-rows-[160px] grid-cols-2 gap-3 sm:auto-rows-[200px] sm:gap-4 lg:auto-rows-[220px] lg:grid-cols-4">
           {gallery.map((g) => (
             <figure
               key={g.src}
@@ -389,7 +625,7 @@ function Gallery() {
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent p-4 text-xs text-foreground/90">
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent p-3 text-xs text-foreground/90 sm:p-4">
                 {g.label}
               </figcaption>
             </figure>
@@ -400,58 +636,63 @@ function Gallery() {
   );
 }
 
-function Advantages() {
+function About() {
   return (
-    <section id="about" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="about" className="relative overflow-hidden py-16 sm:py-24">
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-20" aria-hidden />
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <div>
             <div className="text-eyebrow">О компании</div>
-            <h2 className="text-display mt-4 text-4xl sm:text-5xl">
+            <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
               ООО «Каркас Инвест» — подрядчик для крупных заказов
             </h2>
-            <p className="mt-6 text-muted-foreground">
-              Мы работаем в сегменте сварочных и металлообрабатывающих работ с
-              2023 года. За 2024 год выполнили заказов на 248 млн рублей. В
-              команде — аттестованные сварщики, монтажники и специалисты по
-              подготовке чертежей.
+            <p className="mt-5 text-sm text-muted-foreground sm:text-base">
+              Работаем в сегменте металлообработки и сварочных работ с 2023
+              года. Оборот за 2024 год — 248 млн ₽. В команде — аттестованные
+              сварщики, монтажники и специалисты по подготовке чертежей.
+              Основа работы — производство и монтаж строго по документации
+              заказчика.
             </p>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-3 text-sm text-muted-foreground sm:text-base">
               Юридически зарегистрированы в Краснодарском крае, г. Сочи.
-              Работаем по всему югу России, включая объекты в Крыму. Готовы
-              выполнить как штучный заказ, так и серийную поставку
-              металлоконструкций для промышленного и коммерческого
-              строительства.
+              Отгружаем и монтируем по всей России. Готовы выполнить как
+              штучный заказ, так и серийную поставку металлоконструкций для
+              промышленного и коммерческого строительства.
             </p>
 
-            <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8 text-sm">
-              <div>
+            <dl className="mt-8 grid grid-cols-2 gap-5 border-t border-border pt-8 text-sm">
+              <div className="min-w-0">
                 <dt className="text-eyebrow">ИНН</dt>
                 <dd className="mt-1 font-semibold">2367031991</dd>
               </div>
-              <div>
+              <div className="min-w-0">
                 <dt className="text-eyebrow">ОГРН</dt>
                 <dd className="mt-1 font-semibold">1232300040026</dd>
               </div>
-              <div>
+              <div className="min-w-0">
                 <dt className="text-eyebrow">Регион</dt>
                 <dd className="mt-1 font-semibold">Краснодарский край, Сочи</dd>
               </div>
-              <div>
+              <div className="min-w-0">
                 <dt className="text-eyebrow">Руководитель</dt>
                 <dd className="mt-1 font-semibold">Борисов Д. Л.</dd>
               </div>
             </dl>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {advantages.map((a) => (
-              <div key={a.title} className="surface-card p-6">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { icon: Factory, title: "Собственное производство", desc: "Цех в Сочи: вязка каркасов, резка, гибка, сварка." },
+              { icon: Shield, title: "Работаем по договору", desc: "Юрлицо с 2023 года, оборот 248 млн ₽ за 2024." },
+              { icon: Clock, title: "Соблюдаем сроки", desc: "Планируем загрузку цеха под график генподряда." },
+              { icon: Boxes, title: "Штучно и серийно", desc: "От единичных изделий до серийных партий по РФ." },
+            ].map((a) => (
+              <div key={a.title} className="surface-card p-5 sm:p-6">
                 <div className="flex h-11 w-11 items-center justify-center rounded-md bg-ember/15 text-ember">
                   <a.icon className="h-5 w-5" />
                 </div>
-                <div className="mt-4 text-display text-lg">{a.title}</div>
+                <div className="text-display mt-4 text-base sm:text-lg">{a.title}</div>
                 <p className="mt-2 text-sm text-muted-foreground">{a.desc}</p>
               </div>
             ))}
@@ -462,9 +703,47 @@ function Advantages() {
   );
 }
 
+function FAQ() {
+  return (
+    <section id="faq" className="border-y border-border bg-surface py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr]">
+          <div>
+            <div className="text-eyebrow">Частые вопросы</div>
+            <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
+              Отвечаем на вопросы заказчиков
+            </h2>
+            <p className="mt-4 max-w-sm text-sm text-muted-foreground">
+              Если нужного вопроса нет — задайте его напрямую в WhatsApp,
+              Telegram или по телефону.
+            </p>
+          </div>
+          <div className="divide-y divide-border rounded-xl border border-border bg-background">
+            {faq.map((item, idx) => (
+              <details key={item.q} className="group px-5 py-4 sm:px-6" open={idx === 0}>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-sm font-semibold text-foreground sm:text-base">
+                  <span>{item.q}</span>
+                  <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="mt-3 text-sm text-muted-foreground">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ContactCTA() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", task: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    company: "",
+    task: "",
+    city: "",
+  });
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -473,45 +752,73 @@ function ContactCTA() {
   };
 
   return (
-    <section id="contacts" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="surface-card relative overflow-hidden p-8 sm:p-12 lg:p-16">
+    <section id="contacts" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="surface-card relative overflow-hidden p-6 sm:p-10 lg:p-14">
           <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-ember/25 blur-[100px]" aria-hidden />
-          <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <div className="text-eyebrow">Оставить заявку</div>
-              <h2 className="text-display mt-4 text-4xl sm:text-5xl">
-                Расскажите о задаче — <span className="text-ember">рассчитаем за 1 день</span>
+              <div className="text-eyebrow">Заявка на расчёт</div>
+              <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
+                Пришлите чертёж или задачу — <span className="text-ember">рассчитаем стоимость и сроки</span>
               </h2>
-              <p className="mt-5 max-w-md text-muted-foreground">
-                Пришлите чертёж или опишите задачу словами. Свяжемся, уточним
-                детали и подготовим коммерческое предложение.
+              <p className="mt-5 max-w-md text-sm text-muted-foreground sm:text-base">
+                Работаем с юрлицами по всей России. Расчёт за 1 рабочий день,
+                договор, НДС по запросу, полный пакет закрывающих документов.
               </p>
 
-              <div className="mt-8 space-y-4 text-sm">
+              <div className="mt-6 space-y-3 text-sm">
                 <a href={PHONE_HREF} className="flex items-center gap-3 text-foreground">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-ember/15 text-ember">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
                     <Phone className="h-4 w-4" />
                   </span>
-                  <span className="text-display text-lg">{PHONE_DISPLAY}</span>
+                  <span className="text-display text-base sm:text-lg">{PHONE_DISPLAY}</span>
                 </a>
-                <a href="mailto:info@karkas-invest.ru" className="flex items-center gap-3 text-foreground">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-ember/15 text-ember">
+                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 break-all text-foreground">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
                     <Mail className="h-4 w-4" />
                   </span>
-                  info@karkas-invest.ru
+                  {EMAIL}
                 </a>
                 <div className="flex items-center gap-3 text-foreground">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-ember/15 text-ember">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
                     <MapPin className="h-4 w-4" />
                   </span>
-                  г. Сочи, Краснодарский край
+                  г. Сочи, Краснодарский край · работаем по РФ
                 </div>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
+                </a>
+                <a
+                  href={TELEGRAM_HREF}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
+                >
+                  <Send className="h-4 w-4" />
+                  Telegram
+                </a>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
+                >
+                  <Mail className="h-4 w-4" />
+                  Email
+                </a>
               </div>
             </div>
 
             {sent ? (
-              <div className="flex flex-col items-start justify-center rounded-xl border border-ember/40 bg-ember/10 p-8">
+              <div className="flex flex-col items-start justify-center rounded-xl border border-ember/40 bg-ember/10 p-6 sm:p-8">
                 <CheckCircle2 className="h-10 w-10 text-ember" />
                 <div className="text-display mt-4 text-2xl">Заявка отправлена</div>
                 <p className="mt-2 text-sm text-muted-foreground">
@@ -519,32 +826,52 @@ function ContactCTA() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={submit} className="space-y-4">
-                <Field
-                  label="Как к вам обращаться"
-                  value={form.name}
-                  onChange={(v) => setForm({ ...form, name: v })}
-                  placeholder="Имя"
-                  required
-                />
-                <Field
-                  label="Телефон для связи"
-                  value={form.phone}
-                  onChange={(v) => setForm({ ...form, phone: v })}
-                  placeholder="+7"
-                  type="tel"
-                  required
-                />
+              <form onSubmit={submit} className="space-y-3">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <Field
+                    label="Имя"
+                    value={form.name}
+                    onChange={(v) => setForm({ ...form, name: v })}
+                    placeholder="Как к вам обращаться"
+                    required
+                  />
+                  <Field
+                    label="Телефон"
+                    value={form.phone}
+                    onChange={(v) => setForm({ ...form, phone: v })}
+                    placeholder="+7"
+                    type="tel"
+                    required
+                  />
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <Field
+                    label="Компания"
+                    value={form.company}
+                    onChange={(v) => setForm({ ...form, company: v })}
+                    placeholder="Название организации"
+                  />
+                  <Field
+                    label="Город / регион объекта"
+                    value={form.city}
+                    onChange={(v) => setForm({ ...form, city: v })}
+                    placeholder="Например: Москва, ЯНАО"
+                  />
+                </div>
                 <div>
-                  <label className="text-eyebrow">Задача или объект</label>
+                  <label className="text-eyebrow">Что нужно изготовить</label>
                   <textarea
                     value={form.task}
                     onChange={(e) => setForm({ ...form, task: e.target.value })}
                     rows={4}
-                    placeholder="Например: 40 арматурных каркасов Ø 1000 мм длиной 8 м, объект в Адлере"
+                    placeholder="Например: 40 арматурных каркасов Ø 1000 мм длиной 8 м, срок 3 недели. Чертежи КЖ есть."
                     className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ember"
                   />
                 </div>
+                <p className="text-xs text-muted-foreground">
+                  Чертежи и файлы удобнее прислать в WhatsApp, Telegram или на{" "}
+                  <a href={`mailto:${EMAIL}`} className="text-ember">{EMAIL}</a>.
+                </p>
                 <button
                   type="submit"
                   className="btn-ember inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
@@ -581,7 +908,7 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <div>
+    <div className="min-w-0">
       <label className="text-eyebrow">{label}</label>
       <input
         type={type}
@@ -598,17 +925,17 @@ function Field({
 function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-ember text-ember-foreground">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember text-ember-foreground">
               <Flame className="h-5 w-5" strokeWidth={2.5} />
             </div>
             <div className="text-display text-lg">Каркас Инвест</div>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            ООО «Каркас Инвест». Производство и монтаж металлоконструкций.
-            Сочи, Краснодарский край, Крым.
+            ООО «Каркас Инвест». Производство, сварка и монтаж
+            металлоконструкций по чертежам заказчика. Работаем по всей России.
           </p>
         </div>
         <div>
@@ -624,14 +951,14 @@ function Footer() {
           <div className="text-eyebrow">Контакты</div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><a href={PHONE_HREF} className="hover:text-foreground">{PHONE_DISPLAY}</a></li>
-            <li><a href="mailto:info@karkas-invest.ru" className="hover:text-foreground">info@karkas-invest.ru</a></li>
-            <li>г. Сочи, Краснодарский край</li>
+            <li className="break-all"><a href={`mailto:${EMAIL}`} className="hover:text-foreground">{EMAIL}</a></li>
+            <li>г. Сочи, Краснодарский край · по РФ</li>
             <li>ИНН 2367031991 · ОГРН 1232300040026</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border/60">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-5 text-xs text-muted-foreground md:flex-row md:items-center">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-4 py-5 text-xs text-muted-foreground sm:px-6 md:flex-row md:items-center">
           <div>© {new Date().getFullYear()} ООО «Каркас Инвест». Все права защищены.</div>
           <div>Сделано с расчётом на нагрузку.</div>
         </div>
