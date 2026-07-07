@@ -769,9 +769,7 @@ function ContactCTA() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    company: "",
     task: "",
-    city: "",
   });
 
   const submit = (e: React.FormEvent) => {
@@ -865,8 +863,8 @@ function ContactCTA() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={submit} className="space-y-3">
-                <div className="grid gap-3 sm:grid-cols-2">
+              <form onSubmit={submit} className="space-y-4">
+                <div className="space-y-3">
                   <Field
                     label="Имя"
                     value={form.name}
@@ -881,20 +879,6 @@ function ContactCTA() {
                     placeholder="+7"
                     type="tel"
                     required
-                  />
-                </div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <Field
-                    label="Компания"
-                    value={form.company}
-                    onChange={(v) => setForm({ ...form, company: v })}
-                    placeholder="Название организации"
-                  />
-                  <Field
-                    label="Город / регион объекта"
-                    value={form.city}
-                    onChange={(v) => setForm({ ...form, city: v })}
-                    placeholder="Например: Москва, ЯНАО"
                   />
                 </div>
                 <div>
