@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
 const PHONE_DISPLAY = "+7 (918) 003-93-74";
 const PHONE_HREF = "tel:+79180039374";
 const WHATSAPP_HREF = "https://wa.me/79180039374";
-const TELEGRAM_HREF = "https://t.me/karkasinvest";
+const TELEGRAM_HREF = "https://t.me/+79180039374";
 const MAX_HREF = "#contacts"; // Replace with direct MAX link when integration is ready.
 const EMAIL = "info@karkas-invest.ru";
 
