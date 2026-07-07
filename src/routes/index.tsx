@@ -196,21 +196,41 @@ const faq = [
 
 function Index() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+    <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <IndustrialBackdrop />
       <Nav />
-      <Hero />
-      <TrustBar />
-      <Clients />
-      <Services />
-      <SendChecklist />
-      <Workflow />
-      <Quality />
-      <Gallery />
-      <About />
-      <FAQ />
-      <ContactCTA />
+      <main className="relative z-10">
+        <Hero />
+        <TrustBar />
+        <Clients />
+        <Services />
+        <SendChecklist />
+        <Workflow />
+        <Quality />
+        <Gallery />
+        <About />
+        <FAQ />
+        <ContactCTA />
+      </main>
       <FloatingActions />
       <Footer />
+    </div>
+  );
+}
+
+function IndustrialBackdrop() {
+  return (
+    <div className="industrial-backdrop" aria-hidden>
+      <video
+        src="/assets/welding-area.mp4"
+        poster={weldingImg.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      />
+      <div className="industrial-backdrop__shade" />
     </div>
   );
 }

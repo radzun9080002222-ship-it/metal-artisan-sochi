@@ -155,6 +155,47 @@
   border-radius: var(--radius-xl);
 }
 
+@utility industrial-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 10%, rgba(255,91,0,0.16), transparent 32%),
+    var(--background);
+}
+
+@utility industrial-backdrop {
+  video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    filter: saturate(0.85) contrast(1.18) brightness(0.55);
+    transform: scale(1.06);
+  }
+}
+
+.industrial-backdrop__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10,10,9,0.9), rgba(10,10,9,0.64) 48%, rgba(10,10,9,0.86)),
+    linear-gradient(180deg, rgba(10,10,9,0.76), rgba(10,10,9,0.9) 72%, rgba(10,10,9,0.96)),
+    radial-gradient(circle at 22% 28%, rgba(255,91,0,0.14), transparent 34%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 96px);
+}
+
+@media (max-width: 639px) {
+  .industrial-backdrop video {
+    opacity: 0.12;
+    filter: saturate(0.75) contrast(1.15) brightness(0.45);
+  }
+}
+
 @utility metal-title-plate {
   position: relative;
   isolation: isolate;
@@ -272,6 +313,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .industrial-backdrop video {
+    display: none;
+  }
+
   .metal-title-plate::after,
   .weld-spark {
     animation: none;
