@@ -46,10 +46,11 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PHONE_DISPLAY = "+7 (988) 000-00-00";
-const PHONE_HREF = "tel:+79880000000";
-const WHATSAPP_HREF = "https://wa.me/79880000000";
+const PHONE_DISPLAY = "+7 (918) 003-93-74";
+const PHONE_HREF = "tel:+79180039374";
+const WHATSAPP_HREF = "https://wa.me/79180039374";
 const TELEGRAM_HREF = "https://t.me/karkasinvest";
+const MAX_HREF = "#contacts"; // Replace with direct MAX link when integration is ready.
 const EMAIL = "info@karkas-invest.ru";
 
 const services = [
@@ -96,7 +97,7 @@ const services = [
   {
     icon: Flame,
     title: "Сварочные работы и монтаж",
-    desc: "Аттестованные сварщики, монтаж на объекте по РФ, ответственные и ГОСТ-сварные соединения.",
+    desc: "Аттестованные сварщики, монтаж на объекте по РФ и СНГ, ответственные и ГОСТ-сварные соединения.",
     objects: "Промышленные площадки, объекты капстроительства, инфраструктура.",
     need: "Объём работ, чертежи узлов, требования по НАКС/НК, график.",
     img: montazhImg.url,
@@ -104,14 +105,14 @@ const services = [
 ];
 
 const trustFacts = [
-  { label: "Оборот 2024", value: "248 млн ₽" },
-  { label: "География", value: "Работаем по РФ" },
+  { label: "Годовой оборот", value: "Более 1 млрд ₽" },
+  { label: "География", value: "РФ и страны СНГ" },
   { label: "Производство", value: "Собственный цех" },
   { label: "Сварщики", value: "Аттестованные" },
-  { label: "Основа работы", value: "Чертежи заказчика" },
+  { label: "Основа работ", value: "Чертежи заказчика и наши ТЗ" },
   { label: "Документы", value: "Договор, счета, УПД" },
   { label: "Контроль", value: "Геометрия и качество швов" },
-  { label: "На рынке с", value: "2023 года" },
+  { label: "На рынке", value: "Более 10 лет" },
 ];
 
 const clients = [
@@ -124,12 +125,12 @@ const clients = [
 ];
 
 const workflow = [
-  { n: "01", title: "Получаем чертежи и ТЗ", desc: "Принимаем КМ/КМД, DXF, спецификации или задачу словами." },
+  { n: "01", title: "Получаем чертежи и ТЗ", desc: "Принимаем КМ/КМД, DXF, спецификации или сами формируем техническое задание." },
   { n: "02", title: "Считаем стоимость и сроки", desc: "Расчёт по металлу и работам за 1 рабочий день." },
   { n: "03", title: "Согласуем договор и оплату", desc: "Договор, спецификация, счёт. Работаем с НДС и без." },
   { n: "04", title: "Производим изделия", desc: "Изготовление в собственном цехе, планирование загрузки под сроки." },
   { n: "05", title: "Контролируем качество", desc: "Геометрия, сварные швы, соответствие чертежу, маркировка партий." },
-  { n: "06", title: "Отгружаем или монтируем", desc: "Отгрузка на объект по РФ или монтаж силами нашей бригады." },
+  { n: "06", title: "Отгружаем или монтируем", desc: "Отгрузка на объект по РФ и СНГ или монтаж силами нашей бригады." },
 ];
 
 const qc = [
@@ -152,8 +153,8 @@ const sendChecklist = [
 
 const faq = [
   {
-    q: "Работаете ли по всей России?",
-    a: "Да. Производим в Сочи, отгружаем и монтируем по всей РФ. Логистику берём на себя или согласуем с заказчиком.",
+    q: "Работаете ли по России и СНГ?",
+    a: "Да. Производим в Сочи, отгружаем и монтируем по России и странам СНГ. Логистику берём на себя или согласуем с заказчиком.",
   },
   {
     q: "Можно ли прислать только чертежи для расчёта?",
@@ -161,7 +162,7 @@ const faq = [
   },
   {
     q: "Делаете ли монтаж на объекте?",
-    a: "Да. Собственная бригада аттестованных сварщиков и монтажников, выезд по РФ, работа по графику генподряда.",
+    a: "Да. Собственная бригада аттестованных сварщиков и монтажников, выезд по России и СНГ, работа по графику генподряда.",
   },
   {
     q: "Работаете ли с НДС?",
@@ -196,6 +197,7 @@ function Index() {
       <About />
       <FAQ />
       <ContactCTA />
+      <FloatingActions />
       <Footer />
     </div>
   );
@@ -221,7 +223,7 @@ function Nav() {
           <div className="min-w-0 leading-tight">
             <div className="text-display truncate text-base sm:text-lg">Каркас Инвест</div>
             <div className="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:block">
-              металлоконструкции · по РФ
+              металлоконструкции · РФ и СНГ
             </div>
           </div>
         </a>
@@ -288,27 +290,26 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" aria-hidden />
       <div className="pointer-events-none absolute -right-40 top-20 h-[420px] w-[420px] rounded-full bg-ember/20 blur-[120px] ember-pulse sm:h-[520px] sm:w-[520px]" aria-hidden />
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-24">
-        <div className="flex flex-col justify-center">
+      <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-24">
+        <div className="flex min-w-0 max-w-full flex-col justify-center">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-ember" />
-            <span className="text-muted-foreground">Производство в Сочи · Работаем по РФ</span>
+            <span className="text-muted-foreground">Сочи · РФ и страны СНГ</span>
           </div>
 
-          <h1 className="text-display mt-5 text-[2rem] leading-[1.05] sm:text-5xl lg:text-6xl xl:text-7xl">
-            Металлоконструкции,{" "}
-            <span className="text-ember">арматурные каркасы БНС</span>{" "}
-            и сварочные работы по чертежам заказчика
+          <h1 className="text-display mt-5 max-w-full text-[1.5rem] leading-[1.08] [overflow-wrap:break-word] min-[420px]:text-[2.05rem] sm:max-w-5xl sm:text-5xl sm:leading-[1.02] lg:text-7xl xl:text-[5.4rem]">
+            Металлоконструкции, <span className="text-ember">которые держат</span>{" "}
+            объект и сроки
           </h1>
 
-          <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Производство, сварка и монтаж металлоконструкций по всей России.
+          <p className="mt-5 max-w-full text-base text-muted-foreground sm:max-w-xl sm:text-lg">
+            Производство, сварка и монтаж металлоконструкций по России и странам СНГ.
             Работаем с генподрядчиками, промышленными предприятиями и крупными
-            строительными компаниями. Берём объёмные и штучные заказы строго
-            по чертежам и ТЗ.
+            строительными компаниями. Берём объёмные и штучные заказы: по
+            чертежам заказчика или по самостоятельно подготовленному ТЗ.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-7 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#contacts"
               className="btn-ember inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold sm:w-auto"
@@ -332,23 +333,23 @@ function Hero() {
             </a>
           </div>
 
-          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-border pt-6 sm:gap-6 sm:pt-8">
+          <dl className="mt-10 grid grid-cols-1 gap-4 border-t border-border pt-6 min-[420px]:grid-cols-3 sm:gap-6 sm:pt-8">
             <div className="min-w-0">
-              <dt className="text-eyebrow">Оборот 2024</dt>
-              <dd className="text-display mt-2 text-lg sm:text-2xl">248 млн ₽</dd>
+              <dt className="text-eyebrow">Годовой оборот</dt>
+              <dd className="text-display mt-2 text-lg sm:text-2xl">1+ млрд ₽</dd>
             </div>
             <div className="min-w-0">
               <dt className="text-eyebrow">География</dt>
-              <dd className="text-display mt-2 text-lg sm:text-2xl">По РФ</dd>
+              <dd className="text-display mt-2 text-lg sm:text-2xl">РФ и СНГ</dd>
             </div>
             <div className="min-w-0">
-              <dt className="text-eyebrow">На рынке с</dt>
-              <dd className="text-display mt-2 text-lg sm:text-2xl">2023</dd>
+              <dt className="text-eyebrow">На рынке</dt>
+              <dd className="text-display mt-2 text-lg sm:text-2xl">10+ лет</dd>
             </div>
           </dl>
         </div>
 
-        <div className="relative">
+        <div className="relative min-w-0 max-w-full">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-deep)]">
             <img
               src={heroImg.url}
@@ -665,17 +666,16 @@ function About() {
               ООО «Каркас Инвест» — подрядчик для крупных заказов
             </h2>
             <p className="mt-5 text-sm text-muted-foreground sm:text-base">
-              Работаем в сегменте металлообработки и сварочных работ с 2023
-              года. Оборот за 2024 год — 248 млн ₽. В команде — аттестованные
-              сварщики, монтажники и специалисты по подготовке чертежей.
-              Основа работы — производство и монтаж строго по документации
-              заказчика.
+              Работаем в сегменте металлообработки, сварочных работ и монтажа
+              более 10 лет. Годовой оборот компании — более 1 млрд ₽. В
+              команде — аттестованные сварщики, монтажники и специалисты по
+              подготовке чертежей и технических заданий.
             </p>
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-              Юридически зарегистрированы в Краснодарском крае, г. Сочи.
-              Отгружаем и монтируем по всей России. Готовы выполнить как
-              штучный заказ, так и серийную поставку металлоконструкций для
-              промышленного и коммерческого строительства.
+              Производственная площадка находится по адресу: Краснодарский край,
+              г. Сочи, Адлерский район, ул. Изумрудная, 42 к3. Отгружаем и
+              монтируем по России и странам СНГ: от штучных изделий до
+              серийных поставок для промышленных объектов.
             </p>
 
             <dl className="mt-8 grid grid-cols-2 gap-5 border-t border-border pt-8 text-sm">
@@ -692,8 +692,8 @@ function About() {
                 <dd className="mt-1 font-semibold">Краснодарский край, Сочи</dd>
               </div>
               <div className="min-w-0">
-                <dt className="text-eyebrow">Руководитель</dt>
-                <dd className="mt-1 font-semibold">Борисов Д. Л.</dd>
+                <dt className="text-eyebrow">Адрес производства</dt>
+                <dd className="mt-1 font-semibold">Сочи, ул. Изумрудная, 42 к3</dd>
               </div>
             </dl>
           </div>
@@ -701,9 +701,9 @@ function About() {
           <div className="grid gap-3 sm:grid-cols-2">
             {[
               { icon: Factory, title: "Собственное производство", desc: "Цех в Сочи: вязка каркасов, резка, гибка, сварка." },
-              { icon: Shield, title: "Работаем по договору", desc: "Юрлицо с 2023 года, оборот 248 млн ₽ за 2024." },
+              { icon: Shield, title: "Работаем по договору", desc: "Официальные документы, УПД, счета и годовой оборот более 1 млрд ₽." },
               { icon: Clock, title: "Соблюдаем сроки", desc: "Планируем загрузку цеха под график генподряда." },
-              { icon: Boxes, title: "Штучно и серийно", desc: "От единичных изделий до серийных партий по РФ." },
+              { icon: Boxes, title: "Штучно и серийно", desc: "От единичных изделий до серийных партий по РФ и СНГ." },
             ].map((a) => (
               <div key={a.title} className="surface-card p-5 sm:p-6">
                 <div className="flex h-11 w-11 items-center justify-center rounded-md bg-ember/15 text-ember">
@@ -780,7 +780,7 @@ function ContactCTA() {
                 Пришлите чертёж или задачу — <span className="text-ember">рассчитаем стоимость и сроки</span>
               </h2>
               <p className="mt-5 max-w-md text-sm text-muted-foreground sm:text-base">
-                Работаем с юрлицами по всей России. Расчёт за 1 рабочий день,
+                Работаем с юрлицами по России и странам СНГ. Расчёт за 1 рабочий день,
                 договор, НДС по запросу, полный пакет закрывающих документов.
               </p>
 
@@ -801,11 +801,18 @@ function ContactCTA() {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
                     <MapPin className="h-4 w-4" />
                   </span>
-                  г. Сочи, Краснодарский край · работаем по РФ
+                  Краснодарский край, г. Сочи, Адлерский район, ул. Изумрудная, 42 к3
                 </div>
               </div>
 
               <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                <a
+                  href={MAX_HREF}
+                  className="btn-max inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  MAX
+                </a>
                 <a
                   href={WHATSAPP_HREF}
                   target="_blank"
@@ -886,7 +893,7 @@ function ContactCTA() {
                   />
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Чертежи и файлы удобнее прислать в WhatsApp, Telegram или на{" "}
+                  Чертежи и файлы удобнее прислать в MAX, WhatsApp, Telegram или на{" "}
                   <a href={`mailto:${EMAIL}`} className="text-ember">{EMAIL}</a>.
                 </p>
                 <button
@@ -906,6 +913,27 @@ function ContactCTA() {
         </div>
       </div>
     </section>
+  );
+}
+
+function FloatingActions() {
+  return (
+    <div className="fixed inset-x-0 bottom-3 z-50 mx-auto flex w-[calc(100%-1.5rem)] max-w-sm items-center justify-center gap-2 rounded-full border border-border/70 bg-background/90 p-2 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:bottom-5 sm:w-auto sm:max-w-none">
+      <a
+        href={MAX_HREF}
+        className="btn-max inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold sm:flex-none"
+      >
+        <MessageCircle className="h-4 w-4" />
+        MAX
+      </a>
+      <a
+        href={PHONE_HREF}
+        className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold text-foreground transition-colors hover:bg-surface sm:flex-none"
+      >
+        <Phone className="h-4 w-4" />
+        Позвонить
+      </a>
+    </div>
   );
 }
 
@@ -952,7 +980,8 @@ function Footer() {
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
             ООО «Каркас Инвест». Производство, сварка и монтаж
-            металлоконструкций по чертежам заказчика. Работаем по всей России.
+            металлоконструкций по чертежам заказчика и нашим ТЗ. Работаем по
+            России и странам СНГ.
           </p>
         </div>
         <div>
@@ -969,7 +998,7 @@ function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><a href={PHONE_HREF} className="hover:text-foreground">{PHONE_DISPLAY}</a></li>
             <li className="break-all"><a href={`mailto:${EMAIL}`} className="hover:text-foreground">{EMAIL}</a></li>
-            <li>г. Сочи, Краснодарский край · по РФ</li>
+            <li>Краснодарский край, г. Сочи, Адлерский район, ул. Изумрудная, 42 к3</li>
             <li>ИНН 2367031991 · ОГРН 1232300040026</li>
           </ul>
         </div>

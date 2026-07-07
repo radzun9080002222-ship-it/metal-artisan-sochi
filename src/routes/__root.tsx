@@ -77,25 +77,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Каркас Инвест — металлоконструкции, арматурные каркасы БНС и сварочные работы по РФ" },
+      { title: "Каркас Инвест — металлоконструкции, которые держат объект и сроки" },
       {
         name: "description",
         content:
-          "Изготовление металлоконструкций, арматурных каркасов БНС, закладных деталей, ёмкостей и изделий по чертежам заказчика. Производство, сварка, монтаж, работа с крупными заказчиками по РФ.",
+          "Изготовление металлоконструкций, арматурных каркасов БНС, закладных деталей, ёмкостей и изделий по чертежам заказчика и нашим ТЗ. Производство, сварка, монтаж, работа с крупными заказчиками по РФ и СНГ.",
       },
       { name: "author", content: "ООО «Каркас Инвест»" },
-      { property: "og:title", content: "Каркас Инвест — металлоконструкции и каркасы БНС по чертежам заказчика" },
+      { property: "og:title", content: "Каркас Инвест — металлоконструкции, которые держат объект и сроки" },
       {
         property: "og:description",
         content:
-          "Собственное производство: арматурные каркасы БНС, закладные, ёмкости, металлоконструкции под ключ. Работаем по всей России с крупными подрядчиками.",
+          "Собственное производство: арматурные каркасы БНС, закладные, ёмкости, металлоконструкции под ключ. Работаем по России и странам СНГ с крупными подрядчиками.",
       },
+      { property: "og:image", content: "https://karkas-invest.ru/og-image.png" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://karkas-invest.ru/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
@@ -112,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <HeadContent />
       </head>
