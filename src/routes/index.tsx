@@ -53,6 +53,18 @@ const TELEGRAM_HREF = "https://t.me/karkasinvest";
 const MAX_HREF = "#contacts"; // Replace with direct MAX link when integration is ready.
 const EMAIL = "info@karkas-invest.ru";
 
+function GearLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path
+        fillRule="evenodd"
+        d="M10.55 2h2.9l.55 2.72c.76.22 1.47.52 2.13.9l2.32-1.53 2.05 2.05-1.53 2.32c.38.66.68 1.37.9 2.13l2.63.53v2.9l-2.63.53a8.53 8.53 0 0 1-.9 2.13l1.53 2.32-2.05 2.05-2.32-1.53a8.53 8.53 0 0 1-2.13.9L13.45 22h-2.9L10 19.42a8.53 8.53 0 0 1-2.13-.9l-2.32 1.53-2.05-2.05 1.53-2.32a8.53 8.53 0 0 1-.9-2.13L1.5 14.02v-2.9l2.63-.53c.22-.76.52-1.47.9-2.13L3.5 6.14l2.05-2.05 2.32 1.53c.66-.38 1.37-.68 2.13-.9L10.55 2ZM12 8.15a3.85 3.85 0 1 0 0 7.7 3.85 3.85 0 0 0 0-7.7Z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
 const services = [
   {
     icon: Ruler,
@@ -218,7 +230,7 @@ function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <a href="#top" className="flex min-w-0 items-center gap-2 sm:gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-ember text-ember-foreground sm:h-10 sm:w-10">
-            <Flame className="h-5 w-5" strokeWidth={2.5} />
+            <GearLogo className="h-5 w-5" />
           </div>
           <div className="min-w-0 leading-tight">
             <div className="text-display truncate text-base sm:text-lg">Каркас Инвест</div>
@@ -775,6 +787,9 @@ function ContactCTA() {
           <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-ember/25 blur-[100px]" aria-hidden />
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-ember text-ember-foreground">
+                <GearLogo className="h-6 w-6" />
+              </div>
               <div className="text-eyebrow">Заявка на расчёт</div>
               <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
                 Пришлите чертёж или задачу — <span className="text-ember">рассчитаем стоимость и сроки</span>
@@ -990,7 +1005,7 @@ function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember text-ember-foreground">
-              <Flame className="h-5 w-5" strokeWidth={2.5} />
+              <GearLogo className="h-5 w-5" />
             </div>
             <div className="text-display text-lg">Каркас Инвест</div>
           </div>
