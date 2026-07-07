@@ -322,7 +322,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" aria-hidden />
       <div className="pointer-events-none absolute -right-40 top-20 h-[420px] w-[420px] rounded-full bg-ember/20 blur-[120px] ember-pulse sm:h-[520px] sm:w-[520px]" aria-hidden />
 
-      <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[1.12fr_0.98fr] lg:gap-8 lg:pt-24">
+      <div className="mx-auto grid w-full max-w-7xl min-w-0 gap-10 px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16 lg:grid-cols-[1.35fr_0.85fr] lg:gap-7 lg:pt-24">
         <div className="flex min-w-0 max-w-full flex-col justify-center">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-ember" />
@@ -333,9 +333,10 @@ function Hero() {
             <span className="weld-spark weld-spark-a" aria-hidden />
             <span className="weld-spark weld-spark-b" aria-hidden />
             <span className="weld-spark weld-spark-c" aria-hidden />
-            <h1 className="text-display max-w-full text-[1.32rem] leading-[1.08] [overflow-wrap:break-word] min-[420px]:text-[2.05rem] sm:max-w-5xl sm:text-5xl sm:leading-[1.02] lg:text-[3.25rem] xl:text-[3.75rem]">
-              Металлоконструкции, <span className="text-ember">которые держат</span>{" "}
-              объект и сроки
+            <h1 className="text-display max-w-full text-[1.42rem] leading-[1.08] [overflow-wrap:break-word] min-[420px]:text-[2.05rem] sm:max-w-5xl sm:text-5xl sm:leading-[1.02] lg:text-[2.9rem] xl:text-[3.25rem]">
+              <span className="block whitespace-nowrap">Металлоконструкции,</span>
+              <span className="block whitespace-nowrap text-ember">которые держат</span>
+              <span className="block whitespace-nowrap">объект и сроки</span>
             </h1>
           </div>
 
