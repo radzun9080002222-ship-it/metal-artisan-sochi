@@ -38,6 +38,9 @@ import montazhImg from "@/assets/montazh.webp.asset.json";
 import montazh2Img from "@/assets/montazh2.webp.asset.json";
 import trubaImg from "@/assets/truba.webp.asset.json";
 import karkasYardImg from "@/assets/karkas-yard.webp.asset.json";
+import karkasProductionImg from "@/assets/karkas-production.webp.asset.json";
+import bendingImg from "@/assets/bending.webp.asset.json";
+import tankWeldingImg from "@/assets/tank-welding.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -596,11 +599,11 @@ function Quality() {
 
 function Gallery() {
   const gallery = [
-    { src: karkasYardImg.url, label: "Арматурные каркасы, производственная площадка", span: "lg:col-span-2 lg:row-span-2" },
-    { src: weldingImg.url, label: "Сварочный участок" },
+    { type: "image", src: karkasProductionImg.url, label: "Арматурные каркасы, производственная площадка", span: "lg:col-span-2 lg:row-span-2" },
+    { type: "video", src: "/assets/welding-area.mp4", poster: weldingImg.url, label: "Сварочный участок" },
     { src: montazh2Img.url, label: "Монтаж каркаса на объекте" },
-    { src: rezkaImg.url, label: "Гибка и обработка металла" },
-    { src: trubaImg.url, label: "Ёмкость под сварку" },
+    { src: bendingImg.url, label: "Гибка и обработка металла" },
+    { src: tankWeldingImg.url, label: "Ёмкость под сварку" },
   ];
   return (
     <section id="gallery" className="py-16 sm:py-24">
@@ -619,12 +622,26 @@ function Gallery() {
               key={g.src}
               className={`group relative overflow-hidden rounded-xl border border-border ${g.span ?? ""}`}
             >
-              <img
-                src={g.src}
-                alt={g.label}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              {g.type === "video" ? (
+                <video
+                  src={g.src}
+                  poster={g.poster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <img
+                  src={g.src}
+                  alt={g.label}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              )}
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent p-3 text-xs text-foreground/90 sm:p-4">
                 {g.label}
               </figcaption>
