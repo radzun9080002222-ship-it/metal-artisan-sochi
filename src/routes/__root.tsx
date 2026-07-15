@@ -78,22 +78,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Каркас Инвест — металлоконструкции, которые держат объект и сроки" },
+      { title: "Изготовление металлоконструкций и каркасов БНС — Каркас Инвест" },
       {
         name: "description",
         content:
-          "Изготовление металлоконструкций, арматурных каркасов БНС, закладных деталей, ёмкостей и изделий по чертежам заказчика и нашим ТЗ. Производство, сварка, монтаж, работа с крупными заказчиками по РФ и СНГ.",
+          "Изготовление металлоконструкций и арматурных каркасов БНС в Сочи. Производство, сварка и монтаж по чертежам заказчика, поставка по России и СНГ.",
+      },
+      {
+        name: "robots",
+        content: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
       },
       { name: "author", content: "ООО «Каркас Инвест»" },
-      { property: "og:title", content: "Каркас Инвест — металлоконструкции, которые держат объект и сроки" },
+      { name: "theme-color", content: "#11100e" },
+      {
+        property: "og:title",
+        content: "Каркас Инвест — изготовление металлоконструкций и каркасов БНС",
+      },
       {
         property: "og:description",
         content:
-          "Собственное производство: арматурные каркасы БНС, закладные, ёмкости, металлоконструкции под ключ. Работаем по России и странам СНГ с крупными подрядчиками.",
+          "Собственное производство в Сочи: каркасы БНС, закладные детали и металлоконструкции по чертежам. Работаем по России и СНГ.",
       },
+      { property: "og:url", content: "https://karkas-invest.ru/" },
+      { property: "og:site_name", content: "Каркас Инвест" },
       { property: "og:image", content: "https://karkas-invest.ru/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Каркас Инвест — производство металлоконструкций" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "ru_RU" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Каркас Инвест — металлоконструкции и каркасы БНС" },
+      {
+        name: "twitter:description",
+        content: "Производство металлоконструкций в Сочи с поставкой по России и СНГ.",
+      },
       { name: "twitter:image", content: "https://karkas-invest.ru/og-image.png" },
     ],
     links: [
