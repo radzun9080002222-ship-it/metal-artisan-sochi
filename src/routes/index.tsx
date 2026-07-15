@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type ChangeEvent } from "react";
+import { useState } from "react";
 import {
   ArrowRight,
   Phone,
@@ -54,15 +54,6 @@ const MAX_HREF = "https://max.ru/u/f9LHodD0cOJK0qdYGJB_46xaAZlQdCOdNiRJg_lZc1FR4
 const LEAD_ENDPOINT =
   import.meta.env.VITE_LEAD_ENDPOINT ||
   "https://leads.62.60.248.177.nip.io/api/leads";
-
-const leadServices = [
-  "Каркасы БНС",
-  "Изделия и металлоконструкции по чертежам",
-  "Кольца и небольшие детали",
-  "Гибка, сверление и обработка",
-  "Бурение и экскаваторы",
-  "Доставка, манипулятор и длинномер",
-];
 
 function GearLogo({ className }: { className?: string }) {
   return (
@@ -233,14 +224,19 @@ function IndustrialBackdrop() {
   return (
     <div className="industrial-backdrop" aria-hidden>
       <video
-        src="/assets/welding-area.mp4"
         poster={weldingImg.url}
         autoPlay
         muted
         loop
         playsInline
         preload="metadata"
-      />
+      >
+        <source
+          src="/assets/welding-area.mp4"
+          type="video/mp4"
+          media="(min-width: 640px) and (prefers-reduced-motion: no-preference)"
+        />
+      </video>
       <div className="industrial-backdrop__shade" />
     </div>
   );
@@ -367,11 +363,13 @@ function Hero() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#contacts"
+              href={MAX_HREF}
+              target="_blank"
+              rel="noreferrer"
               className="btn-ghost-line inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold sm:w-auto"
             >
               <Send className="h-4 w-4" />
-              Отправить чертёж
+              Отправить чертёж в MAX
             </a>
             <a
               href={PHONE_HREF}
@@ -405,6 +403,10 @@ function Hero() {
               alt="Производственный участок ООО Каркас Инвест: арматурные каркасы БНС"
               className="h-full w-full object-cover"
               loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              width="1280"
+              height="1280"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
             <div className="absolute inset-x-4 bottom-4 sm:inset-x-5 sm:bottom-5">
@@ -558,10 +560,12 @@ function SendChecklist() {
           </p>
           <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
             <a
-              href="#contacts"
+              href={MAX_HREF}
+              target="_blank"
+              rel="noreferrer"
               className="btn-ember inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
             >
-              Отправить чертёж на расчёт
+              Отправить чертёж в MAX
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
@@ -674,7 +678,6 @@ function Gallery() {
             >
               {g.type === "video" ? (
                 <video
-                  src={g.src}
                   poster={g.poster}
                   autoPlay
                   muted
@@ -682,7 +685,13 @@ function Gallery() {
                   playsInline
                   preload="metadata"
                   className="h-full w-full object-cover"
-                />
+                >
+                  <source
+                    src={g.src}
+                    type="video/mp4"
+                    media="(min-width: 640px) and (prefers-reduced-motion: no-preference)"
+                  />
+                </video>
               ) : (
                 <img
                   src={g.src}
@@ -804,16 +813,6 @@ function FAQ() {
 function ContactCTA() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [error, setError] = useState("");
-  const [drawing, setDrawing] = useState<File | null>(null);
-  const [form, setForm] = useState({
-    name: "",
-    company: "",
-    phone: "",
-    service: leadServices[0],
-    task: "",
-    consent: false,
-    website: "",
-  });
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -822,20 +821,14 @@ function ContactCTA() {
     setStatus("submitting");
     setError("");
 
-    const payload = new FormData();
-    payload.append("name", form.name.trim());
-    payload.append("company", form.company.trim());
-    payload.append("phone", form.phone.trim());
-    payload.append("service", form.service);
-    payload.append("details", form.task.trim());
-    payload.append("consent", form.consent ? "1" : "");
-    payload.append("website", form.website);
-    payload.append("page_url", window.location.href);
+    const payload = new FormData(e.currentTarget);
+    payload.set("service", "Определить менеджеру");
+    payload.set("consent", "1");
+    payload.set("page_url", window.location.href);
 
     for (const [key, value] of Object.entries(readAttribution())) {
-      if (value) payload.append(key, value);
+      if (value) payload.set(key, value);
     }
-    if (drawing) payload.append("drawing", drawing, drawing.name);
 
     try {
       const response = await fetch(LEAD_ENDPOINT, {
@@ -851,7 +844,7 @@ function ContactCTA() {
         throw new Error(result.message || "Не удалось отправить заявку");
       }
 
-      reachGoal("lead_submit_success", { service: form.service, has_drawing: Boolean(drawing) });
+      reachGoal("lead_submit_success", { source: "site_form" });
       setStatus("success");
     } catch (submitError) {
       setStatus("idle");
@@ -861,12 +854,6 @@ function ContactCTA() {
           : "Не удалось отправить заявку. Позвоните нам или напишите в Telegram.",
       );
     }
-  };
-
-  const attachDrawing = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0] || null;
-    setDrawing(file);
-    if (file) reachGoal("drawing_attached", { extension: file.name.split(".").pop() || "" });
   };
 
   return (
@@ -881,11 +868,12 @@ function ContactCTA() {
               </div>
               <div className="text-eyebrow">Заявка на расчёт</div>
               <h2 className="text-display mt-3 text-3xl sm:text-4xl lg:text-5xl">
-                Пришлите чертёж или задачу — <span className="text-ember">рассчитаем стоимость и сроки</span>
+                Опишите задачу — <span className="text-ember">рассчитаем стоимость и сроки</span>
               </h2>
               <p className="mt-5 max-w-md text-sm text-muted-foreground sm:text-base">
                 Работаем с юрлицами по России и странам СНГ. Расчёт за 1 рабочий день,
-                договор, НДС по запросу, полный пакет закрывающих документов.
+                договор, НДС по запросу, полный пакет закрывающих документов. Чертёж
+                или ТЗ можно отправить менеджеру в удобном мессенджере.
               </p>
 
               <div className="mt-6 space-y-3 text-sm">
@@ -947,8 +935,6 @@ function ContactCTA() {
                 <input
                   type="text"
                   name="website"
-                  value={form.website}
-                  onChange={(e) => setForm({ ...form, website: e.target.value })}
                   className="absolute -left-[9999px] h-px w-px opacity-0"
                   tabIndex={-1}
                   autoComplete="off"
@@ -957,65 +943,35 @@ function ContactCTA() {
                 <div className="space-y-3">
                   <Field
                     label="Имя"
-                    value={form.name}
-                    onChange={(v) => setForm({ ...form, name: v })}
+                    name="name"
                     placeholder="Как к вам обращаться"
+                    autoComplete="name"
                     required
-                  />
-                  <Field
-                    label="Компания"
-                    value={form.company}
-                    onChange={(v) => setForm({ ...form, company: v })}
-                    placeholder="Название организации"
                   />
                   <Field
                     label="Телефон"
-                    value={form.phone}
-                    onChange={(v) => setForm({ ...form, phone: v })}
+                    name="phone"
                     placeholder="+7"
                     type="tel"
+                    autoComplete="tel"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="lead-service" className="text-eyebrow">Направление</label>
-                  <select
-                    id="lead-service"
-                    value={form.service}
-                    onChange={(e) => setForm({ ...form, service: e.target.value })}
-                    required
-                    className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-ember"
-                  >
-                    {leadServices.map((service) => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="text-eyebrow">Что нужно изготовить</label>
+                  <label htmlFor="lead-details" className="text-eyebrow">Что требуется</label>
                   <textarea
-                    value={form.task}
-                    onChange={(e) => setForm({ ...form, task: e.target.value })}
+                    id="lead-details"
+                    name="details"
                     rows={4}
-                    placeholder="Например: 40 арматурных каркасов Ø 1000 мм длиной 8 м, срок 3 недели. Чертежи КЖ есть."
+                    placeholder="Кратко опишите задачу, объём, город и желаемый срок"
                     className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ember"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="drawing" className="text-eyebrow">Чертёж или ТЗ до 15 МБ</label>
-                  <input
-                    id="drawing"
-                    type="file"
-                    onChange={attachDrawing}
-                    accept=".pdf,.dwg,.dxf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip,.rar"
-                    className="mt-2 block w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-muted-foreground file:mr-3 file:rounded file:border-0 file:bg-ember file:px-3 file:py-2 file:text-sm file:font-semibold file:text-ember-foreground"
                   />
                 </div>
                 <label className="flex items-start gap-3 text-xs text-muted-foreground">
                   <input
                     type="checkbox"
-                    checked={form.consent}
-                    onChange={(e) => setForm({ ...form, consent: e.target.checked })}
+                    name="consent"
+                    value="1"
                     required
                     className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--ember)]"
                   />
@@ -1089,27 +1045,28 @@ function TelegramIcon({ className }: { className?: string }) {
 
 function Field({
   label,
-  value,
-  onChange,
+  name,
   placeholder,
   type = "text",
+  autoComplete,
   required,
 }: {
   label: string;
-  value: string;
-  onChange: (v: string) => void;
+  name: string;
   placeholder?: string;
   type?: string;
+  autoComplete?: string;
   required?: boolean;
 }) {
   return (
     <div className="min-w-0">
-      <label className="text-eyebrow">{label}</label>
+      <label htmlFor={`lead-${name}`} className="text-eyebrow">{label}</label>
       <input
+        id={`lead-${name}`}
         type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        name={name}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         required={required}
         className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ember"
       />
