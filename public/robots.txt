@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://karkas-invest.ru/sitemap.xml
