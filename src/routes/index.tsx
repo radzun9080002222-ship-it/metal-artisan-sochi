@@ -4,7 +4,6 @@ import {
   ArrowRight,
   Phone,
   MapPin,
-  CheckCircle2,
   Factory,
   Flame,
   Ruler,
@@ -40,7 +39,6 @@ import karkasYardImg from "@/assets/karkas-yard.webp.asset.json";
 import karkasProductionImg from "@/assets/karkas-production.webp.asset.json";
 import bendingImg from "@/assets/bending.webp.asset.json";
 import tankWeldingImg from "@/assets/tank-welding.webp.asset.json";
-import { reachGoal, readAttribution } from "@/lib/analytics";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -51,10 +49,6 @@ const PHONE_HREF = "tel:+79180039374";
 const WHATSAPP_HREF = "https://wa.me/79180039374";
 const TELEGRAM_HREF = "https://t.me/+79180039374";
 const MAX_HREF = "https://max.ru/u/f9LHodD0cOJK0qdYGJB_46xaAZlQdCOdNiRJg_lZc1FR4yIeVWP1XpMILJ4";
-const LEAD_ENDPOINT =
-  import.meta.env.VITE_LEAD_ENDPOINT ||
-  "https://leads.62.60.248.177.nip.io/api/leads";
-
 function GearLogo({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
@@ -811,51 +805,6 @@ function FAQ() {
 }
 
 function ContactCTA() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
-  const [error, setError] = useState("");
-
-  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (status === "submitting") return;
-
-    setStatus("submitting");
-    setError("");
-
-    const payload = new FormData(e.currentTarget);
-    payload.set("service", "Определить менеджеру");
-    payload.set("consent", "1");
-    payload.set("page_url", window.location.href);
-
-    for (const [key, value] of Object.entries(readAttribution())) {
-      if (value) payload.set(key, value);
-    }
-
-    try {
-      const response = await fetch(LEAD_ENDPOINT, {
-        method: "POST",
-        body: payload,
-        headers: { Accept: "application/json" },
-      });
-      const result = (await response.json().catch(() => ({}))) as {
-        success?: boolean;
-        message?: string;
-      };
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Не удалось отправить заявку");
-      }
-
-      reachGoal("lead_submit_success", { source: "site_form" });
-      setStatus("success");
-    } catch (submitError) {
-      setStatus("idle");
-      setError(
-        submitError instanceof Error
-          ? submitError.message
-          : "Не удалось отправить заявку. Позвоните нам или напишите в Telegram.",
-      );
-    }
-  };
-
   return (
     <section id="contacts" className="relative py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -922,81 +871,12 @@ function ContactCTA() {
               </div>
             </div>
 
-            {status === "success" ? (
-              <div className="flex flex-col items-start justify-center rounded-xl border border-ember/40 bg-ember/10 p-6 sm:p-8">
-                <CheckCircle2 className="h-10 w-10 text-ember" />
-                <div className="text-display mt-4 text-2xl">Заявка отправлена</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Спасибо! Заявка доставлена менеджеру в Telegram. Свяжемся с вами в течение рабочего дня.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={submit} className="space-y-4">
-                <input
-                  type="text"
-                  name="website"
-                  className="absolute -left-[9999px] h-px w-px opacity-0"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                />
-                <div className="space-y-3">
-                  <Field
-                    label="Имя"
-                    name="name"
-                    placeholder="Как к вам обращаться"
-                    autoComplete="name"
-                    required
-                  />
-                  <Field
-                    label="Телефон"
-                    name="phone"
-                    placeholder="+7"
-                    type="tel"
-                    autoComplete="tel"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lead-details" className="text-eyebrow">Что требуется</label>
-                  <textarea
-                    id="lead-details"
-                    name="details"
-                    rows={4}
-                    placeholder="Кратко опишите задачу, объём, город и желаемый срок"
-                    className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ember"
-                  />
-                </div>
-                <label className="flex items-start gap-3 text-xs text-muted-foreground">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    value="1"
-                    required
-                    className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--ember)]"
-                  />
-                  <span>
-                    Согласен на обработку персональных данных в соответствии с{" "}
-                    <a href="/privacy/" className="text-ember underline underline-offset-2">
-                      политикой конфиденциальности
-                    </a>.
-                  </span>
-                </label>
-                {error && (
-                  <p role="alert" className="rounded-md border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-200">
-                    {error}
-                  </p>
-                )}
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="btn-ember inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
-                >
-                  {status === "submitting" ? "Отправляем…" : "Отправить заявку"}
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-            )}
+            <iframe
+              src="/request/"
+              title="Форма заявки на расчёт"
+              className="min-h-[510px] w-full border-0 sm:min-h-[530px]"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
@@ -1040,37 +920,6 @@ function TelegramIcon({ className }: { className?: string }) {
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
       <path d="M21.7 3.18c.3-.14.62.12.53.44l-3.1 16.22c-.08.41-.56.6-.9.36l-5.17-3.84-2.52 2.43c-.28.27-.75.15-.86-.22l-.96-3.22-4.73-1.56c-.42-.14-.45-.72-.04-.9L21.7 3.18Zm-3.95 4.09-8.27 6.08.68 2.34.38-1.23c.07-.2.2-.38.37-.51l7.3-5.72c.42-.33.02-1-.47-.75Z" />
     </svg>
-  );
-}
-
-function Field({
-  label,
-  name,
-  placeholder,
-  type = "text",
-  autoComplete,
-  required,
-}: {
-  label: string;
-  name: string;
-  placeholder?: string;
-  type?: string;
-  autoComplete?: string;
-  required?: boolean;
-}) {
-  return (
-    <div className="min-w-0">
-      <label htmlFor={`lead-${name}`} className="text-eyebrow">{label}</label>
-      <input
-        id={`lead-${name}`}
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        autoComplete={autoComplete}
-        required={required}
-        className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ember"
-      />
-    </div>
   );
 }
 
