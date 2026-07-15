@@ -50,7 +50,7 @@ const PHONE_DISPLAY = "+7 (918) 003-93-74";
 const PHONE_HREF = "tel:+79180039374";
 const WHATSAPP_HREF = "https://wa.me/79180039374";
 const TELEGRAM_HREF = "https://t.me/+79180039374";
-const MAX_HREF = "#contacts"; // Replace with direct MAX link when integration is ready.
+const MAX_HREF = "https://max.ru/u/f9LHodD0cOJK0qdYGJB_46xaAZlQdCOdNiRJg_lZc1FR4yIeVWP1XpMILJ4";
 const LEAD_ENDPOINT =
   import.meta.env.VITE_LEAD_ENDPOINT ||
   "https://leads.62.60.248.177.nip.io/api/leads";
@@ -906,6 +906,8 @@ function ContactCTA() {
               <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                 <a
                   href={MAX_HREF}
+                  target="_blank"
+                  rel="noreferrer"
                   className="btn-max inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
                 >
                   <MessageCircle className="h-4 w-4" />
@@ -1051,6 +1053,8 @@ function FloatingActions() {
     <div className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-sm -translate-x-1/2 grid-cols-2 items-center gap-1.5 rounded-full border border-border/70 bg-background/92 p-2 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:bottom-5 sm:w-auto sm:max-w-none sm:gap-2 sm:bg-background/86 sm:shadow-[0_18px_46px_-28px_rgba(0,0,0,0.85)]">
       <a
         href={MAX_HREF}
+        target="_blank"
+        rel="noreferrer"
         className="btn-max inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold"
       >
         <MessageCircle className="h-4 w-4" />

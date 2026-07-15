@@ -67,6 +67,7 @@ export function initAnalytics() {
 
       const href = link.href;
       if (href.startsWith("tel:")) reachGoal("click_phone", { channel: "phone" });
+      if (href.includes("max.ru/")) reachGoal("click_max", { channel: "max" });
       if (href.includes("wa.me/")) reachGoal("click_whatsapp", { channel: "whatsapp" });
       if (href.includes("t.me/")) reachGoal("click_telegram", { channel: "telegram" });
     });
