@@ -249,16 +249,13 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
-        <a href="#top" className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-ember text-ember-foreground sm:h-10 sm:w-10">
-            <GearLogo className="h-5 w-5" />
-          </div>
-          <div className="min-w-0 leading-tight">
-            <div className="text-display truncate text-base sm:text-lg">Каркас Инвест</div>
-            <div className="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:block">
-              металлоконструкции · РФ и СНГ
-            </div>
-          </div>
+        <a href="#top" className="flex min-w-0 items-center" aria-label="Каркас Инвест">
+          <img
+            src="/logo-header.webp"
+            alt="Каркас Инвест — металлоконструкции"
+            className="h-auto w-[190px] sm:w-[240px]"
+            decoding="async"
+          />
         </a>
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground lg:flex">
           {links.map((l) => (
