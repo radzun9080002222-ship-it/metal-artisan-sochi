@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import {
   ArrowRight,
   Phone,
   MapPin,
-  Mail,
   CheckCircle2,
   Factory,
   Flame,
@@ -41,6 +40,7 @@ import karkasYardImg from "@/assets/karkas-yard.webp.asset.json";
 import karkasProductionImg from "@/assets/karkas-production.webp.asset.json";
 import bendingImg from "@/assets/bending.webp.asset.json";
 import tankWeldingImg from "@/assets/tank-welding.webp.asset.json";
+import { reachGoal, readAttribution } from "@/lib/analytics";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -51,7 +51,18 @@ const PHONE_HREF = "tel:+79180039374";
 const WHATSAPP_HREF = "https://wa.me/79180039374";
 const TELEGRAM_HREF = "https://t.me/+79180039374";
 const MAX_HREF = "#contacts"; // Replace with direct MAX link when integration is ready.
-const EMAIL = "info@karkas-invest.ru";
+const LEAD_ENDPOINT =
+  import.meta.env.VITE_LEAD_ENDPOINT ||
+  "https://leads.62.60.248.177.nip.io/api/leads";
+
+const leadServices = [
+  "Каркасы БНС",
+  "Изделия и металлоконструкции по чертежам",
+  "Кольца и небольшие детали",
+  "Гибка, сверление и обработка",
+  "Бурение и экскаваторы",
+  "Доставка, манипулятор и длинномер",
+];
 
 function GearLogo({ className }: { className?: string }) {
   return (
@@ -791,17 +802,71 @@ function FAQ() {
 }
 
 function ContactCTA() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [error, setError] = useState("");
+  const [drawing, setDrawing] = useState<File | null>(null);
   const [form, setForm] = useState({
     name: "",
+    company: "",
     phone: "",
+    service: leadServices[0],
     task: "",
+    consent: false,
+    website: "",
   });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: подключить приём заявок (email / CRM)
-    setSent(true);
+    if (status === "submitting") return;
+
+    setStatus("submitting");
+    setError("");
+
+    const payload = new FormData();
+    payload.append("name", form.name.trim());
+    payload.append("company", form.company.trim());
+    payload.append("phone", form.phone.trim());
+    payload.append("service", form.service);
+    payload.append("details", form.task.trim());
+    payload.append("consent", form.consent ? "1" : "");
+    payload.append("website", form.website);
+    payload.append("page_url", window.location.href);
+
+    for (const [key, value] of Object.entries(readAttribution())) {
+      if (value) payload.append(key, value);
+    }
+    if (drawing) payload.append("drawing", drawing, drawing.name);
+
+    try {
+      const response = await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        body: payload,
+        headers: { Accept: "application/json" },
+      });
+      const result = (await response.json().catch(() => ({}))) as {
+        success?: boolean;
+        message?: string;
+      };
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Не удалось отправить заявку");
+      }
+
+      reachGoal("lead_submit_success", { service: form.service, has_drawing: Boolean(drawing) });
+      setStatus("success");
+    } catch (submitError) {
+      setStatus("idle");
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Не удалось отправить заявку. Позвоните нам или напишите в Telegram.",
+      );
+    }
+  };
+
+  const attachDrawing = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] || null;
+    setDrawing(file);
+    if (file) reachGoal("drawing_attached", { extension: file.name.split(".").pop() || "" });
   };
 
   return (
@@ -829,12 +894,6 @@ function ContactCTA() {
                     <Phone className="h-4 w-4" />
                   </span>
                   <span className="text-display text-base sm:text-lg">{PHONE_DISPLAY}</span>
-                </a>
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 break-all text-foreground">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
-                    <Mail className="h-4 w-4" />
-                  </span>
-                  {EMAIL}
                 </a>
                 <div className="flex items-center gap-3 text-foreground">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
@@ -870,26 +929,29 @@ function ContactCTA() {
                   <TelegramIcon className="h-4 w-4" />
                   Telegram
                 </a>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="btn-ghost-line inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold"
-                >
-                  <Mail className="h-4 w-4" />
-                  Email
-                </a>
               </div>
             </div>
 
-            {sent ? (
+            {status === "success" ? (
               <div className="flex flex-col items-start justify-center rounded-xl border border-ember/40 bg-ember/10 p-6 sm:p-8">
                 <CheckCircle2 className="h-10 w-10 text-ember" />
                 <div className="text-display mt-4 text-2xl">Заявка отправлена</div>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Спасибо! Свяжемся с вами в течение рабочего дня.
+                  Спасибо! Заявка доставлена менеджеру в Telegram. Свяжемся с вами в течение рабочего дня.
                 </p>
               </div>
             ) : (
               <form onSubmit={submit} className="space-y-4">
+                <input
+                  type="text"
+                  name="website"
+                  value={form.website}
+                  onChange={(e) => setForm({ ...form, website: e.target.value })}
+                  className="absolute -left-[9999px] h-px w-px opacity-0"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
                 <div className="space-y-3">
                   <Field
                     label="Имя"
@@ -897,6 +959,12 @@ function ContactCTA() {
                     onChange={(v) => setForm({ ...form, name: v })}
                     placeholder="Как к вам обращаться"
                     required
+                  />
+                  <Field
+                    label="Компания"
+                    value={form.company}
+                    onChange={(v) => setForm({ ...form, company: v })}
+                    placeholder="Название организации"
                   />
                   <Field
                     label="Телефон"
@@ -908,6 +976,20 @@ function ContactCTA() {
                   />
                 </div>
                 <div>
+                  <label htmlFor="lead-service" className="text-eyebrow">Направление</label>
+                  <select
+                    id="lead-service"
+                    value={form.service}
+                    onChange={(e) => setForm({ ...form, service: e.target.value })}
+                    required
+                    className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-ember"
+                  >
+                    {leadServices.map((service) => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
                   <label className="text-eyebrow">Что нужно изготовить</label>
                   <textarea
                     value={form.task}
@@ -917,21 +999,44 @@ function ContactCTA() {
                     className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-ember"
                   />
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  Чертежи и файлы удобнее прислать в MAX, WhatsApp, Telegram или на{" "}
-                  <a href={`mailto:${EMAIL}`} className="text-ember">{EMAIL}</a>.
-                </p>
+                <div>
+                  <label htmlFor="drawing" className="text-eyebrow">Чертёж или ТЗ до 15 МБ</label>
+                  <input
+                    id="drawing"
+                    type="file"
+                    onChange={attachDrawing}
+                    accept=".pdf,.dwg,.dxf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip,.rar"
+                    className="mt-2 block w-full rounded-md border border-border bg-background px-3 py-2.5 text-sm text-muted-foreground file:mr-3 file:rounded file:border-0 file:bg-ember file:px-3 file:py-2 file:text-sm file:font-semibold file:text-ember-foreground"
+                  />
+                </div>
+                <label className="flex items-start gap-3 text-xs text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    checked={form.consent}
+                    onChange={(e) => setForm({ ...form, consent: e.target.checked })}
+                    required
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--ember)]"
+                  />
+                  <span>
+                    Согласен на обработку персональных данных в соответствии с{" "}
+                    <a href="/privacy/" className="text-ember underline underline-offset-2">
+                      политикой конфиденциальности
+                    </a>.
+                  </span>
+                </label>
+                {error && (
+                  <p role="alert" className="rounded-md border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                    {error}
+                  </p>
+                )}
                 <button
                   type="submit"
+                  disabled={status === "submitting"}
                   className="btn-ember inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-semibold"
                 >
-                  Отправить заявку
+                  {status === "submitting" ? "Отправляем…" : "Отправить заявку"}
                   <ArrowRight className="h-4 w-4" />
                 </button>
-                <p className="text-xs text-muted-foreground">
-                  Нажимая кнопку, вы соглашаетесь на обработку персональных
-                  данных.
-                </p>
               </form>
             )}
           </div>
@@ -1038,7 +1143,8 @@ function Footer() {
           <div className="text-eyebrow">Контакты</div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><a href={PHONE_HREF} className="hover:text-foreground">{PHONE_DISPLAY}</a></li>
-            <li className="break-all"><a href={`mailto:${EMAIL}`} className="hover:text-foreground">{EMAIL}</a></li>
+            <li><a href={TELEGRAM_HREF} className="hover:text-foreground" target="_blank" rel="noreferrer">Telegram</a></li>
+            <li><a href={WHATSAPP_HREF} className="hover:text-foreground" target="_blank" rel="noreferrer">WhatsApp</a></li>
             <li>Краснодарский край, г. Сочи, Адлерский район, ул. Изумрудная, 42 к3</li>
             <li>ИНН 2367031991 · ОГРН 1232300040026</li>
           </ul>
