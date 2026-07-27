@@ -155,6 +155,21 @@ def metrika_get(token: str, params: dict) -> dict:
         raise RuntimeError(f"Метрика вернула HTTP {e.code}: {detail}") from None
 
 
+def totals_of(resp: dict, count: int) -> list[float]:
+    """Достаёт totals из ответа Метрики.
+
+    Stat API отдаёт totals ПЛОСКИМ списком чисел: [5, 5, 100.0, 1.0, 0.0].
+    На всякий случай поддерживаем и вложенный вариант [[...]] — встречается
+    в отдельных ответах, — и добиваем нулями, если метрик пришло меньше.
+    """
+    t = resp.get("totals") or []
+    if t and isinstance(t[0], (list, tuple)):
+        t = t[0]
+    vals = [float(v or 0) for v in t]
+    vals += [0.0] * (count - len(vals))
+    return vals[:count]
+
+
 def fetch_metrika(token: str, d_from: str, d_to: str) -> tuple[dict, dict]:
     """Возвращает (мониторинг счётчика целиком, достижения целей с трафика Директа)."""
     site = metrika_get(token, {
@@ -170,30 +185,38 @@ def fetch_metrika(token: str, d_from: str, d_to: str) -> tuple[dict, dict]:
         "date2": d_to,
         "accuracy": "full",
     })
-    s = (site.get("totals") or [[0, 0, 0, 0, 0]])[0]
+    s = totals_of(site, 5)
     monitor = {
-        "visits": int(s[0] or 0),
-        "users": int(s[1] or 0),
-        "bounce_rate": round(float(s[2] or 0), 1),
-        "page_depth": round(float(s[3] or 0), 2),
-        "avg_duration_sec": int(s[4] or 0),
+        "visits": int(s[0]),
+        "users": int(s[1]),
+        "bounce_rate": round(s[2], 1),
+        "page_depth": round(s[3], 2),
+        "avg_duration_sec": int(s[4]),
     }
 
+    # Цели считаем только по рекламному трафику. Если фильтр по какой-то причине
+    # не отработает, мониторинг счётчика всё равно уже собран и не потеряется.
     goal_metrics = [f"ym:s:goal{gid}reaches" for gid, _ in GOALS]
-    direct = metrika_get(token, {
-        "ids": COUNTER_ID,
-        "metrics": ",".join(["ym:s:visits", "ym:s:bounceRate", *goal_metrics]),
-        "filters": "ym:s:lastsignTrafficSource=='ad'",
-        "date1": d_from,
-        "date2": d_to,
-        "accuracy": "full",
-    })
-    dt = (direct.get("totals") or [[0] * (2 + len(GOALS))])[0]
-    ads = {
-        "visits": int(dt[0] or 0),
-        "bounce_rate": round(float(dt[1] or 0), 1),
-        "goals": {gid: int(dt[2 + i] or 0) for i, (gid, _) in enumerate(GOALS)},
-    }
+    ads = {"visits": 0, "bounce_rate": None, "goals": {gid: 0 for gid, _ in GOALS}}
+    try:
+        direct = metrika_get(token, {
+            "ids": COUNTER_ID,
+            "metrics": ",".join(["ym:s:visits", "ym:s:bounceRate", *goal_metrics]),
+            "filters": "ym:s:lastsignTrafficSource=='ad'",
+            "date1": d_from,
+            "date2": d_to,
+            "accuracy": "full",
+        })
+        dt = totals_of(direct, 2 + len(GOALS))
+        ads = {
+            "visits": int(dt[0]),
+            "bounce_rate": round(dt[1], 1),
+            "goals": {gid: int(dt[2 + i]) for i, (gid, _) in enumerate(GOALS)},
+        }
+    except Exception as e:
+        log(f"срез по рекламному трафику не собрался: {e}")
+        notes.append(f"Цели по рекламному трафику не собрались: {e}")
+
     return monitor, ads
 
 
