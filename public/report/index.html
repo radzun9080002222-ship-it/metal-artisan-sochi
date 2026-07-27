@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="yandex" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Отчёт по рекламе — Каркас Инвест</title>
+<style>
+  :root{
+    --bg:#11100e; --card:#191714; --line:#302c26; --fg:#f7f4ef; --muted:#a99f92;
+    --ember:#ff5b00; --green:#4caf7d; --red:#ff4d3d; --blue:#5b9bd5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:26px 18px 70px}
+
+  #gate{min-height:100vh;display:grid;place-items:center;padding:20px}
+  #gate .box{width:100%;max-width:340px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:26px}
+  #gate h1{margin:0 0 5px;font-size:19px}
+  #gate p{margin:0 0 18px;color:var(--muted);font-size:13.5px}
+  input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);
+    background:#0b0a09;color:var(--fg);font-size:19px;letter-spacing:.3em;text-align:center}
+  input:focus{outline:none;border-color:var(--ember)}
+  button{width:100%;margin-top:11px;padding:12px;border:0;border-radius:8px;
+    background:var(--ember);color:#100c08;font-weight:800;font-size:15px;cursor:pointer}
+  button:disabled{opacity:.5;cursor:default}
+  .err{margin-top:11px;color:var(--red);font-size:13px;min-height:18px}
+
+  header{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end}
+  h2{margin:0;font-size:clamp(20px,3.3vw,28px);line-height:1.15}
+  .sub{color:var(--muted);font-size:13px;margin:5px 0 0}
+  .badge{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:99px;
+    border:1px solid var(--line);font-size:12px;color:var(--muted);white-space:nowrap}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(146px,1fr));gap:11px;margin:22px 0 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px}
+  .kpi .lbl{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+  .kpi .val{font-size:24px;font-weight:700;margin-top:7px;line-height:1.1}
+  .kpi .hint{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .kpi.hl .val{color:var(--ember)}
+  .kpi.mx .val{color:var(--blue)}
+
+  section{margin-top:32px}
+  h3{font-size:15px;margin:0 0 12px}
+  h3 .tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    margin-left:9px;font-weight:400}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:17px}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;color:var(--muted);font-weight:600;font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;padding:0 10px 9px;border-bottom:1px solid var(--line)}
+  td{padding:11px 10px;border-bottom:1px solid #24211c}
+  tr:last-child td{border-bottom:0}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .z{color:var(--muted)}
+
+  .bars{display:grid;gap:9px}
+  .bar{display:grid;grid-template-columns:92px 1fr 78px;gap:11px;align-items:center;font-size:13px}
+  .track{height:9px;background:#0b0a09;border-radius:99px;overflow:hidden}
+  .fill{height:100%;background:var(--ember);border-radius:99px}
+  .budget .track{height:12px}
+  .budget .fill{background:linear-gradient(90deg,var(--ember),#ff8a3d)}
+  .budget .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:8px}
+
+  ul.notes{margin:0;padding-left:19px}
+  ul.notes li{color:#cfc5b7;font-size:13.5px;margin-bottom:7px}
+  footer{margin-top:42px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);
+    font-size:12px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+  .hidden{display:none!important}
+  @media(max-width:520px){ .bar{grid-template-columns:76px 1fr 64px;font-size:12px} }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h1>Отчёт по рекламе</h1>
+    <p>Каркас Инвест · закрытый раздел</p>
+    <input id="pin" type="password" inputmode="numeric" autocomplete="off"
+           placeholder="PIN" maxlength="16" aria-label="PIN">
+    <button id="go">Открыть</button>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<div class="wrap hidden" id="app">
+  <header>
+    <div>
+      <h2>Каркасы БНС — Краснодарский край</h2>
+      <p class="sub" id="period"></p>
+    </div>
+    <span class="badge"><span class="dot"></span><span id="status"></span></span>
+  </header>
+
+  <section style="margin-top:20px">
+    <h3>Яндекс Директ<span class="tag">рекламная кампания</span></h3>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section>
+    <h3>Недельный бюджет</h3>
+    <div class="card budget">
+      <div class="track"><div class="fill" id="bfill" style="width:0%"></div></div>
+      <div class="row"><span id="btext"></span><span id="bcap"></span></div>
+    </div>
+  </section>
+
+  <section id="mxWrap">
+    <h3>Яндекс Метрика<span class="tag">поведение на сайте, счётчик целиком</span></h3>
+    <div class="kpis" id="mx" style="margin-top:0"></div>
+  </section>
+
+  <section>
+    <h3>Обращения по каналам<span class="tag">с рекламного трафика</span></h3>
+    <div class="card"><div class="bars" id="goals"></div></div>
+  </section>
+
+  <section>
+    <h3>По дням</h3>
+    <div class="card" style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Дата</th><th class="n">Расход</th><th class="n">Показы</th>
+          <th class="n">Клики</th></tr></thead>
+        <tbody id="daily"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h3>Поисковые запросы</h3>
+    <div class="card" style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Запрос</th><th class="n">Показы</th><th class="n">Клики</th>
+          <th class="n">Расход</th></tr></thead>
+        <tbody id="queries"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="notesWrap">
+    <h3>Комментарий</h3>
+    <div class="card"><ul class="notes" id="notes"></ul></div>
+  </section>
+
+  <footer>
+    <span id="updated"></span>
+    <span>Кампания № 712813448 · счётчик 110755114</span>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const DATA_URL = 'data.json';
+  // SHA-256 от PIN. Держим хеш, а не сам код, чтобы он не лежал в исходнике открыто.
+  const PIN_HASH = '6c97aad35e1926d26189e8cecc601729963e279143285c19e0d329b3c319c173';
+
+  const rub = n => n == null ? '—'
+    : n.toLocaleString('ru-RU',{minimumFractionDigits:0,maximumFractionDigits:2}) + ' ₽';
+  const num = n => n == null ? '—' : n.toLocaleString('ru-RU');
+  const pct = n => n == null ? '—' : n.toLocaleString('ru-RU',{maximumFractionDigits:2}) + ' %';
+  const esc = s => String(s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const fmtDate = s => { if(!s) return '—'; const p=s.split('-'); return `${p[2]}.${p[1]}.${p[0]}`; };
+  const fmtDT = s => { const d=new Date(s); return isNaN(d)?(s||'—')
+    : d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}); };
+  const dur = sec => { if(sec==null) return '—'; const m=Math.floor(sec/60), s=sec%60;
+    return m ? `${m} мин ${s} с` : `${s} с`; };
+
+  async function sha256(txt){
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt));
+    return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function render(d){
+    const m = d.meta, t = d.totals;
+    $('status').textContent = m.status || '—';
+    $('period').textContent = `${fmtDate(m.period_from)} — ${fmtDate(m.period_to)} · ${m.geo} · ${m.schedule}`;
+
+    $('kpis').innerHTML = [
+      {lbl:'Расход',        val:rub(t.spend),        hint:`потолок клика ${m.cpc_cap} ₽`},
+      {lbl:'Показы',        val:num(t.impressions)},
+      {lbl:'Клики',         val:num(t.clicks),       hint:'CTR ' + pct(t.ctr)},
+      {lbl:'Цена клика',    val:rub(t.cpc)},
+      {lbl:'Обращения',     val:num(t.leads_total),  hl:true},
+      {lbl:'Цена обращения',val:t.cpl==null?'—':rub(t.cpl), hl:true,
+       hint:t.cpl==null?'пока нет обращений':''},
+    ].map(k=>`<div class="kpi${k.hl?' hl':''}"><div class="lbl">${k.lbl}</div>
+      <div class="val">${k.val}</div>${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
+
+    const share = m.budget_week ? Math.min(100, t.spend/m.budget_week*100) : 0;
+    $('bfill').style.width = share.toFixed(1)+'%';
+    $('btext').textContent = `Израсходовано ${rub(t.spend)} — ${share.toFixed(1)} %`;
+    $('bcap').textContent  = `Лимит ${rub(m.budget_week)} в неделю`;
+
+    if (d.metrika) {
+      const x = d.metrika;
+      $('mx').innerHTML = [
+        {lbl:'Визиты',        val:num(x.visits)},
+        {lbl:'Посетители',    val:num(x.users)},
+        {lbl:'Отказы',        val:pct(x.bounce_rate)},
+        {lbl:'Глубина',       val:x.page_depth==null?'—':x.page_depth.toLocaleString('ru-RU'),
+         hint:'страниц за визит'},
+        {lbl:'Время на сайте',val:dur(x.avg_duration_sec)},
+      ].map(k=>`<div class="kpi mx"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div>
+        ${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
+    } else { $('mxWrap').classList.add('hidden'); }
+
+    const mx = Math.max(1, ...d.goals.map(g=>g.count));
+    $('goals').innerHTML = d.goals.map(g=>
+      `<div class="bar"><span>${esc(g.name)}</span>
+       <div class="track"><div class="fill" style="width:${(g.count/mx*100).toFixed(1)}%"></div></div>
+       <span class="n${g.count?'':' z'}">${g.count}${g.cpl!=null?' · '+rub(g.cpl):''}</span></div>`).join('');
+
+    $('daily').innerHTML = d.daily.length ? d.daily.map(r=>
+      `<tr><td>${fmtDate(r.date)}</td><td class="n">${rub(r.spend)}</td>
+       <td class="n">${num(r.impressions)}</td><td class="n">${num(r.clicks)}</td></tr>`).join('')
+      : `<tr><td colspan="4" class="z">Пока нет данных</td></tr>`;
+
+    $('queries').innerHTML = d.queries.length ? d.queries.map(q=>
+      `<tr><td>${esc(q.query)}</td><td class="n">${num(q.impressions)}</td>
+       <td class="n">${num(q.clicks)}</td><td class="n">${rub(q.spend)}</td></tr>`).join('')
+      : `<tr><td colspan="4" class="z">Пока нет данных</td></tr>`;
+
+    if (d.notes && d.notes.length){
+      $('notes').innerHTML = d.notes.map(n=>`<li>${esc(n)}</li>`).join('');
+    } else { $('notesWrap').classList.add('hidden'); }
+
+    $('updated').textContent = 'Обновлено ' + fmtDT(m.updated_at);
+    $('gate').classList.add('hidden');
+    $('app').classList.remove('hidden');
+    try { sessionStorage.setItem('ki_report_ok','1'); } catch(e){}
+  }
+
+  async function load(){
+    const res = await fetch(DATA_URL, {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    render(await res.json());
+  }
+
+  async function open(){
+    const pin = $('pin').value.trim();
+    if(!pin){ $('err').textContent='Введите PIN'; return; }
+    $('go').disabled = true; $('err').textContent='';
+    if (await sha256(pin) !== PIN_HASH){
+      $('err').textContent='Неверный PIN';
+      $('go').disabled=false; $('pin').value=''; $('pin').focus(); return;
+    }
+    try { await load(); }
+    catch(e){ $('err').textContent='Не удалось загрузить отчёт. Попробуйте позже.'; $('go').disabled=false; }
+  }
+
+  $('go').addEventListener('click', open);
+  $('pin').addEventListener('keydown', e => { if(e.key==='Enter') open(); });
+
+  // в рамках вкладки повторно PIN не спрашиваем
+  try {
+    if (sessionStorage.getItem('ki_report_ok')==='1') load().catch(()=>{});
+  } catch(e){}
+  $('pin').focus();
+})();
+</script>
+</body>
+</html>
