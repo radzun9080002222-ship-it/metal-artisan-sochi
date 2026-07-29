@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "build:pages": "vite build --config vite.static.config.ts --outDir dist",
+    "build:pages": "vite build --config vite.static.config.ts --outDir dist && node scripts/postbuild-static.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

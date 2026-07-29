@@ -41,6 +41,9 @@ import bendingImg from "@/assets/bending.webp.asset.json";
 import tankWeldingImg from "@/assets/tank-welding.webp.asset.json";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://karkas-invest.ru/" }],
+  }),
   component: Index,
 });
 
@@ -243,6 +246,7 @@ function Nav() {
     { href: "#clients", label: "Для кого" },
     { href: "#workflow", label: "Как работаем" },
     { href: "#quality", label: "Качество" },
+    { href: "/vacancies/", label: "Вакансии" },
     { href: "#faq", label: "FAQ" },
     { href: "#contacts", label: "Контакты" },
   ];
@@ -722,7 +726,7 @@ function About() {
             </p>
             <p className="mt-3 text-sm text-muted-foreground sm:text-base">
               Производственная площадка находится по адресу: Краснодарский край,
-              г. Сочи, Адлерский район, ул. Изумрудная, 42 к3. Отгружаем и
+              г. Сочи, Адлерский район, ул. Гастелло. Отгружаем и
               монтируем по России и странам СНГ: от штучных изделий до
               серийных поставок для промышленных объектов.
             </p>
@@ -742,7 +746,7 @@ function About() {
               </div>
               <div className="min-w-0">
                 <dt className="text-eyebrow">Адрес производства</dt>
-                <dd className="mt-1 font-semibold">Сочи, ул. Изумрудная, 42 к3</dd>
+                <dd className="mt-1 font-semibold">Сочи, Адлерский район, ул. Гастелло</dd>
               </div>
             </dl>
           </div>
@@ -833,7 +837,7 @@ function ContactCTA() {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-ember/15 text-ember">
                     <MapPin className="h-4 w-4" />
                   </span>
-                  Краснодарский край, г. Сочи, Адлерский район, ул. Изумрудная, 42 к3
+                  Краснодарский край, г. Сочи, Адлерский район, ул. Гастелло
                 </div>
               </div>
 
@@ -944,6 +948,7 @@ function Footer() {
             <li><a href="#services" className="hover:text-foreground">Закладные детали</a></li>
             <li><a href="#services" className="hover:text-foreground">Резка и плазма</a></li>
             <li><a href="#services" className="hover:text-foreground">Металлоконструкции под ключ</a></li>
+            <li><a href="/vacancies/" className="hover:text-foreground">Вакансии</a></li>
           </ul>
         </div>
         <div>
@@ -952,7 +957,7 @@ function Footer() {
             <li><a href={PHONE_HREF} className="hover:text-foreground">{PHONE_DISPLAY}</a></li>
             <li><a href={TELEGRAM_HREF} className="hover:text-foreground" target="_blank" rel="noreferrer">Telegram</a></li>
             <li><a href={WHATSAPP_HREF} className="hover:text-foreground" target="_blank" rel="noreferrer">WhatsApp</a></li>
-            <li>Краснодарский край, г. Сочи, Адлерский район, ул. Изумрудная, 42 к3</li>
+            <li>Краснодарский край, г. Сочи, Адлерский район, ул. Гастелло</li>
             <li>ИНН 2367031991 · ОГРН 1232300040026</li>
           </ul>
         </div>
