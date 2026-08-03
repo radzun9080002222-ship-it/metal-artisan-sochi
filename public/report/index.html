@@ -23,10 +23,10 @@
     border-radius:12px;padding:26px}
   #gate h1{margin:0 0 5px;font-size:19px}
   #gate p{margin:0 0 18px;color:var(--muted);font-size:13.5px}
-  input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);
+  #pin{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--line);
     background:#0b0a09;color:var(--fg);font-size:19px;letter-spacing:.3em;text-align:center}
-  input:focus{outline:none;border-color:var(--ember)}
-  button{width:100%;margin-top:11px;padding:12px;border:0;border-radius:8px;
+  #pin:focus{outline:none;border-color:var(--ember)}
+  #gate button{width:100%;margin-top:11px;padding:12px;border:0;border-radius:8px;
     background:var(--ember);color:#100c08;font-weight:800;font-size:15px;cursor:pointer}
   button:disabled{opacity:.5;cursor:default}
   .err{margin-top:11px;color:var(--red);font-size:13px;min-height:18px}
@@ -37,6 +37,24 @@
   .badge{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:99px;
     border:1px solid var(--line);font-size:12px;color:var(--muted);white-space:nowrap}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+
+  .filters{margin-top:20px;padding:14px;display:grid;gap:13px}
+  .presets{display:flex;gap:7px;flex-wrap:wrap}
+  .preset{border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#11100e;
+    color:var(--muted);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
+  .preset:hover{border-color:#544b40;color:var(--fg)}
+  .preset.active{background:var(--ember);border-color:var(--ember);color:#130d08}
+  .custom{display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap}
+  .date-field{display:grid;gap:5px;min-width:145px;flex:1}
+  .date-field label{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .date-field input{width:100%;border:1px solid var(--line);border-radius:8px;background:#0b0a09;
+    color:var(--fg);padding:8px 10px;font:inherit;color-scheme:dark}
+  .date-field input:focus{outline:none;border-color:var(--ember)}
+  .apply{border:0;border-radius:8px;padding:9px 15px;background:#39332b;color:var(--fg);
+    font:inherit;font-size:12.5px;font-weight:800;cursor:pointer;white-space:nowrap}
+  .apply:hover{background:#4a4238}
+  .filter-meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+  .filter-meta strong{color:var(--fg);font-weight:700}
 
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(146px,1fr));gap:11px;margin:22px 0 0}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px}
@@ -70,12 +88,28 @@
   .budget .fill{background:linear-gradient(90deg,var(--ember),#ff8a3d)}
   .budget .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:8px}
 
+  .chart-card{padding:14px 14px 10px;overflow:hidden}
+  .chart-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:6px}
+  .legend{display:flex;gap:13px;flex-wrap:wrap;color:var(--muted);font-size:11.5px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{display:block;width:9px;height:9px;border-radius:2px;background:var(--ember)}
+  .legend i.clicks{background:var(--blue);border-radius:50%}
+  .chart{display:block;width:100%;height:auto;min-height:230px}
+  .chart text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  .chart-empty{min-height:230px;display:grid;place-items:center;color:var(--muted);font-size:13px}
+
   ul.notes{margin:0;padding-left:19px}
   ul.notes li{color:#cfc5b7;font-size:13.5px;margin-bottom:7px}
   footer{margin-top:42px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);
     font-size:12px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
   .hidden{display:none!important}
-  @media(max-width:520px){ .bar{grid-template-columns:76px 1fr 64px;font-size:12px} }
+  @media(max-width:620px){
+    .bar{grid-template-columns:76px 1fr 64px;font-size:12px}
+    .custom{display:grid;grid-template-columns:1fr 1fr}
+    .apply{grid-column:1/-1}
+    .chart-card{padding-left:7px;padding-right:7px}
+    .chart{min-height:190px}
+  }
 </style>
 </head>
 <body>
@@ -100,13 +134,37 @@
     <span class="badge"><span class="dot"></span><span id="status"></span></span>
   </header>
 
+  <section class="card filters" aria-label="Выбор периода">
+    <div class="presets" id="presets">
+      <button class="preset" data-range="today">Сегодня</button>
+      <button class="preset" data-range="yesterday">Вчера</button>
+      <button class="preset" data-range="7d">7 дней</button>
+      <button class="preset" data-range="week">Эта неделя</button>
+      <button class="preset" data-range="prev-week">Прошлая неделя</button>
+      <button class="preset" data-range="month">Этот месяц</button>
+      <button class="preset active" data-range="30d">30 дней</button>
+    </div>
+    <div class="custom">
+      <div class="date-field"><label for="dateFrom">Дата с</label><input id="dateFrom" type="date"></div>
+      <div class="date-field"><label for="dateTo">Дата по</label><input id="dateTo" type="date"></div>
+      <button class="apply" id="applyDates">Применить даты</button>
+    </div>
+    <div class="filter-meta"><span>Выбран период: <strong id="selectedPeriod">—</strong></span>
+      <span id="filterHint">Данные пересчитываются по выбранным датам</span></div>
+  </section>
+
   <section style="margin-top:20px">
     <h3>Яндекс Директ<span class="tag" id="source">рекламная кампания</span></h3>
     <div class="kpis" id="kpis"></div>
   </section>
 
   <section>
-    <h3>Недельный бюджет</h3>
+    <div class="chart-head"><h3>Динамика</h3><div class="legend"><span><i></i>Расход</span><span><i class="clicks"></i>Клики</span></div></div>
+    <div class="card chart-card" id="chartWrap"><svg class="chart" id="trendChart" viewBox="0 0 960 280" role="img" aria-label="Динамика расходов и кликов"></svg></div>
+  </section>
+
+  <section>
+    <h3 id="budgetTitle">Недельный бюджет</h3>
     <div class="card budget">
       <div class="track"><div class="fill" id="bfill" style="width:0%"></div></div>
       <div class="row"><span id="btext"></span><span id="bcap"></span></div>
@@ -127,14 +185,14 @@
     <h3>По дням</h3>
     <div class="card" style="overflow-x:auto">
       <table>
-        <thead><tr><th>Дата</th><th class="n">Расход</th><th class="n">Клики</th></tr></thead>
+        <thead><tr><th>Дата</th><th class="n">Расход</th><th class="n">Клики</th><th class="n">Визиты</th><th class="n">Заявки</th></tr></thead>
         <tbody id="daily"></tbody>
       </table>
     </div>
   </section>
 
   <section>
-    <h3>Поисковые запросы</h3>
+    <h3>Поисковые запросы<span class="tag" id="queryPeriod"></span></h3>
     <div class="card" style="overflow-x:auto">
       <table>
         <thead><tr><th>Запрос</th><th class="n">Клики</th><th class="n">Расход</th></tr></thead>
@@ -160,6 +218,9 @@
   const DATA_URL = 'data.json';
   // SHA-256 от PIN. Держим хеш, а не сам код, чтобы он не лежал в исходнике открыто.
   const PIN_HASH = '6c97aad35e1926d26189e8cecc601729963e279143285c19e0d329b3c319c173';
+  let reportData = null;
+  let currentFrom = null;
+  let currentTo = null;
 
   const rub = n => n == null ? '—'
     : n.toLocaleString('ru-RU',{minimumFractionDigits:0,maximumFractionDigits:2}) + ' ₽';
@@ -171,70 +232,184 @@
     : d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}); };
   const dur = sec => { if(sec==null) return '—'; const m=Math.floor(sec/60), s=sec%60;
     return m ? `${m} мин ${s} с` : `${s} с`; };
+  const dateObj = s => new Date(`${s}T12:00:00Z`);
+  const dateISO = d => d.toISOString().slice(0,10);
+  const moveDate = (s, days) => { const d=dateObj(s); d.setUTCDate(d.getUTCDate()+days); return dateISO(d); };
+  const mondayOf = s => { const d=dateObj(s), day=(d.getUTCDay()+6)%7; d.setUTCDate(d.getUTCDate()-day); return dateISO(d); };
+  const monthStart = s => `${s.slice(0,7)}-01`;
+  const inRange = (s, from, to) => s>=from && s<=to;
+  const sum = (rows, key) => rows.reduce((acc,row)=>acc+(Number(row[key])||0),0);
+  const weighted = (rows, key) => { const weight=sum(rows,'visits'); return weight
+    ? rows.reduce((acc,row)=>acc+(Number(row[key])||0)*(Number(row.visits)||0),0)/weight : null; };
+  const fmtShort = s => { const p=s.split('-'); return `${p[2]}.${p[1]}`; };
 
   async function sha256(txt){
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt));
     return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
   }
 
-  function render(d){
-    const m = d.meta, t = d.totals;
-    $('status').textContent = m.status || '—';
-    $('period').textContent = `${fmtDate(m.period_from)} — ${fmtDate(m.period_to)} · ${m.geo} · ${m.schedule}`;
-    $('source').textContent = m.data_source || 'рекламная кампания';
+  function rangeFor(key){
+    const m=reportData.meta, end=m.period_to;
+    if(key==='today') return [end,end];
+    if(key==='yesterday'){ const day=moveDate(end,-1); return [day,day]; }
+    if(key==='7d') return [moveDate(end,-6),end];
+    if(key==='week') return [mondayOf(end),end];
+    if(key==='prev-week'){ const to=moveDate(mondayOf(end),-1); return [moveDate(to,-6),to]; }
+    if(key==='month') return [monthStart(end),end];
+    return [m.period_from,end];
+  }
+
+  function setActivePreset(key){
+    document.querySelectorAll('.preset').forEach(button=>
+      button.classList.toggle('active',button.dataset.range===key));
+  }
+
+  function usePreset(key){
+    if(!reportData) return;
+    [currentFrom,currentTo]=rangeFor(key);
+    currentFrom=currentFrom<reportData.meta.period_from?reportData.meta.period_from:currentFrom;
+    currentTo=currentTo>reportData.meta.period_to?reportData.meta.period_to:currentTo;
+    setActivePreset(key);
+    updateView();
+  }
+
+  function applyCustomRange(){
+    if(!reportData) return;
+    let from=$('dateFrom').value, to=$('dateTo').value;
+    if(!from||!to) return;
+    if(from>to) [from,to]=[to,from];
+    currentFrom=from<reportData.meta.period_from?reportData.meta.period_from:from;
+    currentTo=to>reportData.meta.period_to?reportData.meta.period_to:to;
+    if(currentFrom>currentTo) [currentFrom,currentTo]=[reportData.meta.period_from,reportData.meta.period_to];
+    setActivePreset('custom');
+    updateView();
+  }
+
+  function filteredQueries(d, from, to, fullPeriod){
+    const dated=(d.queries||[]).some(q=>q.date);
+    const rows=dated ? d.queries.filter(q=>q.date&&inRange(q.date,from,to)) : (fullPeriod?d.queries:[]);
+    const grouped=new Map();
+    rows.forEach(q=>{
+      const key=q.query;
+      const item=grouped.get(key)||{query:q.query,keyword:q.keyword||'',clicks:0,spend:0};
+      item.clicks+=Number(q.clicks)||0; item.spend+=Number(q.spend)||0; grouped.set(key,item);
+    });
+    return {dated, rows:[...grouped.values()].sort((a,b)=>b.clicks-a.clicks||b.spend-a.spend).slice(0,40)};
+  }
+
+  function renderChart(rows, from, to){
+    const svg=$('trendChart');
+    const byDate=new Map(rows.map(row=>[row.date,row]));
+    const days=[];
+    for(let day=from;day<=to;day=moveDate(day,1)) days.push(byDate.get(day)||{date:day,spend:0,clicks:0});
+    const maxSpend=Math.max(0,...days.map(r=>Number(r.spend)||0));
+    const maxClicks=Math.max(0,...days.map(r=>Number(r.clicks)||0));
+    if(!maxSpend&&!maxClicks){
+      svg.innerHTML='<text x="480" y="140" text-anchor="middle" fill="#a99f92" font-size="14">За выбранный период данных нет</text>';
+      return;
+    }
+    const W=960,H=280,L=62,R=34,T=20,B=42,plotW=W-L-R,plotH=H-T-B;
+    const step=plotW/days.length, barW=Math.max(3,Math.min(24,step*.56));
+    const ySpend=v=>T+plotH-(maxSpend?v/maxSpend*plotH:0);
+    const yClicks=v=>T+plotH-(maxClicks?v/maxClicks*plotH:0);
+    const labelEvery=Math.max(1,Math.ceil(days.length/6));
+    let parts=['<defs><linearGradient id="spendGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a32"/><stop offset="1" stop-color="#ff5b00" stop-opacity=".35"/></linearGradient></defs>'];
+    for(let i=0;i<=4;i++){
+      const y=T+plotH*i/4, value=maxSpend*(1-i/4);
+      parts.push(`<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#302c26"/>`,
+        `<text x="${L-9}" y="${y+4}" text-anchor="end" fill="#a99f92" font-size="10">${Math.round(value).toLocaleString('ru-RU')} ₽</text>`);
+    }
+    days.forEach((row,i)=>{
+      const x=L+step*i+step/2, y=ySpend(Number(row.spend)||0), height=T+plotH-y;
+      parts.push(`<rect x="${x-barW/2}" y="${y}" width="${barW}" height="${height}" rx="3" fill="url(#spendGradient)"><title>${fmtDate(row.date)} · ${rub(row.spend)} · ${num(row.clicks)} кликов</title></rect>`);
+      if(i%labelEvery===0||i===days.length-1) parts.push(`<text x="${x}" y="${H-15}" text-anchor="middle" fill="#a99f92" font-size="10">${fmtShort(row.date)}</text>`);
+    });
+    const points=days.map((row,i)=>`${L+step*i+step/2},${yClicks(Number(row.clicks)||0)}`).join(' ');
+    parts.push(`<polyline points="${points}" fill="none" stroke="#5b9bd5" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`);
+    days.forEach((row,i)=>{ const x=L+step*i+step/2,y=yClicks(Number(row.clicks)||0);
+      parts.push(`<circle cx="${x}" cy="${y}" r="4" fill="#11100e" stroke="#5b9bd5" stroke-width="2"><title>${fmtDate(row.date)} · ${num(row.clicks)} кликов</title></circle>`); });
+    parts.push(`<text x="${W-R}" y="${T+10}" text-anchor="end" fill="#5b9bd5" font-size="10">макс. ${num(maxClicks)} кликов/день</text>`);
+    svg.innerHTML=parts.join('');
+  }
+
+  function updateView(){
+    const d=reportData, m=d.meta;
+    const rows=(d.daily||[]).filter(r=>inRange(r.date,currentFrom,currentTo));
+    const richDaily=rows.some(r=>Object.prototype.hasOwnProperty.call(r,'visits'));
+    const fullPeriod=currentFrom===m.period_from&&currentTo===m.period_to;
+    const spend=sum(rows,'spend'), clicks=sum(rows,'clicks');
+    const leads=richDaily?sum(rows,'leads'):(fullPeriod?d.totals.leads_total:null);
+    const contacts=richDaily?sum(rows,'contact_actions'):(fullPeriod?d.totals.contact_actions_total:null);
+    const visits=richDaily?sum(rows,'visits'):(fullPeriod&&d.metrika?d.metrika.visits:null);
+    const users=richDaily?sum(rows,'users'):(fullPeriod&&d.metrika?d.metrika.users:null);
+    const bounce=richDaily?weighted(rows,'bounce_rate'):(fullPeriod&&d.metrika?d.metrika.bounce_rate:null);
+    const depth=richDaily?weighted(rows,'page_depth'):(fullPeriod&&d.metrika?d.metrika.page_depth:null);
+    const duration=richDaily?weighted(rows,'avg_duration_sec'):(fullPeriod&&d.metrika?d.metrika.avg_duration_sec:null);
+    const conversion=visits!=null&&leads!=null&&visits?leads/visits*100:(visits===0&&leads===0?0:null);
+    const cpc=clicks?spend/clicks:null, cpl=leads?spend/leads:null;
+
+    $('dateFrom').value=currentFrom; $('dateTo').value=currentTo;
+    $('selectedPeriod').textContent=`${fmtDate(currentFrom)} — ${fmtDate(currentTo)}`;
+    $('period').textContent = `${fmtDate(currentFrom)} — ${fmtDate(currentTo)} · ${m.geo} · ${m.schedule}`;
+    $('filterHint').textContent=richDaily?'Все показатели пересчитаны по выбранным датам':'Конверсии по датам появятся после ближайшего обновления';
 
     $('kpis').innerHTML = [
-      {lbl:'Расход',        val:rub(t.spend),        hint:`потолок клика ${m.cpc_cap} ₽`},
-      {lbl:'Клики',         val:num(t.clicks),       hint:t.ctr==null?'по данным Метрики':'CTR '+pct(t.ctr)},
-      {lbl:'Цена клика',    val:rub(t.cpc)},
-      {lbl:'Заявки',        val:num(t.leads_total),  hl:true, hint:'успешная отправка формы'},
-      {lbl:'Конверсия',     val:pct(t.conversion_rate), hl:true, hint:'визит → заявка'},
-      {lbl:'Цена заявки',   val:t.cpl==null?'—':rub(t.cpl), hl:true,
-       hint:t.cpl==null?'пока нет заявок':''},
-    ].map(k=>`<div class="kpi${k.hl?' hl':''}"><div class="lbl">${k.lbl}</div>
-      <div class="val">${k.val}</div>${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
+      {lbl:'Расход',val:rub(spend),hint:`потолок клика ${m.cpc_cap} ₽`},
+      {lbl:'Клики',val:num(clicks),hint:'по данным Метрики'},
+      {lbl:'Цена клика',val:rub(cpc)},
+      {lbl:'Заявки',val:num(leads),hl:true,hint:'успешная отправка формы'},
+      {lbl:'Конверсия',val:pct(conversion),hl:true,hint:'визит → заявка'},
+      {lbl:'Цена заявки',val:rub(cpl),hl:true,hint:leads===0?'пока нет заявок':''},
+    ].map(k=>`<div class="kpi${k.hl?' hl':''}"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div>${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
 
-    const weekSpend = d.weekly && d.weekly.spend != null ? d.weekly.spend : t.spend;
-    const share = m.budget_week ? Math.min(100, weekSpend/m.budget_week*100) : 0;
-    $('bfill').style.width = share.toFixed(1)+'%';
-    $('btext').textContent = `${m.week_from?'С '+fmtDate(m.week_from)+' · ':''}израсходовано ${rub(weekSpend)} — ${share.toFixed(1)} %`;
-    $('bcap').textContent  = `Лимит ${rub(m.budget_week)} в неделю`;
+    renderChart(rows,currentFrom,currentTo);
 
-    if (d.metrika) {
-      const x = d.metrika;
-      $('mx').innerHTML = [
-        {lbl:'Визиты',        val:num(x.visits)},
-        {lbl:'Посетители',    val:num(x.users)},
-        {lbl:'Отказы',        val:pct(x.bounce_rate)},
-        {lbl:'Глубина',       val:x.page_depth==null?'—':x.page_depth.toLocaleString('ru-RU'),
-         hint:'страниц за визит'},
-        {lbl:'Время на сайте',val:dur(x.avg_duration_sec)},
-      ].map(k=>`<div class="kpi mx"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div>
-        ${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
-    } else { $('mxWrap').classList.add('hidden'); }
+    const budgetFrom=mondayOf(currentTo), budgetTo=moveDate(budgetFrom,6);
+    const budgetRows=(d.daily||[]).filter(r=>inRange(r.date,budgetFrom,budgetTo));
+    const weekSpend=sum(budgetRows,'spend');
+    const share=m.budget_week?Math.min(100,weekSpend/m.budget_week*100):0;
+    $('budgetTitle').textContent=`Бюджет недели ${fmtShort(budgetFrom)}–${fmtShort(budgetTo)}`;
+    $('bfill').style.width=share.toFixed(1)+'%';
+    $('btext').textContent=`израсходовано ${rub(weekSpend)} — ${share.toFixed(1)} %`;
+    $('bcap').textContent=`Лимит ${rub(m.budget_week)} в неделю`;
 
-    const goals = d.goals || [];
-    const mx = Math.max(1, ...goals.map(g=>g.count));
-    $('goals').innerHTML = goals.map(g=>
-      `<div class="bar${g.kind==='lead'?' lead':''}"><span>${esc(g.name)}</span>
-       <div class="track"><div class="fill" style="width:${(g.count/mx*100).toFixed(1)}%"></div></div>
-       <span class="n${g.count?'':' z'}">${g.count}${g.cpl!=null?' · '+rub(g.cpl):''}</span></div>`).join('');
+    $('mx').innerHTML = [
+      {lbl:'Визиты',val:num(visits)},
+      {lbl:fullPeriod?'Посетители':'Посетители/дни',val:num(users),hint:fullPeriod?'':'сумма дневных уникальных'},
+      {lbl:'Отказы',val:pct(bounce)},
+      {lbl:'Глубина',val:depth==null?'—':depth.toLocaleString('ru-RU',{maximumFractionDigits:2}),hint:'страниц за визит'},
+      {lbl:'Время на сайте',val:dur(duration==null?null:Math.round(duration))},
+    ].map(k=>`<div class="kpi mx"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div>${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
 
-    $('daily').innerHTML = d.daily && d.daily.length ? d.daily.map(r=>
-      `<tr><td>${fmtDate(r.date)}</td><td class="n">${rub(r.spend)}</td>
-       <td class="n">${num(r.clicks)}</td></tr>`).join('')
-      : `<tr><td colspan="3" class="z">Пока нет данных</td></tr>`;
+    const goals=(d.goals||[]).map(goal=>{
+      let count=goal.count;
+      if(richDaily) count=rows.reduce((acc,row)=>acc+(Number((row.goals||{})[String(goal.id)])||0),0);
+      else if(!fullPeriod) count=null;
+      return {...goal,count,cpl:count?spend/count:null};
+    });
+    const goalMax=Math.max(1,...goals.map(g=>Number(g.count)||0));
+    $('goals').innerHTML=goals.map(g=>`<div class="bar${g.kind==='lead'?' lead':''}"><span>${esc(g.name)}</span><div class="track"><div class="fill" style="width:${g.count==null?0:(g.count/goalMax*100).toFixed(1)}%"></div></div><span class="n${g.count?'':' z'}">${num(g.count)}${g.cpl!=null?' · '+rub(g.cpl):''}</span></div>`).join('');
 
-    $('queries').innerHTML = d.queries && d.queries.length ? d.queries.map(q=>
-      `<tr><td>${esc(q.query)}</td><td class="n">${num(q.clicks)}</td>
-       <td class="n">${rub(q.spend)}</td></tr>`).join('')
-      : `<tr><td colspan="3" class="z">Пока нет данных</td></tr>`;
+    $('daily').innerHTML=rows.length?rows.map(r=>`<tr><td>${fmtDate(r.date)}</td><td class="n">${rub(r.spend)}</td><td class="n">${num(r.clicks)}</td><td class="n">${num(r.visits)}</td><td class="n">${num(r.leads)}</td></tr>`).join(''):`<tr><td colspan="5" class="z">За выбранный период данных нет</td></tr>`;
+
+    const queryData=filteredQueries(d,currentFrom,currentTo,fullPeriod);
+    $('queryPeriod').textContent=queryData.dated?'по выбранному периоду':(fullPeriod?'за весь период':'нужен свежий снимок');
+    $('queries').innerHTML=queryData.rows.length?queryData.rows.map(q=>`<tr><td>${esc(q.query)}</td><td class="n">${num(q.clicks)}</td><td class="n">${rub(q.spend)}</td></tr>`).join(''):`<tr><td colspan="3" class="z">За выбранный период запросов нет</td></tr>`;
+  }
+
+  function render(d){
+    reportData=d;
+    const m=d.meta;
+    $('status').textContent = m.status || '—';
+    $('source').textContent = m.data_source || 'рекламная кампания';
+    ['dateFrom','dateTo'].forEach(id=>{ $(id).min=m.period_from; $(id).max=m.period_to; });
 
     if (d.notes && d.notes.length){
       $('notes').innerHTML = d.notes.map(n=>`<li>${esc(n)}</li>`).join('');
     } else { $('notesWrap').classList.add('hidden'); }
 
     $('updated').textContent = 'Обновлено ' + fmtDT(m.updated_at);
+    usePreset('30d');
     $('gate').classList.add('hidden');
     $('app').classList.remove('hidden');
     try { sessionStorage.setItem('ki_report_ok','1'); } catch(e){}
@@ -260,6 +435,14 @@
 
   $('go').addEventListener('click', open);
   $('pin').addEventListener('keydown', e => { if(e.key==='Enter') open(); });
+  $('presets').addEventListener('click', e => {
+    const button=e.target.closest('.preset');
+    if(button) usePreset(button.dataset.range);
+  });
+  $('applyDates').addEventListener('click', applyCustomRange);
+  ['dateFrom','dateTo'].forEach(id=>$(id).addEventListener('keydown',e=>{
+    if(e.key==='Enter') applyCustomRange();
+  }));
 
   // в рамках вкладки повторно PIN не спрашиваем
   try {
