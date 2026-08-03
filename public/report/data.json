@@ -3,68 +3,340 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-03T10:35:46+03:00",
+    "updated_at": "2026-08-03T16:03:45+03:00",
     "period_from": "2026-07-05",
     "period_to": "2026-08-03",
+    "week_from": "2026-08-03",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
     "geo": "Краснодарский край",
-    "status": "Идут показы"
+    "status": "Данные актуальны",
+    "data_source": "Яндекс Метрика · Директ, расходы"
   },
   "totals": {
-    "spend": 0,
-    "impressions": 0,
-    "clicks": 0,
-    "ctr": 0.0,
-    "cpc": null,
+    "spend": 1684.01,
+    "impressions": null,
+    "clicks": 27,
+    "ctr": null,
+    "cpc": 62.37,
     "leads_total": 0,
+    "contact_actions_total": 0,
+    "conversion_rate": 0.0,
     "cpl": null,
     "bounce_rate": 29.2
   },
+  "weekly": {
+    "spend": 441.86,
+    "clicks": 4
+  },
   "metrika": {
-    "visits": 56,
-    "users": 50,
-    "bounce_rate": 48.2,
-    "page_depth": 1.14,
-    "avg_duration_sec": 68
+    "visits": 24,
+    "users": 21,
+    "bounce_rate": 29.2,
+    "page_depth": 1.0,
+    "avg_duration_sec": 10
   },
   "goals": [
     {
       "id": 584981732,
       "name": "Успешная заявка",
+      "kind": "lead",
       "count": 0,
       "cpl": null
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
+      "kind": "contact",
       "count": 0,
       "cpl": null
     },
     {
       "id": 584982462,
       "name": "Переход в Telegram",
+      "kind": "contact",
       "count": 0,
       "cpl": null
     },
     {
       "id": 584982463,
       "name": "Переход в WhatsApp",
+      "kind": "contact",
       "count": 0,
       "cpl": null
     },
     {
       "id": 585122111,
       "name": "Переход в MAX",
+      "kind": "contact",
       "count": 0,
       "cpl": null
     }
   ],
-  "daily": [],
-  "queries": [],
+  "daily": [
+    {
+      "date": "2026-07-27",
+      "spend": 155.38,
+      "impressions": null,
+      "clicks": 2,
+      "leads": null
+    },
+    {
+      "date": "2026-07-28",
+      "spend": 199.58,
+      "impressions": null,
+      "clicks": 5,
+      "leads": null
+    },
+    {
+      "date": "2026-07-29",
+      "spend": 18.1,
+      "impressions": null,
+      "clicks": 2,
+      "leads": null
+    },
+    {
+      "date": "2026-07-30",
+      "spend": 326.61,
+      "impressions": null,
+      "clicks": 6,
+      "leads": null
+    },
+    {
+      "date": "2026-07-31",
+      "spend": 293.8,
+      "impressions": null,
+      "clicks": 2,
+      "leads": null
+    },
+    {
+      "date": "2026-08-01",
+      "spend": 107.33,
+      "impressions": null,
+      "clicks": 3,
+      "leads": null
+    },
+    {
+      "date": "2026-08-02",
+      "spend": 141.34,
+      "impressions": null,
+      "clicks": 3,
+      "leads": null
+    },
+    {
+      "date": "2026-08-03",
+      "spend": 441.86,
+      "impressions": null,
+      "clicks": 4,
+      "leads": null
+    }
+  ],
+  "queries": [
+    {
+      "query": "арматурный каркас под 400 сваю",
+      "keyword": "арматурные каркасы для свай -буронабивной",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 59.32,
+      "leads": null
+    },
+    {
+      "query": "каркасы бнс",
+      "keyword": "каркас БНС -арматурный -изготовление -производство -заказывать -купить -цена -стоимость -производитель -чертеж -кж -опт -краснодар -сочи -новороссийск -армавир -анапа -геленджик -туапсе",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 425.06,
+      "leads": null
+    },
+    {
+      "query": "арматурные каркасы для свай как правильно установить",
+      "keyword": "арматурный каркас для сваи",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 82.0,
+      "leads": null
+    },
+    {
+      "query": "арматурный каркас в сочи купить",
+      "keyword": "купить арматурный каркас",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 5.14,
+      "leads": null
+    },
+    {
+      "query": "арматурный каркас для свай цена",
+      "keyword": "каркасы для буронабивных свай цена",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 27.11,
+      "leads": null
+    },
+    {
+      "query": "арматурный каркас из арматуры а 12 100х100",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 104.77,
+      "leads": null
+    },
+    {
+      "query": "арматурный каркас по чертежам краснодар",
+      "keyword": "арматурный каркас по чертежам",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 107.72,
+      "leads": null
+    },
+    {
+      "query": "варят на заводе армированные каркасы",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 87.75,
+      "leads": null
+    },
+    {
+      "query": "вязка металлических конструкций по осям выпусков арматуры на колонны с учетом выхода на следующий этаж",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 70.8,
+      "leads": null
+    },
+    {
+      "query": "дом каркасный металлический состав проекта ар и кр",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 38.3,
+      "leads": null
+    },
+    {
+      "query": "изготовление арматурных каркасов в сочи",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 271.52,
+      "leads": null
+    },
+    {
+      "query": "как правильно сваривать каркасы буронабивных свай",
+      "keyword": "изготовление каркасов для буронабивных свай",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 24.49,
+      "leads": null
+    },
+    {
+      "query": "какой диаметр сердечника из арматуры должен быть в сваи диаметром в 40 см",
+      "keyword": "арматурный каркас для сваи",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 14.46,
+      "leads": null
+    },
+    {
+      "query": "каркас для буронабивных свай",
+      "keyword": "каркасы для буронабивных свай -арматурный -изготовление -купить -цена",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 64.2,
+      "leads": null
+    },
+    {
+      "query": "каркас сарая из профиля для гипсокартона",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 17.13,
+      "leads": null
+    },
+    {
+      "query": "каркасы бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 60.32,
+      "leads": null
+    },
+    {
+      "query": "лстк фабрика каркасов",
+      "keyword": "производство арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 23.66,
+      "leads": null
+    },
+    {
+      "query": "металлический каркас из квадрата алюминиевого",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 12.86,
+      "leads": null
+    },
+    {
+      "query": "металлокаркасные дома",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 29.11,
+      "leads": null
+    },
+    {
+      "query": "при сборке арматурного каркаса для фундамента как лучше располагать углы хомутов с лапками",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 3.64,
+      "leads": null
+    },
+    {
+      "query": "продам каркасы бнс в сочи",
+      "keyword": "каркасы БНС Сочи",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 47.67,
+      "leads": null
+    },
+    {
+      "query": "проект каркаса бытовки из металла 6 на 5",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 9.85,
+      "leads": null
+    },
+    {
+      "query": "расстояние между каркасом буронабивных свай",
+      "keyword": "каркас буронабивной сваи -арматурный -изготовление -купить",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 25.02,
+      "leads": null
+    },
+    {
+      "query": "расстояние от арматурного каркаса до края бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 21.55,
+      "leads": null
+    },
+    {
+      "query": "сколько стоит вязать 1п м арматурного каркаса 20х20 см",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 50.56,
+      "leads": null
+    }
+  ],
   "notes": [
-    "Данные Директа не обновились: Директ вернул HTTP 400: {\"error\":{\"error_detail\":\"Необходимо заполнить для приложения заявку на доступ в интерфейсе Директа и дождаться её подтверждения\",\"error_string\":\"Незавершенная регистрация\",\"error_code\":\"58\",\"request_id\":\"6205521436516937742\"}}",
-    "Накоплено 0 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
+    "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
+    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
+    "Накоплено 27 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
   ]
 }
