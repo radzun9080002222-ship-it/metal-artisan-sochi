@@ -64,6 +64,8 @@
   .bar{display:grid;grid-template-columns:92px 1fr 78px;gap:11px;align-items:center;font-size:13px}
   .track{height:9px;background:#0b0a09;border-radius:99px;overflow:hidden}
   .fill{height:100%;background:var(--ember);border-radius:99px}
+  .bar.lead .fill{background:var(--green)}
+  .bar.lead>span:first-child{color:var(--green);font-weight:700}
   .budget .track{height:12px}
   .budget .fill{background:linear-gradient(90deg,var(--ember),#ff8a3d)}
   .budget .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:8px}
@@ -99,7 +101,7 @@
   </header>
 
   <section style="margin-top:20px">
-    <h3>Яндекс Директ<span class="tag">рекламная кампания</span></h3>
+    <h3>Яндекс Директ<span class="tag" id="source">рекламная кампания</span></h3>
     <div class="kpis" id="kpis"></div>
   </section>
 
@@ -112,12 +114,12 @@
   </section>
 
   <section id="mxWrap">
-    <h3>Яндекс Метрика<span class="tag">поведение на сайте, счётчик целиком</span></h3>
+    <h3>Яндекс Метрика<span class="tag">визиты только из кампании БНС</span></h3>
     <div class="kpis" id="mx" style="margin-top:0"></div>
   </section>
 
   <section>
-    <h3>Обращения по каналам<span class="tag">с рекламного трафика</span></h3>
+    <h3>Конверсии и контакты<span class="tag">только из кампании БНС</span></h3>
     <div class="card"><div class="bars" id="goals"></div></div>
   </section>
 
@@ -125,8 +127,7 @@
     <h3>По дням</h3>
     <div class="card" style="overflow-x:auto">
       <table>
-        <thead><tr><th>Дата</th><th class="n">Расход</th><th class="n">Показы</th>
-          <th class="n">Клики</th></tr></thead>
+        <thead><tr><th>Дата</th><th class="n">Расход</th><th class="n">Клики</th></tr></thead>
         <tbody id="daily"></tbody>
       </table>
     </div>
@@ -136,8 +137,7 @@
     <h3>Поисковые запросы</h3>
     <div class="card" style="overflow-x:auto">
       <table>
-        <thead><tr><th>Запрос</th><th class="n">Показы</th><th class="n">Клики</th>
-          <th class="n">Расход</th></tr></thead>
+        <thead><tr><th>Запрос</th><th class="n">Клики</th><th class="n">Расход</th></tr></thead>
         <tbody id="queries"></tbody>
       </table>
     </div>
@@ -181,21 +181,23 @@
     const m = d.meta, t = d.totals;
     $('status').textContent = m.status || '—';
     $('period').textContent = `${fmtDate(m.period_from)} — ${fmtDate(m.period_to)} · ${m.geo} · ${m.schedule}`;
+    $('source').textContent = m.data_source || 'рекламная кампания';
 
     $('kpis').innerHTML = [
       {lbl:'Расход',        val:rub(t.spend),        hint:`потолок клика ${m.cpc_cap} ₽`},
-      {lbl:'Показы',        val:num(t.impressions)},
-      {lbl:'Клики',         val:num(t.clicks),       hint:'CTR ' + pct(t.ctr)},
+      {lbl:'Клики',         val:num(t.clicks),       hint:t.ctr==null?'по данным Метрики':'CTR '+pct(t.ctr)},
       {lbl:'Цена клика',    val:rub(t.cpc)},
-      {lbl:'Обращения',     val:num(t.leads_total),  hl:true},
-      {lbl:'Цена обращения',val:t.cpl==null?'—':rub(t.cpl), hl:true,
-       hint:t.cpl==null?'пока нет обращений':''},
+      {lbl:'Заявки',        val:num(t.leads_total),  hl:true, hint:'успешная отправка формы'},
+      {lbl:'Конверсия',     val:pct(t.conversion_rate), hl:true, hint:'визит → заявка'},
+      {lbl:'Цена заявки',   val:t.cpl==null?'—':rub(t.cpl), hl:true,
+       hint:t.cpl==null?'пока нет заявок':''},
     ].map(k=>`<div class="kpi${k.hl?' hl':''}"><div class="lbl">${k.lbl}</div>
       <div class="val">${k.val}</div>${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
 
-    const share = m.budget_week ? Math.min(100, t.spend/m.budget_week*100) : 0;
+    const weekSpend = d.weekly && d.weekly.spend != null ? d.weekly.spend : t.spend;
+    const share = m.budget_week ? Math.min(100, weekSpend/m.budget_week*100) : 0;
     $('bfill').style.width = share.toFixed(1)+'%';
-    $('btext').textContent = `Израсходовано ${rub(t.spend)} — ${share.toFixed(1)} %`;
+    $('btext').textContent = `${m.week_from?'С '+fmtDate(m.week_from)+' · ':''}израсходовано ${rub(weekSpend)} — ${share.toFixed(1)} %`;
     $('bcap').textContent  = `Лимит ${rub(m.budget_week)} в неделю`;
 
     if (d.metrika) {
@@ -211,21 +213,22 @@
         ${k.hint?`<div class="hint">${k.hint}</div>`:''}</div>`).join('');
     } else { $('mxWrap').classList.add('hidden'); }
 
-    const mx = Math.max(1, ...d.goals.map(g=>g.count));
-    $('goals').innerHTML = d.goals.map(g=>
-      `<div class="bar"><span>${esc(g.name)}</span>
+    const goals = d.goals || [];
+    const mx = Math.max(1, ...goals.map(g=>g.count));
+    $('goals').innerHTML = goals.map(g=>
+      `<div class="bar${g.kind==='lead'?' lead':''}"><span>${esc(g.name)}</span>
        <div class="track"><div class="fill" style="width:${(g.count/mx*100).toFixed(1)}%"></div></div>
        <span class="n${g.count?'':' z'}">${g.count}${g.cpl!=null?' · '+rub(g.cpl):''}</span></div>`).join('');
 
-    $('daily').innerHTML = d.daily.length ? d.daily.map(r=>
+    $('daily').innerHTML = d.daily && d.daily.length ? d.daily.map(r=>
       `<tr><td>${fmtDate(r.date)}</td><td class="n">${rub(r.spend)}</td>
-       <td class="n">${num(r.impressions)}</td><td class="n">${num(r.clicks)}</td></tr>`).join('')
-      : `<tr><td colspan="4" class="z">Пока нет данных</td></tr>`;
+       <td class="n">${num(r.clicks)}</td></tr>`).join('')
+      : `<tr><td colspan="3" class="z">Пока нет данных</td></tr>`;
 
-    $('queries').innerHTML = d.queries.length ? d.queries.map(q=>
-      `<tr><td>${esc(q.query)}</td><td class="n">${num(q.impressions)}</td>
-       <td class="n">${num(q.clicks)}</td><td class="n">${rub(q.spend)}</td></tr>`).join('')
-      : `<tr><td colspan="4" class="z">Пока нет данных</td></tr>`;
+    $('queries').innerHTML = d.queries && d.queries.length ? d.queries.map(q=>
+      `<tr><td>${esc(q.query)}</td><td class="n">${num(q.clicks)}</td>
+       <td class="n">${rub(q.spend)}</td></tr>`).join('')
+      : `<tr><td colspan="3" class="z">Пока нет данных</td></tr>`;
 
     if (d.notes && d.notes.length){
       $('notes').innerHTML = d.notes.map(n=>`<li>${esc(n)}</li>`).join('');

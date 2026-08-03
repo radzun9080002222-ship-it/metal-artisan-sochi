@@ -1,22 +1,14 @@
 #!/usr/bin/env python3
-"""
-Собирает отчёт по кампании БНС из Яндекс Директа и Яндекс Метрики
-и пишет public/report/data.json.
+"""Собирает закрытый отчёт по одной кампании БНС через API Метрики.
 
-Запускается из GitHub Actions по расписанию.
-Токены берутся из переменных окружения (GitHub Secrets):
-    YANDEX_DIRECT_TOKEN   — OAuth-токен с доступом к API Директа
-    YANDEX_METRIKA_TOKEN  — OAuth-токен с доступом к API Метрики
-                            (может быть тем же самым, если у приложения обе роли)
-
-Скрипт устойчив к сбоям: если один источник недоступен, отчёт всё равно
-собирается из второго, а в notes попадает пометка о проблеме.
+Direct Reports API для приложения недоступен, поэтому рекламные расходы и
+клики берутся из отчёта Метрики «Директ, расходы». Визиты и цели дополнительно
+фильтруются по тому же ID кампании. При сбое основного источника файл отчёта не
+перезаписывается: на сайте остаётся последний успешный снимок.
 """
 
 from __future__ import annotations
 
-import csv
-import io
 import json
 import os
 import sys
@@ -38,276 +30,249 @@ CPC_CAP = 220
 GEO = "Краснодарский край"
 SCHEDULE = "Круглосуточно, 7 дней в неделю"
 
+PRIMARY_GOAL_ID = 584981732
 GOALS = [
-    (584981732, "Успешная заявка"),
-    (584982228, "Клик по телефону"),
-    (584982462, "Переход в Telegram"),
-    (584982463, "Переход в WhatsApp"),
-    (585122111, "Переход в MAX"),
+    (PRIMARY_GOAL_ID, "Успешная заявка", "lead"),
+    (584982228, "Клик по телефону", "contact"),
+    (584982462, "Переход в Telegram", "contact"),
+    (584982463, "Переход в WhatsApp", "contact"),
+    (585122111, "Переход в MAX", "contact"),
 ]
 
 DAYS_BACK = 30
 OUT_PATH = os.environ.get("OUT_PATH", "public/report/data.json")
 
 MSK = timezone(timedelta(hours=3))
-
-DIRECT_URL = "https://api.direct.yandex.com/json/v5/reports"
 METRIKA_URL = "https://api-metrika.yandex.net/stat/v1/data"
 
-notes: list[str] = []
+AD_ORDER_DIMENSION = "ym:ad:directOrder"
+AD_QUERY_DIMENSION = "ym:ad:directSearchPhrase"
+AD_CRITERION_DIMENSION = "ym:ad:directPhraseOrCond"
+VISIT_ORDER_DIMENSION = "ym:s:lastsignDirectClickOrder"
+AD_METRICS = "ym:ad:clicks,ym:ad:RUBConvertedAdCost"
 
 
 def log(msg: str) -> None:
     print(f"[report] {msg}", file=sys.stderr)
 
 
-# ─────────────────────────── Яндекс Директ ───────────────────────────
-
-
-def direct_report(token: str, body: dict, attempts: int = 12) -> list[dict]:
-    """Запрос к Reports API. Отчёт может ставиться в очередь — ждём готовности."""
-    payload = json.dumps(body, ensure_ascii=False).encode("utf-8")
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Client-Login": CLIENT_LOGIN,
-        "Accept-Language": "ru",
-        "Content-Type": "application/json; charset=utf-8",
-        "processingMode": "auto",
-        "returnMoneyInMicros": "false",
-        "skipReportHeader": "true",
-        "skipColumnHeader": "false",
-        "skipReportSummary": "true",
-    }
-
-    for attempt in range(attempts):
-        req = urllib.request.Request(DIRECT_URL, data=payload, headers=headers, method="POST")
-        try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                status = resp.status
-                raw = resp.read().decode("utf-8")
-        except urllib.error.HTTPError as e:
-            detail = e.read().decode("utf-8", "replace")[:400]
-            raise RuntimeError(f"Директ вернул HTTP {e.code}: {detail}") from None
-
-        if status in (201, 202):
-            wait = min(2 ** attempt, 20)
-            log(f"отчёт в очереди (HTTP {status}), ждём {wait} с")
-            time.sleep(wait)
-            continue
-
-        rows = list(csv.DictReader(io.StringIO(raw), delimiter="\t"))
-        return [r for r in rows if any((v or "").strip() for v in r.values())]
-
-    raise RuntimeError("Директ не отдал отчёт: превышено время ожидания очереди")
-
-
-def fetch_direct(token: str, d_from: str, d_to: str) -> tuple[list[dict], list[dict]]:
-    base_criteria = {
-        "DateFrom": d_from,
-        "DateTo": d_to,
-        "Filter": [{"Field": "CampaignId", "Operator": "EQUALS", "Values": [CAMPAIGN_ID]}],
-    }
-    stamp = int(time.time())
-
-    daily = direct_report(token, {
-        "params": {
-            "SelectionCriteria": base_criteria,
-            "FieldNames": ["Date", "Impressions", "Clicks", "Cost"],
-            "ReportName": f"bns_daily_{stamp}",
-            "ReportType": "CUSTOM_REPORT",
-            "DateRangeType": "CUSTOM_DATE",
-            "Format": "TSV",
-            "IncludeVAT": "YES",
-        }
-    })
-
-    try:
-        queries = direct_report(token, {
-            "params": {
-                "SelectionCriteria": base_criteria,
-                "FieldNames": ["Query", "Criterion", "Impressions", "Clicks", "Cost"],
-                "ReportName": f"bns_queries_{stamp}",
-                "ReportType": "SEARCH_QUERY_PERFORMANCE_REPORT",
-                "DateRangeType": "CUSTOM_DATE",
-                "Format": "TSV",
-                "IncludeVAT": "YES",
-            }
-        })
-    except Exception as e:  # отчёт по запросам не критичен
-        log(f"отчёт по поисковым запросам недоступен: {e}")
-        notes.append("Отчёт по поисковым запросам временно недоступен.")
-        queries = []
-
-    return daily, queries
-
-
-# ─────────────────────────── Яндекс Метрика ───────────────────────────
-
-
-def metrika_get(token: str, params: dict) -> dict:
+def metrika_get(token: str, params: dict, attempts: int = 3) -> dict:
+    """Выполняет запрос к Stat API с коротким retry для временных ошибок."""
     url = METRIKA_URL + "?" + urllib.parse.urlencode(params, doseq=True)
     req = urllib.request.Request(url, headers={"Authorization": f"OAuth {token}"})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", "replace")[:400]
-        raise RuntimeError(f"Метрика вернула HTTP {e.code}: {detail}") from None
+
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", "replace")[:400]
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == attempts - 1:
+                raise RuntimeError(f"Метрика вернула HTTP {exc.code}: {detail}") from None
+            wait = min(2 ** attempt, 4)
+            log(f"Метрика временно недоступна (HTTP {exc.code}), повтор через {wait} с")
+            time.sleep(wait)
+        except urllib.error.URLError as exc:
+            if attempt == attempts - 1:
+                raise RuntimeError(f"Метрика недоступна: {exc.reason}") from None
+            wait = min(2 ** attempt, 4)
+            log(f"Сетевая ошибка Метрики, повтор через {wait} с")
+            time.sleep(wait)
+
+    raise RuntimeError("Метрика не ответила после повторных запросов")
 
 
 def totals_of(resp: dict, count: int) -> list[float]:
-    """Достаёт totals из ответа Метрики.
-
-    Stat API отдаёт totals ПЛОСКИМ списком чисел: [5, 5, 100.0, 1.0, 0.0].
-    На всякий случай поддерживаем и вложенный вариант [[...]] — встречается
-    в отдельных ответах, — и добиваем нулями, если метрик пришло меньше.
-    """
-    t = resp.get("totals") or []
-    if t and isinstance(t[0], (list, tuple)):
-        t = t[0]
-    vals = [float(v or 0) for v in t]
-    vals += [0.0] * (count - len(vals))
-    return vals[:count]
+    """Возвращает плоский список totals требуемой длины."""
+    totals = resp.get("totals") or []
+    if totals and isinstance(totals[0], (list, tuple)):
+        totals = totals[0]
+    values = [float(value or 0) for value in totals]
+    values += [0.0] * (count - len(values))
+    return values[:count]
 
 
-def fetch_metrika(token: str, d_from: str, d_to: str) -> tuple[dict, dict]:
-    """Возвращает (мониторинг счётчика целиком, достижения целей с трафика Директа)."""
-    site = metrika_get(token, {
+def dimension_value(row: dict, index: int, prefer_id: bool = False) -> str:
+    """Достаёт значение группировки из строки ответа Метрики."""
+    dimensions = row.get("dimensions") or []
+    if index >= len(dimensions):
+        return ""
+    dimension = dimensions[index]
+    if isinstance(dimension, dict):
+        if prefer_id and dimension.get("id") is not None:
+            return str(dimension["id"])
+        return str(dimension.get("name") or dimension.get("id") or "")
+    return str(dimension or "")
+
+
+def ad_params(d_from: str, d_to: str, dimensions: str = AD_ORDER_DIMENSION) -> dict:
+    """Общие параметры отчёта «Директ, расходы» для одной кампании."""
+    return {
         "ids": COUNTER_ID,
-        "metrics": ",".join([
-            "ym:s:visits",
-            "ym:s:users",
-            "ym:s:bounceRate",
-            "ym:s:pageDepth",
-            "ym:s:avgVisitDurationSeconds",
-        ]),
+        "direct_client_logins": CLIENT_LOGIN,
+        "metrics": AD_METRICS,
+        "dimensions": dimensions,
+        "filters": f"{AD_ORDER_DIMENSION}=='{CAMPAIGN_ID}'",
+        "date1": d_from,
+        "date2": d_to,
+        "currency": "RUB",
+        "accuracy": "full",
+        "lang": "ru",
+        "limit": 100,
+    }
+
+
+def fetch_ad_totals(token: str, d_from: str, d_to: str) -> dict:
+    """Возвращает клики и расход только кампании БНС за период."""
+    response = metrika_get(token, ad_params(d_from, d_to))
+    clicks, spend = totals_of(response, 2)
+    return {"clicks": int(clicks), "spend": round(spend, 2)}
+
+
+def fetch_campaign_visits(token: str, d_from: str, d_to: str) -> dict:
+    """Возвращает визиты, поведение и цели только кампании БНС."""
+    goal_metrics = [f"ym:s:goal{goal_id}reaches" for goal_id, _, _ in GOALS]
+    metrics = [
+        "ym:s:visits",
+        "ym:s:users",
+        "ym:s:bounceRate",
+        "ym:s:pageDepth",
+        "ym:s:avgVisitDurationSeconds",
+        *goal_metrics,
+    ]
+    response = metrika_get(token, {
+        "ids": COUNTER_ID,
+        "metrics": ",".join(metrics),
+        "filters": f"{VISIT_ORDER_DIMENSION}=='{CAMPAIGN_ID}'",
         "date1": d_from,
         "date2": d_to,
         "accuracy": "full",
+        "lang": "ru",
     })
-    s = totals_of(site, 5)
-    monitor = {
-        "visits": int(s[0]),
-        "users": int(s[1]),
-        "bounce_rate": round(s[2], 1),
-        "page_depth": round(s[3], 2),
-        "avg_duration_sec": int(s[4]),
+    values = totals_of(response, len(metrics))
+    return {
+        "visits": int(values[0]),
+        "users": int(values[1]),
+        "bounce_rate": round(values[2], 1),
+        "page_depth": round(values[3], 2),
+        "avg_duration_sec": int(values[4]),
+        "goals": {
+            goal_id: int(values[5 + index])
+            for index, (goal_id, _, _) in enumerate(GOALS)
+        },
     }
 
-    # Цели считаем только по рекламному трафику. Если фильтр по какой-то причине
-    # не отработает, мониторинг счётчика всё равно уже собран и не потеряется.
-    goal_metrics = [f"ym:s:goal{gid}reaches" for gid, _ in GOALS]
-    ads = {"visits": 0, "bounce_rate": None, "goals": {gid: 0 for gid, _ in GOALS}}
-    try:
-        direct = metrika_get(token, {
-            "ids": COUNTER_ID,
-            "metrics": ",".join(["ym:s:visits", "ym:s:bounceRate", *goal_metrics]),
-            "filters": "ym:s:lastsignTrafficSource=='ad'",
-            "date1": d_from,
-            "date2": d_to,
-            "accuracy": "full",
-        })
-        dt = totals_of(direct, 2 + len(GOALS))
-        ads = {
-            "visits": int(dt[0]),
-            "bounce_rate": round(dt[1], 1),
-            "goals": {gid: int(dt[2 + i]) for i, (gid, _) in enumerate(GOALS)},
-        }
-    except Exception as e:
-        log(f"срез по рекламному трафику не собрался: {e}")
-        notes.append(f"Цели по рекламному трафику не собрались: {e}")
 
-    return monitor, ads
-
-
-# ─────────────────────────── сборка ───────────────────────────
-
-
-def to_float(v) -> float:
-    try:
-        return float(str(v).replace(",", ".").replace(" ", "").replace("\xa0", ""))
-    except (TypeError, ValueError):
-        return 0.0
-
-
-def to_int(v) -> int:
-    try:
-        return int(to_float(v))
-    except (TypeError, ValueError):
-        return 0
-
-
-def main() -> int:
-    direct_token = os.environ.get("YANDEX_DIRECT_TOKEN", "").strip()
-    metrika_token = os.environ.get("YANDEX_METRIKA_TOKEN", "").strip()
-
-    today = datetime.now(MSK).date()
-    d_from = (today - timedelta(days=DAYS_BACK - 1)).isoformat()
-    d_to = today.isoformat()
-
-    daily_rows: list[dict] = []
-    query_rows: list[dict] = []
-    if direct_token:
-        try:
-            daily_rows, query_rows = fetch_direct(direct_token, d_from, d_to)
-            log(f"Директ: {len(daily_rows)} дней, {len(query_rows)} запросов")
-        except Exception as e:
-            log(f"Директ недоступен: {e}")
-            notes.append(f"Данные Директа не обновились: {e}")
-    else:
-        notes.append("Не задан YANDEX_DIRECT_TOKEN — данные Директа пропущены.")
-
-    monitor: dict = {}
-    ads: dict = {}
-    if metrika_token:
-        try:
-            monitor, ads = fetch_metrika(metrika_token, d_from, d_to)
-            log(f"Метрика: {monitor.get('visits')} визитов всего")
-        except Exception as e:
-            log(f"Метрика недоступна: {e}")
-            notes.append(f"Данные Метрики не обновились: {e}")
-    else:
-        notes.append("Не задан YANDEX_METRIKA_TOKEN — данные Метрики пропущены.")
-
-    daily = []
-    for r in daily_rows:
-        daily.append({
-            "date": r.get("Date", ""),
-            "spend": round(to_float(r.get("Cost")), 2),
-            "impressions": to_int(r.get("Impressions")),
-            "clicks": to_int(r.get("Clicks")),
-            "leads": 0,
-        })
-    daily.sort(key=lambda x: x["date"])
-
-    spend = round(sum(d["spend"] for d in daily), 2)
-    impressions = sum(d["impressions"] for d in daily)
-    clicks = sum(d["clicks"] for d in daily)
-    ctr = round(clicks / impressions * 100, 2) if impressions else 0.0
-    cpc = round(spend / clicks, 2) if clicks else None
-
-    goal_counts = ads.get("goals", {})
-    goals = []
-    for gid, name in GOALS:
-        cnt = int(goal_counts.get(gid, 0))
-        goals.append({
-            "id": gid,
-            "name": name,
-            "count": cnt,
-            "cpl": round(spend / cnt, 2) if cnt else None,
-        })
-    leads_total = sum(g["count"] for g in goals)
+def fetch_queries(token: str, d_from: str, d_to: str) -> list[dict]:
+    """Возвращает поисковые фразы кампании с кликами и расходом."""
+    dimensions = ",".join([
+        AD_ORDER_DIMENSION,
+        AD_QUERY_DIMENSION,
+        AD_CRITERION_DIMENSION,
+    ])
+    params = ad_params(d_from, d_to, dimensions)
+    params.update({"sort": "-ym:ad:clicks", "limit": 40})
+    response = metrika_get(token, params)
 
     queries = []
-    for r in sorted(query_rows, key=lambda x: to_int(x.get("Clicks")), reverse=True)[:40]:
+    for row in response.get("data") or []:
+        order_id = dimension_value(row, 0, prefer_id=True)
+        if order_id and order_id != CAMPAIGN_ID:
+            continue
+        query = dimension_value(row, 1).strip()
+        if not query:
+            continue
+        metrics = row.get("metrics") or []
+        clicks = int(float(metrics[0] or 0)) if metrics else 0
+        spend = round(float(metrics[1] or 0), 2) if len(metrics) > 1 else 0.0
         queries.append({
-            "query": r.get("Query", ""),
-            "keyword": r.get("Criterion", ""),
-            "impressions": to_int(r.get("Impressions")),
-            "clicks": to_int(r.get("Clicks")),
-            "spend": round(to_float(r.get("Cost")), 2),
-            "leads": 0,
+            "query": query,
+            "keyword": dimension_value(row, 2).strip(),
+            "impressions": None,
+            "clicks": clicks,
+            "spend": spend,
+            "leads": None,
         })
+
+    return queries
+
+
+def fetch_daily(token: str, d_from: date, d_to: date) -> list[dict]:
+    """Собирает дневную динамику отдельными короткими запросами.
+
+    В наборе группировок «Директ, расходы» нет надёжной группировки по дате,
+    поэтому для 30-дневного окна выполняется один запрос на каждый день.
+    """
+    daily = []
+    current = d_from
+    while current <= d_to:
+        day = current.isoformat()
+        totals = fetch_ad_totals(token, day, day)
+        if totals["clicks"] or totals["spend"]:
+            daily.append({
+                "date": day,
+                "spend": totals["spend"],
+                "impressions": None,
+                "clicks": totals["clicks"],
+                "leads": None,
+            })
+        current += timedelta(days=1)
+    return daily
+
+
+def collect_report(token: str, today: date) -> dict:
+    """Собирает готовую структуру data.json из API Метрики."""
+    d_from_date = today - timedelta(days=DAYS_BACK - 1)
+    d_from = d_from_date.isoformat()
+    d_to = today.isoformat()
+    week_from = today - timedelta(days=today.weekday())
+
+    period = fetch_ad_totals(token, d_from, d_to)
+    weekly = fetch_ad_totals(token, week_from.isoformat(), d_to)
+    monitor = fetch_campaign_visits(token, d_from, d_to)
+
+    notes = [
+        "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
+        "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
+    ]
+
+    try:
+        queries = fetch_queries(token, d_from, d_to)
+    except Exception as exc:
+        log(f"поисковые фразы не собраны: {exc}")
+        notes.append("Поисковые фразы временно не обновились.")
+        queries = []
+
+    try:
+        daily = fetch_daily(token, d_from_date, today)
+    except Exception as exc:
+        log(f"дневная динамика не собрана: {exc}")
+        notes.append("Дневная динамика временно не обновилась.")
+        daily = []
+
+    spend = period["spend"]
+    clicks = period["clicks"]
+    cpc = round(spend / clicks, 2) if clicks else None
+    goal_counts = monitor["goals"]
+
+    goals = []
+    for goal_id, name, kind in GOALS:
+        count = int(goal_counts.get(goal_id, 0))
+        goals.append({
+            "id": goal_id,
+            "name": name,
+            "kind": kind,
+            "count": count,
+            "cpl": round(spend / count, 2) if count else None,
+        })
+
+    leads_total = int(goal_counts.get(PRIMARY_GOAL_ID, 0))
+    contact_actions_total = sum(goal["count"] for goal in goals if goal["kind"] == "contact")
+    conversion_rate = (
+        round(leads_total / monitor["visits"] * 100, 2)
+        if monitor["visits"]
+        else 0.0
+    )
 
     if clicks < 30:
         notes.append(
@@ -315,7 +280,8 @@ def main() -> int:
             "пока это наблюдения, а не статистика."
         )
 
-    data = {
+    status = "Данные актуальны" if clicks or spend else "Нет переходов за период"
+    return {
         "meta": {
             "campaign_id": int(CAMPAIGN_ID),
             "campaign_name": CAMPAIGN_NAME,
@@ -323,35 +289,68 @@ def main() -> int:
             "updated_at": datetime.now(MSK).isoformat(timespec="seconds"),
             "period_from": d_from,
             "period_to": d_to,
+            "week_from": week_from.isoformat(),
             "budget_week": BUDGET_WEEK,
             "cpc_cap": CPC_CAP,
             "schedule": SCHEDULE,
             "geo": GEO,
-            "status": "Идут показы",
+            "status": status,
+            "data_source": "Яндекс Метрика · Директ, расходы",
         },
         "totals": {
             "spend": spend,
-            "impressions": impressions,
+            "impressions": None,
             "clicks": clicks,
-            "ctr": ctr,
+            "ctr": None,
             "cpc": cpc,
             "leads_total": leads_total,
+            "contact_actions_total": contact_actions_total,
+            "conversion_rate": conversion_rate,
             "cpl": round(spend / leads_total, 2) if leads_total else None,
-            "bounce_rate": ads.get("bounce_rate"),
+            "bounce_rate": monitor["bounce_rate"],
         },
-        "metrika": monitor or None,
+        "weekly": {
+            "spend": weekly["spend"],
+            "clicks": weekly["clicks"],
+        },
+        "metrika": {
+            "visits": monitor["visits"],
+            "users": monitor["users"],
+            "bounce_rate": monitor["bounce_rate"],
+            "page_depth": monitor["page_depth"],
+            "avg_duration_sec": monitor["avg_duration_sec"],
+        },
         "goals": goals,
         "daily": daily,
         "queries": queries,
         "notes": notes,
     }
 
-    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
-    with open(OUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-        f.write("\n")
 
-    log(f"записан {OUT_PATH}: расход {spend} ₽, кликов {clicks}, обращений {leads_total}")
+def main() -> int:
+    token = os.environ.get("YANDEX_METRIKA_TOKEN", "").strip()
+    if not token:
+        log("не задан YANDEX_METRIKA_TOKEN; существующий отчёт оставлен без изменений")
+        return 1
+
+    today = datetime.now(MSK).date()
+    try:
+        data = collect_report(token, today)
+    except Exception as exc:
+        log(f"основные данные Метрики не собраны: {exc}")
+        log("существующий отчёт оставлен без изменений")
+        return 1
+
+    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as output:
+        json.dump(data, output, ensure_ascii=False, indent=2)
+        output.write("\n")
+
+    totals = data["totals"]
+    log(
+        f"записан {OUT_PATH}: расход {totals['spend']} ₽, "
+        f"кликов {totals['clicks']}, заявок {totals['leads_total']}"
+    )
     return 0
 
 
