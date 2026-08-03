@@ -49,6 +49,7 @@ AD_ORDER_DIMENSION = "ym:ad:directOrder"
 AD_QUERY_DIMENSION = "ym:ad:directSearchPhrase"
 AD_CRITERION_DIMENSION = "ym:ad:directPhraseOrCond"
 VISIT_ORDER_DIMENSION = "ym:s:lastsignDirectClickOrder"
+VISIT_DATE_DIMENSION = "ym:s:date"
 AD_METRICS = "ym:ad:clicks,ym:ad:RUBConvertedAdCost"
 
 
@@ -163,6 +164,51 @@ def fetch_campaign_visits(token: str, d_from: str, d_to: str) -> dict:
     }
 
 
+def fetch_campaign_visits_daily(token: str, d_from: str, d_to: str) -> dict[str, dict]:
+    """Возвращает поведение и цели кампании с группировкой по дням."""
+    goal_metrics = [f"ym:s:goal{goal_id}reaches" for goal_id, _, _ in GOALS]
+    metrics = [
+        "ym:s:visits",
+        "ym:s:users",
+        "ym:s:bounceRate",
+        "ym:s:pageDepth",
+        "ym:s:avgVisitDurationSeconds",
+        *goal_metrics,
+    ]
+    response = metrika_get(token, {
+        "ids": COUNTER_ID,
+        "metrics": ",".join(metrics),
+        "dimensions": VISIT_DATE_DIMENSION,
+        "filters": f"{VISIT_ORDER_DIMENSION}=='{CAMPAIGN_ID}'",
+        "date1": d_from,
+        "date2": d_to,
+        "accuracy": "full",
+        "lang": "ru",
+        "limit": 1000,
+        "sort": VISIT_DATE_DIMENSION,
+    })
+
+    result = {}
+    for row in response.get("data") or []:
+        day = dimension_value(row, 0, prefer_id=True)[:10]
+        if not day:
+            continue
+        values = [float(value or 0) for value in (row.get("metrics") or [])]
+        values += [0.0] * (len(metrics) - len(values))
+        result[day] = {
+            "visits": int(values[0]),
+            "users": int(values[1]),
+            "bounce_rate": round(values[2], 1),
+            "page_depth": round(values[3], 2),
+            "avg_duration_sec": int(values[4]),
+            "goals": {
+                goal_id: int(values[5 + index])
+                for index, (goal_id, _, _) in enumerate(GOALS)
+            },
+        }
+    return result
+
+
 def fetch_queries(token: str, d_from: str, d_to: str) -> list[dict]:
     """Возвращает поисковые фразы кампании с кликами и расходом."""
     dimensions = ",".join([
@@ -197,8 +243,13 @@ def fetch_queries(token: str, d_from: str, d_to: str) -> list[dict]:
     return queries
 
 
-def fetch_daily(token: str, d_from: date, d_to: date) -> list[dict]:
-    """Собирает дневную динамику отдельными короткими запросами.
+def fetch_daily(
+    token: str,
+    d_from: date,
+    d_to: date,
+    visits_by_date: dict[str, dict],
+) -> list[dict]:
+    """Собирает полную дневную динамику для фильтров на странице.
 
     В наборе группировок «Директ, расходы» нет надёжной группировки по дате,
     поэтому для 30-дневного окна выполняется один запрос на каждый день.
@@ -208,16 +259,44 @@ def fetch_daily(token: str, d_from: date, d_to: date) -> list[dict]:
     while current <= d_to:
         day = current.isoformat()
         totals = fetch_ad_totals(token, day, day)
-        if totals["clicks"] or totals["spend"]:
-            daily.append({
-                "date": day,
-                "spend": totals["spend"],
-                "impressions": None,
-                "clicks": totals["clicks"],
-                "leads": None,
-            })
+        monitor = visits_by_date.get(day) or {}
+        goal_counts = monitor.get("goals") or {}
+        goals = {
+            str(goal_id): int(goal_counts.get(goal_id, 0))
+            for goal_id, _, _ in GOALS
+        }
+        daily.append({
+            "date": day,
+            "spend": totals["spend"],
+            "impressions": None,
+            "clicks": totals["clicks"],
+            "visits": int(monitor.get("visits", 0)),
+            "users": int(monitor.get("users", 0)),
+            "bounce_rate": monitor.get("bounce_rate"),
+            "page_depth": monitor.get("page_depth"),
+            "avg_duration_sec": monitor.get("avg_duration_sec"),
+            "goals": goals,
+            "leads": goals[str(PRIMARY_GOAL_ID)],
+            "contact_actions": sum(
+                goals[str(goal_id)]
+                for goal_id, _, kind in GOALS
+                if kind == "contact"
+            ),
+        })
         current += timedelta(days=1)
     return daily
+
+
+def fetch_daily_queries(token: str, daily: list[dict]) -> list[dict]:
+    """Добавляет дату к поисковым фразам для клиентской фильтрации."""
+    queries = []
+    for row in daily:
+        if not row["clicks"]:
+            continue
+        for query in fetch_queries(token, row["date"], row["date"]):
+            query["date"] = row["date"]
+            queries.append(query)
+    return queries
 
 
 def collect_report(token: str, today: date) -> dict:
@@ -236,19 +315,17 @@ def collect_report(token: str, today: date) -> dict:
         "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
     ]
 
-    try:
-        queries = fetch_queries(token, d_from, d_to)
-    except Exception as exc:
-        log(f"поисковые фразы не собраны: {exc}")
-        notes.append("Поисковые фразы временно не обновились.")
-        queries = []
+    daily_monitor = fetch_campaign_visits_daily(token, d_from, d_to)
+    daily = fetch_daily(token, d_from_date, today, daily_monitor)
 
     try:
-        daily = fetch_daily(token, d_from_date, today)
+        queries = fetch_daily_queries(token, daily)
     except Exception as exc:
-        log(f"дневная динамика не собрана: {exc}")
-        notes.append("Дневная динамика временно не обновилась.")
-        daily = []
+        log(f"поисковые фразы по дням не собраны: {exc}")
+        notes.append(
+            "Поисковые фразы не удалось разбить по дням; они показаны только для полного периода."
+        )
+        queries = fetch_queries(token, d_from, d_to)
 
     spend = period["spend"]
     clicks = period["clicks"]
@@ -296,6 +373,7 @@ def collect_report(token: str, today: date) -> dict:
             "geo": GEO,
             "status": status,
             "data_source": "Яндекс Метрика · Директ, расходы",
+            "filter_granularity": "day",
         },
         "totals": {
             "spend": spend,

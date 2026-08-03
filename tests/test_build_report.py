@@ -25,9 +25,20 @@ class BuildReportTests(unittest.TestCase):
                 params["filters"],
                 f"{report.VISIT_ORDER_DIMENSION}=='{report.CAMPAIGN_ID}'",
             )
-            return {
-                "totals": [8, 7, 25.0, 1.5, 90, 2, 1, 1, 0, 0],
-            }
+            if params.get("dimensions") == report.VISIT_DATE_DIMENSION:
+                return {
+                    "data": [
+                        {
+                            "dimensions": [{"name": "2026-08-04"}],
+                            "metrics": [3, 3, 33.3, 1.0, 60, 1, 0, 1, 0, 0],
+                        },
+                        {
+                            "dimensions": [{"name": "2026-08-05"}],
+                            "metrics": [5, 4, 20.0, 1.8, 108, 1, 1, 0, 0, 0],
+                        },
+                    ],
+                }
+            return {"totals": [8, 7, 25.0, 1.5, 90, 2, 1, 1, 0, 0]}
 
         self.assertEqual(params["direct_client_logins"], report.CLIENT_LOGIN)
         self.assertEqual(
@@ -88,9 +99,16 @@ class BuildReportTests(unittest.TestCase):
         self.assertEqual(data["totals"]["cpl"], 250.0)
 
         self.assertEqual(data["weekly"], {"spend": 180.0, "clicks": 4})
-        self.assertEqual([row["date"] for row in data["daily"]], ["2026-08-04", "2026-08-05"])
-        self.assertEqual(len(data["queries"]), 1)
+        self.assertEqual(len(data["daily"]), 30)
+        active_days = [row for row in data["daily"] if row["clicks"]]
+        self.assertEqual([row["date"] for row in active_days], ["2026-08-04", "2026-08-05"])
+        self.assertEqual(active_days[0]["visits"], 3)
+        self.assertEqual(active_days[0]["leads"], 1)
+        self.assertEqual(active_days[0]["contact_actions"], 1)
+
+        self.assertEqual(len(data["queries"]), 2)
         self.assertEqual(data["queries"][0]["query"], "каркас бнс купить")
+        self.assertEqual(data["queries"][0]["date"], "2026-08-04")
 
     def test_missing_token_keeps_existing_report_untouched(self):
         with tempfile.TemporaryDirectory() as tmp_dir:
