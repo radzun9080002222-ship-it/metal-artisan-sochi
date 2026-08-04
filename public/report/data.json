@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-03T16:42:26+03:00",
-    "period_from": "2026-07-05",
-    "period_to": "2026-08-03",
+    "updated_at": "2026-08-04T09:34:36+03:00",
+    "period_from": "2026-07-06",
+    "period_to": "2026-08-04",
     "week_from": "2026-08-03",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,25 +16,25 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 1684.01,
+    "spend": 1947.49,
     "impressions": null,
-    "clicks": 27,
+    "clicks": 31,
     "ctr": null,
-    "cpc": 62.37,
+    "cpc": 62.82,
     "leads_total": 0,
     "contact_actions_total": 0,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 29.2
+    "bounce_rate": 33.3
   },
   "weekly": {
-    "spend": 441.86,
-    "clicks": 4
+    "spend": 705.34,
+    "clicks": 8
   },
   "metrika": {
-    "visits": 24,
-    "users": 21,
-    "bounce_rate": 29.2,
+    "visits": 27,
+    "users": 24,
+    "bounce_rate": 33.3,
     "page_depth": 1.0,
     "avg_duration_sec": 10
   },
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-05",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-06",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-03",
-      "spend": 441.86,
+      "spend": 544.34,
       "impressions": null,
-      "clicks": 4,
-      "visits": 5,
-      "users": 4,
-      "bounce_rate": 20.0,
+      "clicks": 6,
+      "visits": 6,
+      "users": 5,
+      "bounce_rate": 33.3,
       "page_depth": 1.0,
-      "avg_duration_sec": 12,
+      "avg_duration_sec": 10,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-04",
+      "spend": 161.0,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -913,6 +913,15 @@
       "date": "2026-08-03"
     },
     {
+      "query": "металлокаркас для дома из профильной трубы 40 на 40",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 66.5,
+      "leads": null,
+      "date": "2026-08-03"
+    },
+    {
       "query": "сколько стоит вязать 1п м арматурного каркаса 20х20 см",
       "keyword": "вязка арматурных каркасов",
       "impressions": null,
@@ -920,11 +929,37 @@
       "spend": 50.56,
       "leads": null,
       "date": "2026-08-03"
+    },
+    {
+      "query": "треугольный каркас из арматуры для фундамента",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 35.98,
+      "leads": null,
+      "date": "2026-08-03"
+    },
+    {
+      "query": "арматурный каркас в новороссийске",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 150.16,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
+      "query": "сколько стоит изготовление арматурных каркасов",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 10.84,
+      "leads": null,
+      "date": "2026-08-04"
     }
   ],
   "notes": [
     "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
-    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
-    "Накоплено 27 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
+    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются."
   ]
 }
