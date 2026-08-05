@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-04T09:34:36+03:00",
-    "period_from": "2026-07-06",
-    "period_to": "2026-08-04",
+    "updated_at": "2026-08-05T09:35:26+03:00",
+    "period_from": "2026-07-07",
+    "period_to": "2026-08-05",
     "week_from": "2026-08-03",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 1947.49,
+    "spend": 3074.12,
     "impressions": null,
-    "clicks": 31,
+    "clicks": 38,
     "ctr": null,
-    "cpc": 62.82,
+    "cpc": 80.9,
     "leads_total": 0,
-    "contact_actions_total": 0,
+    "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 33.3
+    "bounce_rate": 28.1
   },
   "weekly": {
-    "spend": 705.34,
-    "clicks": 8
+    "spend": 1831.96,
+    "clicks": 15
   },
   "metrika": {
-    "visits": 27,
-    "users": 24,
-    "bounce_rate": 33.3,
+    "visits": 32,
+    "users": 29,
+    "bounce_rate": 28.1,
     "page_depth": 1.0,
-    "avg_duration_sec": 10
+    "avg_duration_sec": 14
   },
   "goals": [
     {
@@ -50,8 +50,8 @@
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
-      "count": 0,
-      "cpl": null
+      "count": 2,
+      "cpl": 1537.06
     },
     {
       "id": 584982462,
@@ -71,31 +71,11 @@
       "id": 585122111,
       "name": "Переход в MAX",
       "kind": "contact",
-      "count": 0,
-      "cpl": null
+      "count": 1,
+      "cpl": 3074.12
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-06",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-07",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-04",
-      "spend": 161.0,
+      "spend": 774.65,
       "impressions": null,
-      "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 50.0,
+      "clicks": 8,
+      "visits": 7,
+      "users": 7,
+      "bounce_rate": 14.3,
       "page_depth": 1.0,
-      "avg_duration_sec": 7,
+      "avg_duration_sec": 27,
+      "goals": {
+        "584981732": 0,
+        "584982228": 2,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 1
+      },
+      "leads": 0,
+      "contact_actions": 3
+    },
+    {
+      "date": "2026-08-05",
+      "spend": 512.98,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -940,11 +940,65 @@
       "date": "2026-08-03"
     },
     {
+      "query": "арматурные каркасы для фундамента купить готовые краснодар",
+      "keyword": "цена арматурного каркаса",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 59.48,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
+      "query": "арматурные каркасы краснодар",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 374.31,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
       "query": "арматурный каркас в новороссийске",
       "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
       "impressions": null,
       "clicks": 1,
       "spend": 150.16,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
+      "query": "изготовление пространственных каркасов расценка когда правильно применять",
+      "keyword": "пространственный арматурный каркас",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 9.89,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
+      "query": "купить каркас лстк в краснодаре",
+      "keyword": "цена арматурного каркаса",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 31.12,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
+      "query": "лстк фабрика каркасов официальный сайт",
+      "keyword": "производство арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 96.41,
+      "leads": null,
+      "date": "2026-08-04"
+    },
+    {
+      "query": "масса арматурного каркаса в сваях",
+      "keyword": "арматурные каркасы для свай -буронабивной",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 42.44,
       "leads": null,
       "date": "2026-08-04"
     },
@@ -956,6 +1010,15 @@
       "spend": 10.84,
       "leads": null,
       "date": "2026-08-04"
+    },
+    {
+      "query": "изготовление арматурных каркасов в краснодаре",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 512.98,
+      "leads": null,
+      "date": "2026-08-05"
     }
   ],
   "notes": [
