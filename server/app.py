@@ -21,7 +21,22 @@ from pathlib import Path
 HOST = os.getenv("HOST", "127.0.0.1")
 PORT = int(os.getenv("PORT", "8787"))
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+
+
+def parse_chat_ids() -> tuple[str, ...]:
+    raw_chat_ids = os.getenv("TELEGRAM_CHAT_IDS", "").strip()
+    if not raw_chat_ids:
+        raw_chat_ids = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+
+    chat_ids: list[str] = []
+    for chat_id in raw_chat_ids.split(","):
+        normalized = chat_id.strip()
+        if normalized and normalized not in chat_ids:
+            chat_ids.append(normalized)
+    return tuple(chat_ids)
+
+
+CHAT_IDS = parse_chat_ids()
 DRY_RUN = os.getenv("DRY_RUN", "1").lower() in {"1", "true", "yes"}
 MAX_REQUEST_BYTES = int(os.getenv("MAX_REQUEST_BYTES", str(20 * 1024 * 1024)))
 MAX_FILE_BYTES = int(os.getenv("MAX_FILE_BYTES", str(15 * 1024 * 1024)))
@@ -81,44 +96,77 @@ def telegram_request(method: str, data: bytes, content_type: str) -> None:
         raise RuntimeError("Telegram API rejected the request")
 
 
+def masked_chat_id(chat_id: str) -> str:
+    return f"***{chat_id[-4:]}" if len(chat_id) > 4 else "***"
+
+
+def deliver_to_recipients(deliver) -> None:
+    delivered = 0
+    for chat_id in CHAT_IDS:
+        try:
+            deliver(chat_id)
+            delivered += 1
+        except (urllib.error.URLError, TimeoutError, RuntimeError, ValueError):
+            logging.error(
+                "Telegram delivery failed for recipient %s without logging lead contents or credentials",
+                masked_chat_id(chat_id),
+            )
+
+    if delivered == 0:
+        raise RuntimeError("Telegram delivery failed for every configured recipient")
+    if delivered < len(CHAT_IDS):
+        logging.warning(
+            "Telegram delivery completed partially: %s of %s recipients",
+            delivered,
+            len(CHAT_IDS),
+        )
+
+
 def send_text(message: str) -> None:
-    payload = json.dumps({"chat_id": CHAT_ID, "text": message}).encode("utf-8")
-    telegram_request("sendMessage", payload, "application/json")
+    def deliver(chat_id: str) -> None:
+        payload = json.dumps({"chat_id": chat_id, "text": message}).encode("utf-8")
+        telegram_request("sendMessage", payload, "application/json")
+
+    deliver_to_recipients(deliver)
 
 
 def send_document(message: str, filename: str, contents: bytes, mime_type: str) -> None:
-    boundary = f"----karkas-{uuid.uuid4().hex}"
-    parts: list[bytes] = []
+    safe_filename = Path(filename).name.replace('"', "") or "drawing"
 
-    for name, value in {"chat_id": CHAT_ID, "caption": message[:1024]}.items():
+    def deliver(chat_id: str) -> None:
+        boundary = f"----karkas-{uuid.uuid4().hex}"
+        parts: list[bytes] = []
+
+        for name, value in {"chat_id": chat_id, "caption": message[:1024]}.items():
+            parts.extend(
+                [
+                    f"--{boundary}\r\n".encode(),
+                    f'Content-Disposition: form-data; name="{name}"\r\n\r\n'.encode(),
+                    str(value).encode("utf-8"),
+                    b"\r\n",
+                ]
+            )
+
         parts.extend(
             [
                 f"--{boundary}\r\n".encode(),
-                f'Content-Disposition: form-data; name="{name}"\r\n\r\n'.encode(),
-                str(value).encode("utf-8"),
+                (
+                    'Content-Disposition: form-data; name="document"; '
+                    f'filename="{safe_filename}"\r\n'
+                ).encode("utf-8"),
+                f"Content-Type: {mime_type}\r\n\r\n".encode(),
+                contents,
                 b"\r\n",
+                f"--{boundary}--\r\n".encode(),
             ]
         )
+        telegram_request(
+            "sendDocument",
+            b"".join(parts),
+            f"multipart/form-data; boundary={boundary}",
+        )
 
-    safe_filename = Path(filename).name.replace('"', "") or "drawing"
-    parts.extend(
-        [
-            f"--{boundary}\r\n".encode(),
-            (
-                'Content-Disposition: form-data; name="document"; '
-                f'filename="{safe_filename}"\r\n'
-            ).encode("utf-8"),
-            f"Content-Type: {mime_type}\r\n\r\n".encode(),
-            contents,
-            b"\r\n",
-            f"--{boundary}--\r\n".encode(),
-        ]
-    )
-    telegram_request(
-        "sendDocument",
-        b"".join(parts),
-        f"multipart/form-data; boundary={boundary}",
-    )
+    deliver_to_recipients(deliver)
 
 
 def format_lead(form: cgi.FieldStorage) -> str:
@@ -185,7 +233,8 @@ class LeadHandler(BaseHTTPRequestHandler):
             200,
             {
                 "status": "ok",
-                "telegram_configured": bool(BOT_TOKEN and CHAT_ID),
+                "telegram_configured": bool(BOT_TOKEN and CHAT_IDS),
+                "telegram_recipient_count": len(CHAT_IDS),
                 "dry_run": DRY_RUN,
             },
         )
@@ -236,7 +285,7 @@ class LeadHandler(BaseHTTPRequestHandler):
             self.send_json(422, {"success": False, "message": "Заполните обязательные поля"})
             return
 
-        if DRY_RUN or not BOT_TOKEN or not CHAT_ID:
+        if DRY_RUN or not BOT_TOKEN or not CHAT_IDS:
             self.send_json(
                 503,
                 {"success": False, "message": "Доставка заявки временно не настроена"},
@@ -267,10 +316,11 @@ class LeadHandler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     logging.info(
-        "Starting lead receiver on %s:%s (dry_run=%s, telegram_configured=%s)",
+        "Starting lead receiver on %s:%s (dry_run=%s, telegram_configured=%s, telegram_recipients=%s)",
         HOST,
         PORT,
         DRY_RUN,
-        bool(BOT_TOKEN and CHAT_ID),
+        bool(BOT_TOKEN and CHAT_IDS),
+        len(CHAT_IDS),
     )
     ThreadingHTTPServer((HOST, PORT), LeadHandler).serve_forever()
