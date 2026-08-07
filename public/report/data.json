@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-06T09:38:34+03:00",
-    "period_from": "2026-07-08",
-    "period_to": "2026-08-06",
+    "updated_at": "2026-08-07T08:46:31+03:00",
+    "period_from": "2026-07-09",
+    "period_to": "2026-08-07",
     "week_from": "2026-08-03",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 3374.74,
+    "spend": 3865.89,
     "impressions": null,
-    "clicks": 43,
+    "clicks": 47,
     "ctr": null,
-    "cpc": 78.48,
+    "cpc": 82.25,
     "leads_total": 0,
     "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 27.0
+    "bounce_rate": 24.4
   },
   "weekly": {
-    "spend": 2132.59,
-    "clicks": 20
+    "spend": 2623.74,
+    "clicks": 24
   },
   "metrika": {
-    "visits": 37,
-    "users": 34,
-    "bounce_rate": 27.0,
+    "visits": 41,
+    "users": 38,
+    "bounce_rate": 24.4,
     "page_depth": 1.0,
-    "avg_duration_sec": 132
+    "avg_duration_sec": 121
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 1687.37
+      "cpl": 1932.94
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 1,
-      "cpl": 3374.74
+      "cpl": 3865.89
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-08",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-09",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-06",
-      "spend": 166.13,
+      "spend": 452.7,
+      "impressions": null,
+      "clicks": 4,
+      "visits": 4,
+      "users": 4,
+      "bounce_rate": 25.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 11,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-07",
+      "spend": 204.58,
       "impressions": null,
       "clicks": 1,
       "visits": 1,
       "users": 1,
-      "bounce_rate": 100.0,
+      "bounce_rate": 0.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 0,
+      "avg_duration_sec": 15,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1064,6 +1064,42 @@
       "spend": 166.13,
       "leads": null,
       "date": "2026-08-06"
+    },
+    {
+      "query": "армокаркасы в сибири",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 102.98,
+      "leads": null,
+      "date": "2026-08-06"
+    },
+    {
+      "query": "какой размер арматурного каркаса в землю надо для раздвижных ворот",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 33.37,
+      "leads": null,
+      "date": "2026-08-06"
+    },
+    {
+      "query": "лстк фабрика каркасов",
+      "keyword": "производство арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 150.22,
+      "leads": null,
+      "date": "2026-08-06"
+    },
+    {
+      "query": "изготовление из металла каркас для домика",
+      "keyword": "изготовление армокаркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 204.58,
+      "leads": null,
+      "date": "2026-08-07"
     }
   ],
   "notes": [
