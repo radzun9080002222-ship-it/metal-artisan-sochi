@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-07T08:46:31+03:00",
-    "period_from": "2026-07-09",
-    "period_to": "2026-08-07",
+    "updated_at": "2026-08-08T08:05:27+03:00",
+    "period_from": "2026-07-10",
+    "period_to": "2026-08-08",
     "week_from": "2026-08-03",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,42 +16,42 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 3865.89,
+    "spend": 4510.5,
     "impressions": null,
-    "clicks": 47,
+    "clicks": 50,
     "ctr": null,
-    "cpc": 82.25,
-    "leads_total": 0,
-    "contact_actions_total": 3,
-    "conversion_rate": 0.0,
-    "cpl": null,
-    "bounce_rate": 24.4
+    "cpc": 90.21,
+    "leads_total": 1,
+    "contact_actions_total": 4,
+    "conversion_rate": 2.27,
+    "cpl": 4510.5,
+    "bounce_rate": 25.0
   },
   "weekly": {
-    "spend": 2623.74,
-    "clicks": 24
+    "spend": 3268.35,
+    "clicks": 27
   },
   "metrika": {
-    "visits": 41,
-    "users": 38,
-    "bounce_rate": 24.4,
+    "visits": 44,
+    "users": 41,
+    "bounce_rate": 25.0,
     "page_depth": 1.0,
-    "avg_duration_sec": 121
+    "avg_duration_sec": 135
   },
   "goals": [
     {
       "id": 584981732,
       "name": "Успешная заявка",
       "kind": "lead",
-      "count": 0,
-      "cpl": null
+      "count": 1,
+      "cpl": 4510.5
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 1932.94
+      "cpl": 2255.25
     },
     {
       "id": 584982462,
@@ -71,31 +71,11 @@
       "id": 585122111,
       "name": "Переход в MAX",
       "kind": "contact",
-      "count": 1,
-      "cpl": 3865.89
+      "count": 2,
+      "cpl": 2255.25
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-09",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-10",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-07",
-      "spend": 204.58,
+      "spend": 849.19,
       "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
+      "clicks": 4,
+      "visits": 4,
+      "users": 4,
+      "bounce_rate": 25.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 15,
+      "avg_duration_sec": 244,
+      "goals": {
+        "584981732": 1,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 1
+      },
+      "leads": 1,
+      "contact_actions": 1
+    },
+    {
+      "date": "2026-08-08",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1098,6 +1098,33 @@
       "impressions": null,
       "clicks": 1,
       "spend": 204.58,
+      "leads": null,
+      "date": "2026-08-07"
+    },
+    {
+      "query": "изготовление каркасов бнс ростовская обл",
+      "keyword": "изготовление каркасов БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 398.46,
+      "leads": null,
+      "date": "2026-08-07"
+    },
+    {
+      "query": "каркас фундамента",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 215.12,
+      "leads": null,
+      "date": "2026-08-07"
+    },
+    {
+      "query": "установка арматурного каркаса расценка в смете",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 31.03,
       "leads": null,
       "date": "2026-08-07"
     }
