@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-08T08:05:27+03:00",
-    "period_from": "2026-07-10",
-    "period_to": "2026-08-08",
+    "updated_at": "2026-08-09T08:12:29+03:00",
+    "period_from": "2026-07-11",
+    "period_to": "2026-08-09",
     "week_from": "2026-08-03",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 4510.5,
+    "spend": 5264.33,
     "impressions": null,
-    "clicks": 50,
+    "clicks": 56,
     "ctr": null,
-    "cpc": 90.21,
+    "cpc": 94.01,
     "leads_total": 1,
     "contact_actions_total": 4,
-    "conversion_rate": 2.27,
-    "cpl": 4510.5,
-    "bounce_rate": 25.0
+    "conversion_rate": 2.04,
+    "cpl": 5264.33,
+    "bounce_rate": 24.5
   },
   "weekly": {
-    "spend": 3268.35,
-    "clicks": 27
+    "spend": 4022.18,
+    "clicks": 33
   },
   "metrika": {
-    "visits": 44,
-    "users": 41,
-    "bounce_rate": 25.0,
+    "visits": 49,
+    "users": 45,
+    "bounce_rate": 24.5,
     "page_depth": 1.0,
-    "avg_duration_sec": 135
+    "avg_duration_sec": 122
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 4510.5
+      "cpl": 5264.33
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 2255.25
+      "cpl": 2632.16
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 2,
-      "cpl": 2255.25
+      "cpl": 2632.16
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-10",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-11",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-08",
-      "spend": 0.0,
+      "spend": 714.66,
       "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
+      "clicks": 5,
+      "visits": 4,
+      "users": 3,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-09",
+      "spend": 39.17,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1127,6 +1127,60 @@
       "spend": 31.03,
       "leads": null,
       "date": "2026-08-07"
+    },
+    {
+      "query": "влияет ли ржавчина на армокаркас",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 158.35,
+      "leads": null,
+      "date": "2026-08-08"
+    },
+    {
+      "query": "влияет ли ржавчина на армокаркас регламент",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 64.69,
+      "leads": null,
+      "date": "2026-08-08"
+    },
+    {
+      "query": "крымск производство каркасов для свай",
+      "keyword": "изготовление каркасов для свай -буронабивной",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 295.79,
+      "leads": null,
+      "date": "2026-08-08"
+    },
+    {
+      "query": "обмотка катанкой каркаса для бнс со смещением в два слоя зачем",
+      "keyword": "каркас БНС -арматурный -изготовление -производство -заказывать -купить -цена -стоимость -производитель -чертеж -кж -опт -краснодар -сочи -новороссийск -армавир -анапа -геленджик -туапсе",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 179.88,
+      "leads": null,
+      "date": "2026-08-08"
+    },
+    {
+      "query": "чертеж металлокаркаса для бытовок",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 15.94,
+      "leads": null,
+      "date": "2026-08-08"
+    },
+    {
+      "query": "несущий металлокаркас на болтовых соединениях для дома купить сочи",
+      "keyword": "цена арматурного каркаса",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 39.17,
+      "leads": null,
+      "date": "2026-08-09"
     }
   ],
   "notes": [
