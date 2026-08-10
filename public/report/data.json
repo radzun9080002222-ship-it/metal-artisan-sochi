@@ -3,10 +3,10 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-09T08:12:29+03:00",
-    "period_from": "2026-07-11",
-    "period_to": "2026-08-09",
-    "week_from": "2026-08-03",
+    "updated_at": "2026-08-10T08:39:14+03:00",
+    "period_from": "2026-07-12",
+    "period_to": "2026-08-10",
+    "week_from": "2026-08-10",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 5264.33,
+    "spend": 5572.36,
     "impressions": null,
-    "clicks": 56,
+    "clicks": 59,
     "ctr": null,
-    "cpc": 94.01,
+    "cpc": 94.45,
     "leads_total": 1,
     "contact_actions_total": 4,
-    "conversion_rate": 2.04,
-    "cpl": 5264.33,
-    "bounce_rate": 24.5
+    "conversion_rate": 1.96,
+    "cpl": 5572.36,
+    "bounce_rate": 25.5
   },
   "weekly": {
-    "spend": 4022.18,
-    "clicks": 33
+    "spend": 0.0,
+    "clicks": 0
   },
   "metrika": {
-    "visits": 49,
-    "users": 45,
-    "bounce_rate": 24.5,
+    "visits": 51,
+    "users": 46,
+    "bounce_rate": 25.5,
     "page_depth": 1.0,
-    "avg_duration_sec": 122
+    "avg_duration_sec": 118
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 5264.33
+      "cpl": 5572.36
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 2632.16
+      "cpl": 2786.18
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 2,
-      "cpl": 2632.16
+      "cpl": 2786.18
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-11",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-12",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-09",
-      "spend": 39.17,
+      "spend": 347.2,
       "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
+      "clicks": 4,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 66.7,
       "page_depth": 1.0,
-      "avg_duration_sec": 0,
+      "avg_duration_sec": 7,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-10",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1172,6 +1172,33 @@
       "spend": 15.94,
       "leads": null,
       "date": "2026-08-08"
+    },
+    {
+      "query": "арматурные каркасы",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 219.65,
+      "leads": null,
+      "date": "2026-08-09"
+    },
+    {
+      "query": "арматурный каркас в форме трубы",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 61.28,
+      "leads": null,
+      "date": "2026-08-09"
+    },
+    {
+      "query": "каркас для армопояса арматурный",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 27.09,
+      "leads": null,
+      "date": "2026-08-09"
     },
     {
       "query": "несущий металлокаркас на болтовых соединениях для дома купить сочи",
