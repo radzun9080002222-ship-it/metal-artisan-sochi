@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-10T08:39:14+03:00",
-    "period_from": "2026-07-12",
-    "period_to": "2026-08-10",
+    "updated_at": "2026-08-11T08:15:55+03:00",
+    "period_from": "2026-07-13",
+    "period_to": "2026-08-11",
     "week_from": "2026-08-10",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 5572.36,
+    "spend": 5862.26,
     "impressions": null,
-    "clicks": 59,
+    "clicks": 61,
     "ctr": null,
-    "cpc": 94.45,
+    "cpc": 96.1,
     "leads_total": 1,
     "contact_actions_total": 4,
-    "conversion_rate": 1.96,
-    "cpl": 5572.36,
-    "bounce_rate": 25.5
+    "conversion_rate": 1.89,
+    "cpl": 5862.26,
+    "bounce_rate": 26.4
   },
   "weekly": {
-    "spend": 0.0,
-    "clicks": 0
+    "spend": 289.9,
+    "clicks": 2
   },
   "metrika": {
-    "visits": 51,
-    "users": 46,
-    "bounce_rate": 25.5,
+    "visits": 53,
+    "users": 47,
+    "bounce_rate": 26.4,
     "page_depth": 1.0,
-    "avg_duration_sec": 118
+    "avg_duration_sec": 113
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 5572.36
+      "cpl": 5862.26
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 2786.18
+      "cpl": 2931.13
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 2,
-      "cpl": 2786.18
+      "cpl": 2931.13
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-12",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-13",
       "spend": 0.0,
@@ -658,6 +638,26 @@
     },
     {
       "date": "2026-08-10",
+      "spend": 289.9,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-11",
       "spend": 0.0,
       "impressions": null,
       "clicks": 0,
@@ -1208,6 +1208,24 @@
       "spend": 39.17,
       "leads": null,
       "date": "2026-08-09"
+    },
+    {
+      "query": "арматурный каркас для буронабивных свай купить адлер",
+      "keyword": "арматурный каркас для сваи",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 149.32,
+      "leads": null,
+      "date": "2026-08-10"
+    },
+    {
+      "query": "влияет ли ржавчина на армокаркас",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 140.58,
+      "leads": null,
+      "date": "2026-08-10"
     }
   ],
   "notes": [
