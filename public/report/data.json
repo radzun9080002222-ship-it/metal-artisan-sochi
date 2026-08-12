@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-11T08:15:55+03:00",
-    "period_from": "2026-07-13",
-    "period_to": "2026-08-11",
+    "updated_at": "2026-08-12T08:43:33+03:00",
+    "period_from": "2026-07-14",
+    "period_to": "2026-08-12",
     "week_from": "2026-08-10",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 5862.26,
+    "spend": 6802.41,
     "impressions": null,
-    "clicks": 61,
+    "clicks": 67,
     "ctr": null,
-    "cpc": 96.1,
+    "cpc": 101.53,
     "leads_total": 1,
-    "contact_actions_total": 4,
-    "conversion_rate": 1.89,
-    "cpl": 5862.26,
-    "bounce_rate": 26.4
+    "contact_actions_total": 5,
+    "conversion_rate": 1.69,
+    "cpl": 6802.41,
+    "bounce_rate": 28.8
   },
   "weekly": {
-    "spend": 289.9,
-    "clicks": 2
+    "spend": 1230.05,
+    "clicks": 8
   },
   "metrika": {
-    "visits": 53,
-    "users": 47,
-    "bounce_rate": 26.4,
-    "page_depth": 1.0,
-    "avg_duration_sec": 113
+    "visits": 59,
+    "users": 51,
+    "bounce_rate": 28.8,
+    "page_depth": 1.02,
+    "avg_duration_sec": 115
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 5862.26
+      "cpl": 6802.41
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 2931.13
+      "cpl": 3401.2
     },
     {
       "id": 584982462,
@@ -71,31 +71,11 @@
       "id": 585122111,
       "name": "Переход в MAX",
       "kind": "contact",
-      "count": 2,
-      "cpl": 2931.13
+      "count": 3,
+      "cpl": 2267.47
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-13",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-14",
       "spend": 0.0,
@@ -658,6 +638,26 @@
     },
     {
       "date": "2026-08-11",
+      "spend": 940.16,
+      "impressions": null,
+      "clicks": 6,
+      "visits": 6,
+      "users": 5,
+      "bounce_rate": 50.0,
+      "page_depth": 1.17,
+      "avg_duration_sec": 125,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 1
+      },
+      "leads": 0,
+      "contact_actions": 1
+    },
+    {
+      "date": "2026-08-12",
       "spend": 0.0,
       "impressions": null,
       "clicks": 0,
@@ -1226,6 +1226,60 @@
       "spend": 140.58,
       "leads": null,
       "date": "2026-08-10"
+    },
+    {
+      "query": "армо каркасы в сочи",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 108.75,
+      "leads": null,
+      "date": "2026-08-11"
+    },
+    {
+      "query": "изготовление каркаса для буронабивных свай в смоленской области",
+      "keyword": "изготовление каркасов для буронабивных свай",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 653.64,
+      "leads": null,
+      "date": "2026-08-11"
+    },
+    {
+      "query": "каркас для баннера пресс волл металлический 1х2м",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 50.01,
+      "leads": null,
+      "date": "2026-08-11"
+    },
+    {
+      "query": "каркасс для баннера прессволл металлический 1х2м",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 40.55,
+      "leads": null,
+      "date": "2026-08-11"
+    },
+    {
+      "query": "можно ли варить петли к арматурным каркасам",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 17.95,
+      "leads": null,
+      "date": "2026-08-11"
+    },
+    {
+      "query": "стоимость изготовления каркаса бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 69.25,
+      "leads": null,
+      "date": "2026-08-11"
     }
   ],
   "notes": [
