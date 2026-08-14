@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-13T08:45:36+03:00",
-    "period_from": "2026-07-15",
-    "period_to": "2026-08-13",
+    "updated_at": "2026-08-14T08:43:12+03:00",
+    "period_from": "2026-07-16",
+    "period_to": "2026-08-14",
     "week_from": "2026-08-10",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 7095.93,
+    "spend": 7265.2,
     "impressions": null,
-    "clicks": 70,
+    "clicks": 72,
     "ctr": null,
-    "cpc": 101.37,
+    "cpc": 100.91,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 1.56,
-    "cpl": 7095.93,
-    "bounce_rate": 29.7
+    "conversion_rate": 1.47,
+    "cpl": 7265.2,
+    "bounce_rate": 30.9
   },
   "weekly": {
-    "spend": 1523.57,
-    "clicks": 11
+    "spend": 1692.84,
+    "clicks": 13
   },
   "metrika": {
-    "visits": 64,
-    "users": 53,
-    "bounce_rate": 29.7,
-    "page_depth": 1.02,
-    "avg_duration_sec": 106
+    "visits": 68,
+    "users": 55,
+    "bounce_rate": 30.9,
+    "page_depth": 1.01,
+    "avg_duration_sec": 101
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 7095.93
+      "cpl": 7265.2
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 3547.97
+      "cpl": 3632.6
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 2365.31
+      "cpl": 2421.73
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-15",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-16",
       "spend": 0.0,
@@ -658,6 +638,26 @@
     },
     {
       "date": "2026-08-13",
+      "spend": 169.27,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 4,
+      "users": 3,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-14",
       "spend": 0.0,
       "impressions": null,
       "clicks": 0,
@@ -1307,6 +1307,24 @@
       "spend": 121.37,
       "leads": null,
       "date": "2026-08-12"
+    },
+    {
+      "query": "пристройка и металлокаркас к дому",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 108.07,
+      "leads": null,
+      "date": "2026-08-13"
+    },
+    {
+      "query": "фабрика каркасов лстк официальный сайт",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 61.2,
+      "leads": null,
+      "date": "2026-08-13"
     }
   ],
   "notes": [
