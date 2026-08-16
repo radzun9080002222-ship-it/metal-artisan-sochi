@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-15T07:38:54+03:00",
-    "period_from": "2026-07-17",
-    "period_to": "2026-08-15",
+    "updated_at": "2026-08-16T07:42:39+03:00",
+    "period_from": "2026-07-18",
+    "period_to": "2026-08-16",
     "week_from": "2026-08-10",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 7899.25,
+    "spend": 8052.91,
     "impressions": null,
-    "clicks": 76,
+    "clicks": 77,
     "ctr": null,
-    "cpc": 103.94,
+    "cpc": 104.58,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 1.39,
-    "cpl": 7899.25,
-    "bounce_rate": 33.3
+    "conversion_rate": 1.37,
+    "cpl": 8052.91,
+    "bounce_rate": 34.2
   },
   "weekly": {
-    "spend": 2326.89,
-    "clicks": 17
+    "spend": 2480.54,
+    "clicks": 18
   },
   "metrika": {
-    "visits": 72,
-    "users": 57,
-    "bounce_rate": 33.3,
+    "visits": 73,
+    "users": 58,
+    "bounce_rate": 34.2,
     "page_depth": 1.01,
-    "avg_duration_sec": 95
+    "avg_duration_sec": 94
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 7899.25
+      "cpl": 8052.91
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 3949.62
+      "cpl": 4026.45
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 2633.08
+      "cpl": 2684.3
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-17",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-18",
       "spend": 0.0,
@@ -658,6 +638,26 @@
     },
     {
       "date": "2026-08-15",
+      "spend": 153.65,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-16",
       "spend": 0.0,
       "impressions": null,
       "clicks": 0,
@@ -1343,6 +1343,15 @@
       "spend": 569.3,
       "leads": null,
       "date": "2026-08-14"
+    },
+    {
+      "query": "облегченный металлокаркас для ангара под металлопрофиль",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 153.65,
+      "leads": null,
+      "date": "2026-08-15"
     }
   ],
   "notes": [
