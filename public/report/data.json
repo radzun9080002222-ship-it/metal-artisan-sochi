@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-19T07:44:38+03:00",
-    "period_from": "2026-07-21",
-    "period_to": "2026-08-19",
+    "updated_at": "2026-08-20T07:44:18+03:00",
+    "period_from": "2026-07-22",
+    "period_to": "2026-08-20",
     "week_from": "2026-08-17",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 9326.3,
+    "spend": 9743.03,
     "impressions": null,
-    "clicks": 90,
+    "clicks": 96,
     "ctr": null,
-    "cpc": 103.63,
+    "cpc": 101.49,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 1.23,
-    "cpl": 9326.3,
-    "bounce_rate": 35.8
+    "conversion_rate": 1.16,
+    "cpl": 9743.03,
+    "bounce_rate": 34.9
   },
   "weekly": {
-    "spend": 759.51,
-    "clicks": 7
+    "spend": 1176.24,
+    "clicks": 13
   },
   "metrika": {
-    "visits": 81,
-    "users": 64,
-    "bounce_rate": 35.8,
+    "visits": 86,
+    "users": 68,
+    "bounce_rate": 34.9,
     "page_depth": 1.01,
-    "avg_duration_sec": 85
+    "avg_duration_sec": 81
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 9326.3
+      "cpl": 9743.03
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 4663.15
+      "cpl": 4871.52
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 3108.77
+      "cpl": 3247.68
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-21",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-22",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-19",
-      "spend": 0.0,
+      "spend": 348.93,
       "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
+      "clicks": 4,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 33.3,
+      "page_depth": 1.0,
+      "avg_duration_sec": 10,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-20",
+      "spend": 67.8,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1460,6 +1460,51 @@
       "spend": 185.37,
       "leads": null,
       "date": "2026-08-18"
+    },
+    {
+      "query": "арматурный каркас плитного фундамент толщиной 1 м",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 38.16,
+      "leads": null,
+      "date": "2026-08-19"
+    },
+    {
+      "query": "каркасные бытовки",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 141.43,
+      "leads": null,
+      "date": "2026-08-19"
+    },
+    {
+      "query": "лстк фабрика каркасов официальный сайт",
+      "keyword": "производство арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 91.33,
+      "leads": null,
+      "date": "2026-08-19"
+    },
+    {
+      "query": "цена за каркас армокаркаса и установка",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 78.0,
+      "leads": null,
+      "date": "2026-08-19"
+    },
+    {
+      "query": "каркас сборный металлический на болтах в виде футбольных ворот шириной 115мм высотой 2м",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 67.8,
+      "leads": null,
+      "date": "2026-08-20"
     }
   ],
   "notes": [
