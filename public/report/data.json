@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-20T07:44:18+03:00",
-    "period_from": "2026-07-22",
-    "period_to": "2026-08-20",
+    "updated_at": "2026-08-21T07:46:45+03:00",
+    "period_from": "2026-07-23",
+    "period_to": "2026-08-21",
     "week_from": "2026-08-17",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 9743.03,
+    "spend": 10460.21,
     "impressions": null,
-    "clicks": 96,
+    "clicks": 105,
     "ctr": null,
-    "cpc": 101.49,
+    "cpc": 99.62,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 1.16,
-    "cpl": 9743.03,
-    "bounce_rate": 34.9
+    "conversion_rate": 1.05,
+    "cpl": 10460.21,
+    "bounce_rate": 38.9
   },
   "weekly": {
-    "spend": 1176.24,
-    "clicks": 13
+    "spend": 1893.41,
+    "clicks": 22
   },
   "metrika": {
-    "visits": 86,
-    "users": 68,
-    "bounce_rate": 34.9,
+    "visits": 95,
+    "users": 75,
+    "bounce_rate": 38.9,
     "page_depth": 1.01,
-    "avg_duration_sec": 81
+    "avg_duration_sec": 74
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 9743.03
+      "cpl": 10460.21
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 4871.52
+      "cpl": 5230.1
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 3247.68
+      "cpl": 3486.74
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-22",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-23",
       "spend": 0.0,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-20",
-      "spend": 67.8,
+      "spend": 737.8,
+      "impressions": null,
+      "clicks": 9,
+      "visits": 9,
+      "users": 6,
+      "bounce_rate": 55.6,
+      "page_depth": 1.0,
+      "avg_duration_sec": 6,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-21",
+      "spend": 47.17,
       "impressions": null,
       "clicks": 2,
       "visits": 2,
-      "users": 1,
-      "bounce_rate": 0.0,
+      "users": 2,
+      "bounce_rate": 100.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 15,
+      "avg_duration_sec": 0,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1501,10 +1501,73 @@
       "query": "каркас сборный металлический на болтах в виде футбольных ворот шириной 115мм высотой 2м",
       "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
       "impressions": null,
-      "clicks": 2,
-      "spend": 67.8,
+      "clicks": 3,
+      "spend": 92.13,
       "leads": null,
       "date": "2026-08-20"
+    },
+    {
+      "query": "гост для каркасов для буронабивных свай",
+      "keyword": "каркасы для буронабивных свай -арматурный -изготовление -купить -цена",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 255.22,
+      "leads": null,
+      "date": "2026-08-20"
+    },
+    {
+      "query": "изготовление металлических каркасов свай краснодар",
+      "keyword": "изготовление каркасов для свай -буронабивной",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 143.18,
+      "leads": null,
+      "date": "2026-08-20"
+    },
+    {
+      "query": "как просчитать металлокаркас 12 метров на 14 метров",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 110.25,
+      "leads": null,
+      "date": "2026-08-20"
+    },
+    {
+      "query": "каркас пространственный арматурный ставрополь",
+      "keyword": "пространственный арматурный каркас",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 87.7,
+      "leads": null,
+      "date": "2026-08-20"
+    },
+    {
+      "query": "фер на устройство арматурного каркаса",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 49.32,
+      "leads": null,
+      "date": "2026-08-20"
+    },
+    {
+      "query": "купить алюминиевый каркас",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 21.78,
+      "leads": null,
+      "date": "2026-08-21"
+    },
+    {
+      "query": "стандартный каркас бытовки металлический",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 25.39,
+      "leads": null,
+      "date": "2026-08-21"
     }
   ],
   "notes": [
