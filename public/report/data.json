@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-24T07:54:27+03:00",
-    "period_from": "2026-07-26",
-    "period_to": "2026-08-24",
+    "updated_at": "2026-08-25T07:46:52+03:00",
+    "period_from": "2026-07-27",
+    "period_to": "2026-08-25",
     "week_from": "2026-08-24",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 12802.03,
+    "spend": 13589.44,
     "impressions": null,
-    "clicks": 121,
+    "clicks": 126,
     "ctr": null,
-    "cpc": 105.8,
+    "cpc": 107.85,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 0.92,
-    "cpl": 12802.03,
-    "bounce_rate": 41.3
+    "conversion_rate": 0.88,
+    "cpl": 13589.44,
+    "bounce_rate": 41.2
   },
   "weekly": {
-    "spend": 0.0,
-    "clicks": 0
+    "spend": 787.41,
+    "clicks": 5
   },
   "metrika": {
-    "visits": 109,
-    "users": 88,
-    "bounce_rate": 41.3,
+    "visits": 114,
+    "users": 93,
+    "bounce_rate": 41.2,
     "page_depth": 1.03,
-    "avg_duration_sec": 79
+    "avg_duration_sec": 76
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 12802.03
+      "cpl": 13589.44
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 6401.02
+      "cpl": 6794.72
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 4267.34
+      "cpl": 4529.81
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-26",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-27",
       "spend": 155.38,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-24",
-      "spend": 0.0,
+      "spend": 302.03,
       "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
+      "clicks": 3,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 33.3,
+      "page_depth": 1.0,
+      "avg_duration_sec": 10,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-25",
+      "spend": 485.38,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -1694,6 +1694,51 @@
       "spend": 606.83,
       "leads": null,
       "date": "2026-08-23"
+    },
+    {
+      "query": "буронабивные сваи монтаж краснодар",
+      "keyword": "каркасы БНС Краснодар",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 141.29,
+      "leads": null,
+      "date": "2026-08-24"
+    },
+    {
+      "query": "из какой арматуры делают каркас для свай",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 90.05,
+      "leads": null,
+      "date": "2026-08-24"
+    },
+    {
+      "query": "технология вязки арматурных каркасов для свай из стеклопластиковой арматуры",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 70.69,
+      "leads": null,
+      "date": "2026-08-24"
+    },
+    {
+      "query": "вязка арматуры в плитах перекрытия",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 404.5,
+      "leads": null,
+      "date": "2026-08-25"
+    },
+    {
+      "query": "каркас из арматуры для крышки жби кольца",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 80.88,
+      "leads": null,
+      "date": "2026-08-25"
     }
   ],
   "notes": [
