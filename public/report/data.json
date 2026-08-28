@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-27T18:07:41+03:00",
-    "period_from": "2026-07-29",
-    "period_to": "2026-08-27",
+    "updated_at": "2026-08-28T19:30:53+03:00",
+    "period_from": "2026-07-30",
+    "period_to": "2026-08-28",
     "week_from": "2026-08-24",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 15540.15,
+    "spend": 15861.52,
     "impressions": null,
-    "clicks": 136,
+    "clicks": 137,
     "ctr": null,
-    "cpc": 114.27,
+    "cpc": 115.78,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 0.81,
-    "cpl": 15540.15,
-    "bounce_rate": 43.5
+    "conversion_rate": 0.78,
+    "cpl": 15861.52,
+    "bounce_rate": 43.0
   },
   "weekly": {
-    "spend": 3093.08,
-    "clicks": 22
+    "spend": 3432.55,
+    "clicks": 25
   },
   "metrika": {
-    "visits": 124,
-    "users": 104,
-    "bounce_rate": 43.5,
+    "visits": 128,
+    "users": 107,
+    "bounce_rate": 43.0,
     "page_depth": 1.02,
-    "avg_duration_sec": 72
+    "avg_duration_sec": 70
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 15540.15
+      "cpl": 15861.52
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 7770.07
+      "cpl": 7930.76
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 5180.05
+      "cpl": 5287.17
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-29",
-      "spend": 18.1,
-      "impressions": null,
-      "clicks": 2,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-30",
       "spend": 326.61,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-27",
-      "spend": 1290.15,
+      "spend": 1336.74,
       "impressions": null,
-      "clicks": 7,
-      "visits": 5,
-      "users": 5,
-      "bounce_rate": 40.0,
+      "clicks": 8,
+      "visits": 8,
+      "users": 7,
+      "bounce_rate": 37.5,
       "page_depth": 1.0,
       "avg_duration_sec": 9,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-28",
+      "spend": 292.88,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,24 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "какой диаметр сердечника из арматуры должен быть в сваи диаметром в 40 см",
-      "keyword": "арматурный каркас для сваи",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 14.46,
-      "leads": null,
-      "date": "2026-07-29"
-    },
-    {
-      "query": "при сборке арматурного каркаса для фундамента как лучше располагать углы хомутов с лапками",
-      "keyword": "вязка арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 3.64,
-      "leads": null,
-      "date": "2026-07-29"
-    },
     {
       "query": "арматурный каркас под 400 сваю",
       "keyword": "арматурные каркасы для свай -буронабивной",
@@ -1786,6 +1768,15 @@
       "date": "2026-08-27"
     },
     {
+      "query": "диаметр проема сваи на 42 на сколько нужно вставлять каркас из арматуры",
+      "keyword": "арматурные каркасы для свай -буронабивной",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 46.59,
+      "leads": null,
+      "date": "2026-08-27"
+    },
+    {
       "query": "изготовление армокаркасов москва",
       "keyword": "изготовление арматурных каркасов",
       "impressions": null,
@@ -1829,6 +1820,33 @@
       "spend": 58.22,
       "leads": null,
       "date": "2026-08-27"
+    },
+    {
+      "query": "отверстие сваи 42 на сколько надо делать каркас из арматуры во внутрь",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 0,
+      "spend": 0.0,
+      "leads": null,
+      "date": "2026-08-27"
+    },
+    {
+      "query": "армокаркас для фундамента",
+      "keyword": "армокаркас для свай -буронабивной",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 33.02,
+      "leads": null,
+      "date": "2026-08-28"
+    },
+    {
+      "query": "вязка арматуры для фундамента 12 на 20",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 259.86,
+      "leads": null,
+      "date": "2026-08-28"
     }
   ],
   "notes": [
