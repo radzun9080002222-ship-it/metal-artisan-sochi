@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-28T19:30:53+03:00",
-    "period_from": "2026-07-30",
-    "period_to": "2026-08-28",
+    "updated_at": "2026-08-29T13:58:53+03:00",
+    "period_from": "2026-07-31",
+    "period_to": "2026-08-29",
     "week_from": "2026-08-24",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 15861.52,
+    "spend": 15649.13,
     "impressions": null,
-    "clicks": 137,
+    "clicks": 133,
     "ctr": null,
-    "cpc": 115.78,
+    "cpc": 117.66,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 0.78,
-    "cpl": 15861.52,
-    "bounce_rate": 43.0
+    "conversion_rate": 0.8,
+    "cpl": 15649.13,
+    "bounce_rate": 44.0
   },
   "weekly": {
-    "spend": 3432.55,
-    "clicks": 25
+    "spend": 3546.77,
+    "clicks": 27
   },
   "metrika": {
-    "visits": 128,
-    "users": 107,
-    "bounce_rate": 43.0,
+    "visits": 125,
+    "users": 105,
+    "bounce_rate": 44.0,
     "page_depth": 1.02,
-    "avg_duration_sec": 70
+    "avg_duration_sec": 71
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 15861.52
+      "cpl": 15649.13
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 7930.76
+      "cpl": 7824.56
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 5287.17
+      "cpl": 5216.38
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-30",
-      "spend": 326.61,
-      "impressions": null,
-      "clicks": 6,
-      "visits": 5,
-      "users": 5,
-      "bounce_rate": 40.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 9,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-07-31",
       "spend": 293.8,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-28",
-      "spend": 292.88,
+      "spend": 385.23,
       "impressions": null,
-      "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 50.0,
+      "clicks": 3,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 66.7,
       "page_depth": 1.0,
-      "avg_duration_sec": 7,
+      "avg_duration_sec": 5,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-08-29",
+      "spend": 21.87,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,60 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас под 400 сваю",
-      "keyword": "арматурные каркасы для свай -буронабивной",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 37.04,
-      "leads": null,
-      "date": "2026-07-30"
-    },
-    {
-      "query": "дом каркасный металлический состав проекта ар и кр",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 38.3,
-      "leads": null,
-      "date": "2026-07-30"
-    },
-    {
-      "query": "каркас сарая из профиля для гипсокартона",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 17.13,
-      "leads": null,
-      "date": "2026-07-30"
-    },
-    {
-      "query": "каркасы бнс",
-      "keyword": "каркас БНС -арматурный -изготовление -производство -заказывать -купить -цена -стоимость -производитель -чертеж -кж -опт -краснодар -сочи -новороссийск -армавир -анапа -геленджик -туапсе",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 202.74,
-      "leads": null,
-      "date": "2026-07-30"
-    },
-    {
-      "query": "проект каркаса бытовки из металла 6 на 5",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 9.85,
-      "leads": null,
-      "date": "2026-07-30"
-    },
-    {
-      "query": "расстояние от арматурного каркаса до края бнс",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 21.55,
-      "leads": null,
-      "date": "2026-07-30"
-    },
     {
       "query": "арматурный каркас под 400 сваю",
       "keyword": "арматурные каркасы для свай -буронабивной",
@@ -1847,6 +1793,24 @@
       "spend": 259.86,
       "leads": null,
       "date": "2026-08-28"
+    },
+    {
+      "query": "как сделать арматурные каркасы клетки",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 92.35,
+      "leads": null,
+      "date": "2026-08-28"
+    },
+    {
+      "query": "ейск сколько стоит связать армокаркас",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 21.87,
+      "leads": null,
+      "date": "2026-08-29"
     }
   ],
   "notes": [
