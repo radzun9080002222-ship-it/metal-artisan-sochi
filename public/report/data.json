@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-29T13:58:53+03:00",
-    "period_from": "2026-07-31",
-    "period_to": "2026-08-29",
+    "updated_at": "2026-08-30T12:53:29+03:00",
+    "period_from": "2026-08-01",
+    "period_to": "2026-08-30",
     "week_from": "2026-08-24",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,25 +16,25 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 15649.13,
+    "spend": 15776.17,
     "impressions": null,
-    "clicks": 133,
+    "clicks": 136,
     "ctr": null,
-    "cpc": 117.66,
+    "cpc": 116.0,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 0.8,
-    "cpl": 15649.13,
-    "bounce_rate": 44.0
+    "conversion_rate": 0.79,
+    "cpl": 15776.17,
+    "bounce_rate": 45.2
   },
   "weekly": {
-    "spend": 3546.77,
-    "clicks": 27
+    "spend": 3967.61,
+    "clicks": 32
   },
   "metrika": {
-    "visits": 125,
-    "users": 105,
-    "bounce_rate": 44.0,
+    "visits": 126,
+    "users": 106,
+    "bounce_rate": 45.2,
     "page_depth": 1.02,
     "avg_duration_sec": 71
   },
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 15649.13
+      "cpl": 15776.17
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 7824.56
+      "cpl": 7888.09
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 5216.38
+      "cpl": 5258.72
     }
   ],
   "daily": [
-    {
-      "date": "2026-07-31",
-      "spend": 293.8,
-      "impressions": null,
-      "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-01",
       "spend": 107.33,
@@ -658,11 +638,11 @@
     },
     {
       "date": "2026-08-29",
-      "spend": 21.87,
+      "spend": 133.54,
       "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
+      "clicks": 4,
+      "visits": 3,
+      "users": 3,
       "bounce_rate": 100.0,
       "page_depth": 1.0,
       "avg_duration_sec": 0,
@@ -675,27 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-08-30",
+      "spend": 309.17,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас под 400 сваю",
-      "keyword": "арматурные каркасы для свай -буронабивной",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 22.28,
-      "leads": null,
-      "date": "2026-07-31"
-    },
-    {
-      "query": "изготовление арматурных каркасов в сочи",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 271.52,
-      "leads": null,
-      "date": "2026-07-31"
-    },
     {
       "query": "вязка металлических конструкций по осям выпусков арматуры на колонны с учетом выхода на следующий этаж",
       "keyword": "вязка арматурных каркасов",
@@ -1804,6 +1786,15 @@
       "date": "2026-08-28"
     },
     {
+      "query": "алсер строй чебоксары",
+      "keyword": "Автотаргетинг",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 47.52,
+      "leads": null,
+      "date": "2026-08-29"
+    },
+    {
       "query": "ейск сколько стоит связать армокаркас",
       "keyword": "вязка арматурных каркасов",
       "impressions": null,
@@ -1811,6 +1802,42 @@
       "spend": 21.87,
       "leads": null,
       "date": "2026-08-29"
+    },
+    {
+      "query": "расчет металлического каркаса из профильной трубы для навеса",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 35.39,
+      "leads": null,
+      "date": "2026-08-29"
+    },
+    {
+      "query": "хозблок из металлокаркаса",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 28.77,
+      "leads": null,
+      "date": "2026-08-29"
+    },
+    {
+      "query": "металлокаркасные лестницы",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 222.75,
+      "leads": null,
+      "date": "2026-08-30"
+    },
+    {
+      "query": "сколько стоит заказать в цеху каркас сваи из арматуры",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 86.42,
+      "leads": null,
+      "date": "2026-08-30"
     }
   ],
   "notes": [
