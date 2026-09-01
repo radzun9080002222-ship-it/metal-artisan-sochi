@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-08-31T13:45:53+03:00",
-    "period_from": "2026-08-02",
-    "period_to": "2026-08-31",
+    "updated_at": "2026-09-01T12:20:47+03:00",
+    "period_from": "2026-08-03",
+    "period_to": "2026-09-01",
     "week_from": "2026-08-31",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 16527.35,
+    "spend": 17654.35,
     "impressions": null,
-    "clicks": 142,
+    "clicks": 146,
     "ctr": null,
-    "cpc": 116.39,
+    "cpc": 120.92,
     "leads_total": 1,
     "contact_actions_total": 5,
-    "conversion_rate": 0.76,
-    "cpl": 16527.35,
-    "bounce_rate": 45.8
+    "conversion_rate": 0.75,
+    "cpl": 17654.35,
+    "bounce_rate": 46.3
   },
   "weekly": {
-    "spend": 313.72,
-    "clicks": 3
+    "spend": 1582.07,
+    "clicks": 10
   },
   "metrika": {
-    "visits": 131,
-    "users": 110,
-    "bounce_rate": 45.8,
+    "visits": 134,
+    "users": 113,
+    "bounce_rate": 46.3,
     "page_depth": 1.02,
-    "avg_duration_sec": 80
+    "avg_duration_sec": 78
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 16527.35
+      "cpl": 17654.35
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 2,
-      "cpl": 8263.67
+      "cpl": 8827.17
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 5509.12
+      "cpl": 5884.78
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-02",
-      "spend": 141.34,
-      "impressions": null,
-      "clicks": 3,
-      "visits": 3,
-      "users": 3,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-03",
       "spend": 544.34,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-08-31",
-      "spend": 313.72,
+      "spend": 541.13,
       "impressions": null,
-      "clicks": 3,
-      "visits": 3,
-      "users": 3,
-      "bounce_rate": 33.3,
+      "clicks": 5,
+      "visits": 5,
+      "users": 5,
+      "bounce_rate": 20.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 502,
+      "avg_duration_sec": 308,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-09-01",
+      "spend": 1040.94,
+      "impressions": null,
+      "clicks": 5,
+      "visits": 4,
+      "users": 4,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,33 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "варят на заводе армированные каркасы",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 87.75,
-      "leads": null,
-      "date": "2026-08-02"
-    },
-    {
-      "query": "как правильно сваривать каркасы буронабивных свай",
-      "keyword": "изготовление каркасов для буронабивных свай",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 24.49,
-      "leads": null,
-      "date": "2026-08-02"
-    },
-    {
-      "query": "металлокаркасные дома",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 29.11,
-      "leads": null,
-      "date": "2026-08-02"
-    },
     {
       "query": "арматурный каркас из арматуры а 12 100х100",
       "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
@@ -1867,6 +1840,15 @@
       "date": "2026-08-30"
     },
     {
+      "query": "арматурные каркасы типа бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 97.92,
+      "leads": null,
+      "date": "2026-08-31"
+    },
+    {
       "query": "изготовление каркасов для буронабивных свай",
       "keyword": "изготовление каркасов для буронабивных свай",
       "impressions": null,
@@ -1892,6 +1874,60 @@
       "spend": 84.59,
       "leads": null,
       "date": "2026-08-31"
+    },
+    {
+      "query": "производство каркасов бнс в республике адыгея",
+      "keyword": "производство каркасов БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 129.48,
+      "leads": null,
+      "date": "2026-08-31"
+    },
+    {
+      "query": "вязка арматурного каркаса расценка в смете",
+      "keyword": "вязка арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 65.62,
+      "leads": null,
+      "date": "2026-09-01"
+    },
+    {
+      "query": "изготовление каркасных и модульных строений",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 490.78,
+      "leads": null,
+      "date": "2026-09-01"
+    },
+    {
+      "query": "изготовление металлоконструкций",
+      "keyword": "изготовление армокаркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 142.84,
+      "leads": null,
+      "date": "2026-09-01"
+    },
+    {
+      "query": "каркасы для буронабивных свай",
+      "keyword": "каркасы для буронабивных свай -арматурный -изготовление -купить -цена",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 295.09,
+      "leads": null,
+      "date": "2026-09-01"
+    },
+    {
+      "query": "с каким шагом ставить хомуты в армокаркасе ленту фундамента",
+      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 46.6,
+      "leads": null,
+      "date": "2026-09-01"
     }
   ],
   "notes": [
