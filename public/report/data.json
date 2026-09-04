@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-03T11:51:02+03:00",
-    "period_from": "2026-08-05",
-    "period_to": "2026-09-03",
+    "updated_at": "2026-09-04T11:46:34+03:00",
+    "period_from": "2026-08-06",
+    "period_to": "2026-09-04",
     "week_from": "2026-08-31",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 19353.56,
+    "spend": 20307.21,
     "impressions": null,
-    "clicks": 149,
+    "clicks": 147,
     "ctr": null,
-    "cpc": 129.89,
+    "cpc": 138.14,
     "leads_total": 1,
     "contact_actions_total": 3,
     "conversion_rate": 0.72,
-    "cpl": 19353.56,
-    "bounce_rate": 47.5
+    "cpl": 20307.21,
+    "bounce_rate": 49.3
   },
   "weekly": {
-    "spend": 4600.26,
-    "clicks": 27
+    "spend": 6201.39,
+    "clicks": 30
   },
   "metrika": {
-    "visits": 139,
-    "users": 113,
-    "bounce_rate": 47.5,
+    "visits": 138,
+    "users": 111,
+    "bounce_rate": 49.3,
     "page_depth": 1.03,
-    "avg_duration_sec": 75
+    "avg_duration_sec": 44
   },
   "goals": [
     {
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 19353.56
+      "cpl": 20307.21
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 19353.56
+      "cpl": 20307.21
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 2,
-      "cpl": 9676.78
+      "cpl": 10153.6
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-05",
-      "spend": 647.47,
-      "impressions": null,
-      "clicks": 5,
-      "visits": 4,
-      "users": 4,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 1117,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-06",
       "spend": 452.7,
@@ -658,11 +638,11 @@
     },
     {
       "date": "2026-09-03",
-      "spend": 1410.89,
+      "spend": 2453.75,
       "impressions": null,
-      "clicks": 5,
-      "visits": 6,
-      "users": 4,
+      "clicks": 7,
+      "visits": 8,
+      "users": 6,
       "bounce_rate": 50.0,
       "page_depth": 1.0,
       "avg_duration_sec": 7,
@@ -675,54 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-04",
+      "spend": 558.28,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "алюминиевый каркас необходимые инструменты",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 25.3,
-      "leads": null,
-      "date": "2026-08-05"
-    },
-    {
-      "query": "допустимое отклонение по ширине арматурного каркаса",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 14.26,
-      "leads": null,
-      "date": "2026-08-05"
-    },
-    {
-      "query": "изготовление арматурных каркасов в краснодаре",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 512.98,
-      "leads": null,
-      "date": "2026-08-05"
-    },
-    {
-      "query": "каркасы а фрейм металлические",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 33.58,
-      "leads": null,
-      "date": "2026-08-05"
-    },
-    {
-      "query": "плоскими арматурными каркасами высокой заводской готовности взг",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 61.35,
-      "leads": null,
-      "date": "2026-08-05"
-    },
     {
       "query": "арматурный каркас кр1 кр2 кр",
       "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
@@ -1921,6 +1876,15 @@
       "date": "2026-09-03"
     },
     {
+      "query": "баня из железного каркаса",
+      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 92.51,
+      "leads": null,
+      "date": "2026-09-03"
+    },
+    {
       "query": "готовые кольца на свайный каркас",
       "keyword": "каркасы для свай -арматурный -изготовление -буронабивной",
       "impressions": null,
@@ -1946,6 +1910,24 @@
       "spend": 348.87,
       "leads": null,
       "date": "2026-09-03"
+    },
+    {
+      "query": "сочи каркас буронабивных свай",
+      "keyword": "каркас буронабивной сваи -арматурный -изготовление -купить",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 950.34,
+      "leads": null,
+      "date": "2026-09-03"
+    },
+    {
+      "query": "изготовление каркасных и модульных строений сочи",
+      "keyword": "изготовление арматурных каркасов",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 558.28,
+      "leads": null,
+      "date": "2026-09-04"
     }
   ],
   "notes": [
