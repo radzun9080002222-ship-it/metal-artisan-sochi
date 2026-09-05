@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-04T11:46:34+03:00",
-    "period_from": "2026-08-06",
-    "period_to": "2026-09-04",
+    "updated_at": "2026-09-05T11:17:09+03:00",
+    "period_from": "2026-08-07",
+    "period_to": "2026-09-05",
     "week_from": "2026-08-31",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,25 +16,25 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 20307.21,
+    "spend": 19854.51,
     "impressions": null,
-    "clicks": 147,
+    "clicks": 143,
     "ctr": null,
-    "cpc": 138.14,
+    "cpc": 138.84,
     "leads_total": 1,
     "contact_actions_total": 3,
-    "conversion_rate": 0.72,
-    "cpl": 20307.21,
-    "bounce_rate": 49.3
+    "conversion_rate": 0.74,
+    "cpl": 19854.51,
+    "bounce_rate": 49.6
   },
   "weekly": {
     "spend": 6201.39,
     "clicks": 30
   },
   "metrika": {
-    "visits": 138,
-    "users": 111,
-    "bounce_rate": 49.3,
+    "visits": 135,
+    "users": 107,
+    "bounce_rate": 49.6,
     "page_depth": 1.03,
     "avg_duration_sec": 44
   },
@@ -44,14 +44,14 @@
       "name": "Успешная заявка",
       "kind": "lead",
       "count": 1,
-      "cpl": 20307.21
+      "cpl": 19854.51
     },
     {
       "id": 584982228,
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 20307.21
+      "cpl": 19854.51
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 2,
-      "cpl": 10153.6
+      "cpl": 9927.25
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-06",
-      "spend": 452.7,
-      "impressions": null,
-      "clicks": 4,
-      "visits": 4,
-      "users": 4,
-      "bounce_rate": 25.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 11,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-07",
       "spend": 849.19,
@@ -675,45 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-05",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас кр1 кр2 кр",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 166.13,
-      "leads": null,
-      "date": "2026-08-06"
-    },
-    {
-      "query": "армокаркасы в сибири",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 102.98,
-      "leads": null,
-      "date": "2026-08-06"
-    },
-    {
-      "query": "какой размер арматурного каркаса в землю надо для раздвижных ворот",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 33.37,
-      "leads": null,
-      "date": "2026-08-06"
-    },
-    {
-      "query": "лстк фабрика каркасов",
-      "keyword": "производство арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 150.22,
-      "leads": null,
-      "date": "2026-08-06"
-    },
     {
       "query": "изготовление из металла каркас для домика",
       "keyword": "изготовление армокаркасов",
