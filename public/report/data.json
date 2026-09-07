@@ -3,10 +3,10 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-06T11:35:58+03:00",
-    "period_from": "2026-08-08",
-    "period_to": "2026-09-06",
-    "week_from": "2026-08-31",
+    "updated_at": "2026-09-07T12:14:24+03:00",
+    "period_from": "2026-08-09",
+    "period_to": "2026-09-07",
+    "week_from": "2026-09-07",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 19005.32,
+    "spend": 18290.66,
     "impressions": null,
-    "clicks": 139,
+    "clicks": 134,
     "ctr": null,
-    "cpc": 136.73,
+    "cpc": 136.5,
     "leads_total": 0,
     "contact_actions_total": 2,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 50.4
+    "bounce_rate": 52.0
   },
   "weekly": {
-    "spend": 6201.39,
-    "clicks": 30
+    "spend": 0.0,
+    "clicks": 0
   },
   "metrika": {
-    "visits": 131,
-    "users": 103,
-    "bounce_rate": 50.4,
+    "visits": 127,
+    "users": 101,
+    "bounce_rate": 52.0,
     "page_depth": 1.03,
-    "avg_duration_sec": 38
+    "avg_duration_sec": 39
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 19005.32
+      "cpl": 18290.66
     },
     {
       "id": 584982462,
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 1,
-      "cpl": 19005.32
+      "cpl": 18290.66
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-08",
-      "spend": 714.66,
-      "impressions": null,
-      "clicks": 5,
-      "visits": 4,
-      "users": 3,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-09",
       "spend": 347.2,
@@ -675,54 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-07",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "влияет ли ржавчина на армокаркас",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 158.35,
-      "leads": null,
-      "date": "2026-08-08"
-    },
-    {
-      "query": "влияет ли ржавчина на армокаркас регламент",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 64.69,
-      "leads": null,
-      "date": "2026-08-08"
-    },
-    {
-      "query": "крымск производство каркасов для свай",
-      "keyword": "изготовление каркасов для свай -буронабивной",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 295.79,
-      "leads": null,
-      "date": "2026-08-08"
-    },
-    {
-      "query": "обмотка катанкой каркаса для бнс со смещением в два слоя зачем",
-      "keyword": "каркас БНС -арматурный -изготовление -производство -заказывать -купить -цена -стоимость -производитель -чертеж -кж -опт -краснодар -сочи -новороссийск -армавир -анапа -геленджик -туапсе",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 179.88,
-      "leads": null,
-      "date": "2026-08-08"
-    },
-    {
-      "query": "чертеж металлокаркаса для бытовок",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 15.94,
-      "leads": null,
-      "date": "2026-08-08"
-    },
     {
       "query": "арматурные каркасы",
       "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
