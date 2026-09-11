@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-10T11:52:44+03:00",
-    "period_from": "2026-08-12",
-    "period_to": "2026-09-10",
+    "updated_at": "2026-09-11T11:50:28+03:00",
+    "period_from": "2026-08-13",
+    "period_to": "2026-09-11",
     "week_from": "2026-09-07",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 16713.41,
+    "spend": 16419.89,
     "impressions": null,
-    "clicks": 122,
+    "clicks": 119,
     "ctr": null,
-    "cpc": 137.0,
+    "cpc": 137.98,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 51.7
+    "bounce_rate": 52.7
   },
   "weekly": {
     "spend": 0.0,
     "clicks": 0
   },
   "metrika": {
-    "visits": 116,
-    "users": 94,
-    "bounce_rate": 51.7,
+    "visits": 112,
+    "users": 92,
+    "bounce_rate": 52.7,
     "page_depth": 1.03,
-    "avg_duration_sec": 36
+    "avg_duration_sec": 37
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 16713.41
+      "cpl": 16419.89
     },
     {
       "id": 584982462,
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-12",
-      "spend": 293.52,
-      "impressions": null,
-      "clicks": 3,
-      "visits": 5,
-      "users": 3,
-      "bounce_rate": 40.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 10,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-13",
       "spend": 169.27,
@@ -661,6 +641,26 @@
       "spend": 0.0,
       "impressions": null,
       "clicks": 0,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-09-11",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
       "visits": 0,
       "users": 0,
       "bounce_rate": null,
@@ -678,33 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "каркас бытовки сборный металлический на болтах купить",
-      "keyword": "цена арматурного каркаса",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 87.89,
-      "leads": null,
-      "date": "2026-08-12"
-    },
-    {
-      "query": "каркас сборный металлический на болтах купить",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 84.26,
-      "leads": null,
-      "date": "2026-08-12"
-    },
-    {
-      "query": "производство арматурных каркасов для свай",
-      "keyword": "производство арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 121.37,
-      "leads": null,
-      "date": "2026-08-12"
-    },
     {
       "query": "пристройка и металлокаркас к дому",
       "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
