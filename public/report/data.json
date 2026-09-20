@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-19T11:43:59+03:00",
-    "period_from": "2026-08-21",
-    "period_to": "2026-09-19",
+    "updated_at": "2026-09-20T12:13:07+03:00",
+    "period_from": "2026-08-22",
+    "period_to": "2026-09-20",
     "week_from": "2026-09-14",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 13102.79,
+    "spend": 12234.46,
     "impressions": null,
-    "clicks": 86,
+    "clicks": 77,
     "ctr": null,
-    "cpc": 152.36,
+    "cpc": 158.89,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 51.8
+    "bounce_rate": 50.7
   },
   "weekly": {
     "spend": 0.0,
     "clicks": 0
   },
   "metrika": {
-    "visits": 83,
-    "users": 71,
-    "bounce_rate": 51.8,
+    "visits": 75,
+    "users": 64,
+    "bounce_rate": 50.7,
     "page_depth": 1.04,
-    "avg_duration_sec": 47
+    "avg_duration_sec": 52
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 13102.79
+      "cpl": 12234.46
     },
     {
       "id": 584982462,
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-21",
-      "spend": 868.33,
-      "impressions": null,
-      "clicks": 9,
-      "visits": 8,
-      "users": 7,
-      "bounce_rate": 62.5,
-      "page_depth": 1.0,
-      "avg_duration_sec": 5,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-22",
       "spend": 100.43,
@@ -675,72 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-20",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "диаметр свай 530 мм какой размер каркаса",
-      "keyword": "каркасы для свай -арматурный -изготовление -буронабивной",
-      "impressions": null,
-      "clicks": 2,
-      "spend": 188.8,
-      "leads": null,
-      "date": "2026-08-21"
-    },
-    {
-      "query": "расход электродов на 1 тонну арматурные каркасы",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 2,
-      "spend": 66.09,
-      "leads": null,
-      "date": "2026-08-21"
-    },
-    {
-      "query": "арматурные каркасы москва",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 467.88,
-      "leads": null,
-      "date": "2026-08-21"
-    },
-    {
-      "query": "вязка армокаркасов цена",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 50.94,
-      "leads": null,
-      "date": "2026-08-21"
-    },
-    {
-      "query": "купить алюминиевый каркас",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 21.78,
-      "leads": null,
-      "date": "2026-08-21"
-    },
-    {
-      "query": "сколько стоит метр 12 арматуры",
-      "keyword": "цена арматурного каркаса",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 47.45,
-      "leads": null,
-      "date": "2026-08-21"
-    },
-    {
-      "query": "стандартный каркас бытовки металлический",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 25.39,
-      "leads": null,
-      "date": "2026-08-21"
-    },
     {
       "query": "буронабивные сваи какой длины каркас если яма 7 метров",
       "keyword": "каркасы для буронабивных свай -арматурный -изготовление -купить -цена",
