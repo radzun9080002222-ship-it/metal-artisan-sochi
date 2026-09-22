@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as VacanciesRouteImport } from './routes/vacancies'
+import { Route as SvarochnyeRabotyRouteImport } from './routes/svarochnye-raboty'
+import { Route as MetalloobrabotkaRouteImport } from './routes/metalloobrabotka'
+import { Route as ChastnymRouteImport } from './routes/chastnym'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +25,68 @@ const VacanciesRoute = VacanciesRouteImport.update({
   path: '/vacancies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SvarochnyeRabotyRoute = SvarochnyeRabotyRouteImport.update({
+  id: '/svarochnye-raboty',
+  path: '/svarochnye-raboty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MetalloobrabotkaRoute = MetalloobrabotkaRouteImport.update({
+  id: '/metalloobrabotka',
+  path: '/metalloobrabotka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChastnymRoute = ChastnymRouteImport.update({
+  id: '/chastnym',
+  path: '/chastnym',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chastnym': typeof ChastnymRoute
+  '/metalloobrabotka': typeof MetalloobrabotkaRoute
+  '/svarochnye-raboty': typeof SvarochnyeRabotyRoute
   '/vacancies': typeof VacanciesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chastnym': typeof ChastnymRoute
+  '/metalloobrabotka': typeof MetalloobrabotkaRoute
+  '/svarochnye-raboty': typeof SvarochnyeRabotyRoute
   '/vacancies': typeof VacanciesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chastnym': typeof ChastnymRoute
+  '/metalloobrabotka': typeof MetalloobrabotkaRoute
+  '/svarochnye-raboty': typeof SvarochnyeRabotyRoute
   '/vacancies': typeof VacanciesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vacancies'
+  fullPaths:
+    | '/'
+    | '/chastnym'
+    | '/metalloobrabotka'
+    | '/svarochnye-raboty'
+    | '/vacancies'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vacancies'
-  id: '__root__' | '/' | '/vacancies'
+  to: '/' | '/chastnym' | '/metalloobrabotka' | '/svarochnye-raboty' | '/vacancies'
+  id:
+    | '__root__'
+    | '/'
+    | '/chastnym'
+    | '/metalloobrabotka'
+    | '/svarochnye-raboty'
+    | '/vacancies'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChastnymRoute: typeof ChastnymRoute
+  MetalloobrabotkaRoute: typeof MetalloobrabotkaRoute
+  SvarochnyeRabotyRoute: typeof SvarochnyeRabotyRoute
   VacanciesRoute: typeof VacanciesRoute
 }
 
@@ -65,11 +106,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VacanciesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/svarochnye-raboty': {
+      id: '/svarochnye-raboty'
+      path: '/svarochnye-raboty'
+      fullPath: '/svarochnye-raboty'
+      preLoaderRoute: typeof SvarochnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/metalloobrabotka': {
+      id: '/metalloobrabotka'
+      path: '/metalloobrabotka'
+      fullPath: '/metalloobrabotka'
+      preLoaderRoute: typeof MetalloobrabotkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chastnym': {
+      id: '/chastnym'
+      path: '/chastnym'
+      fullPath: '/chastnym'
+      preLoaderRoute: typeof ChastnymRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChastnymRoute: ChastnymRoute,
+  MetalloobrabotkaRoute: MetalloobrabotkaRoute,
+  SvarochnyeRabotyRoute: SvarochnyeRabotyRoute,
   VacanciesRoute: VacanciesRoute,
 }
 export const routeTree = rootRouteImport

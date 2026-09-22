@@ -246,6 +246,7 @@ function Nav() {
     { href: "#clients", label: "Для кого" },
     { href: "#workflow", label: "Как работаем" },
     { href: "#quality", label: "Качество" },
+    { href: "/chastnym/", label: "Частным лицам" },
     { href: "/vacancies/", label: "Вакансии" },
     { href: "#faq", label: "FAQ" },
     { href: "#contacts", label: "Контакты" },
@@ -948,6 +949,9 @@ function Footer() {
             <li><a href="#services" className="hover:text-foreground">Закладные детали</a></li>
             <li><a href="#services" className="hover:text-foreground">Резка и плазма</a></li>
             <li><a href="#services" className="hover:text-foreground">Металлоконструкции под ключ</a></li>
+            <li><a href="/metalloobrabotka/" className="hover:text-foreground">Металлообработка по прайсу</a></li>
+            <li><a href="/svarochnye-raboty/" className="hover:text-foreground">Навесы, ворота, ограждения</a></li>
+            <li><a href="/chastnym/" className="hover:text-foreground">Частным лицам</a></li>
             <li><a href="/vacancies/" className="hover:text-foreground">Вакансии</a></li>
           </ul>
         </div>
