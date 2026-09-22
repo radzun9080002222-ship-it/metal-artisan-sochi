@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   Check,
@@ -175,8 +175,8 @@ function Footer() {
             <span className="text-display text-lg">Каркас Инвест</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Собственное производство в Адлере на ул. Гастелло. Работаем и с организациями,
-            и с частными заказчиками: от одного хомута до навеса под ключ.
+            Собственное производство в Адлере на ул. Гастелло. Работаем и с организациями, и с
+            частными заказчиками: от одного хомута до навеса под ключ.
           </p>
         </div>
         <div>
@@ -213,6 +213,10 @@ function Footer() {
 }
 
 export function B2CLayout({ activeTo, children }: { activeTo: string; children: ReactNode }) {
+  useEffect(() => {
+    readAttribution();
+  }, [activeTo]);
+
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <Nav activeTo={activeTo} />
@@ -495,7 +499,9 @@ export function Steps({ items }: { items: { n: string; title: string; desc: stri
     <section className="border-y border-border bg-surface py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-eyebrow">Как заказать</div>
-        <h2 className="text-display mt-3 text-2xl sm:text-4xl">Без чертежей и согласований</h2>
+        <h2 className="text-display mt-3 text-2xl sm:text-4xl">
+          От вашей идеи до готового изделия
+        </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {items.map((item) => (
             <div key={item.n} className="surface-card bg-background p-5 sm:p-6">
@@ -632,8 +638,8 @@ export function LeadSection({
                 </span>
                 <h3 className="text-display text-xl">Заявка отправлена</h3>
                 <p className="text-sm text-muted-foreground">
-                  Перезвоним в рабочее время. Если срочно — напишите в MAX или Telegram,
-                  ответим быстрее.
+                  Перезвоним в рабочее время. Если срочно — напишите в MAX или Telegram, ответим
+                  быстрее.
                 </p>
               </div>
             ) : (
