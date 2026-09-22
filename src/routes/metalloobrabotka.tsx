@@ -55,6 +55,10 @@ export const Route = createFileRoute("/metalloobrabotka")({
   component: MetalloobrabotkaPage,
 });
 
+// Прайс скрыт до согласования цен с клиентом: поставить true, когда в
+// priceRows появятся реальные цифры вместо «по запросу».
+const SHOW_PRICES = false;
+
 const PAGE = "metalloobrabotka";
 
 const priceRows: PriceRow[] = [
@@ -187,14 +191,16 @@ function MetalloobrabotkaPage() {
         ]}
       />
 
-      <PriceTable
-        id="ceny"
-        eyebrow="Прайс"
-        title="Сколько это стоит"
-        lead="Мелкие позиции считаем по прайсу, крупные — по эскизу. Если нужной работы в списке нет, спросите: скорее всего, делаем."
-        rows={priceRows}
-        note={priceNote}
-      />
+      {SHOW_PRICES ? (
+        <PriceTable
+          id="ceny"
+          eyebrow="Прайс"
+          title="Сколько это стоит"
+          lead="Мелкие позиции считаем по прайсу, крупные — по эскизу. Если нужной работы в списке нет, спросите: скорее всего, делаем."
+          rows={priceRows}
+          note={priceNote}
+        />
+      ) : null}
 
       <ServiceGrid page={PAGE} eyebrow="Работы" title="Что делаем по металлу" items={services} />
 

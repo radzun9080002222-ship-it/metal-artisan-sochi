@@ -56,6 +56,10 @@ export const Route = createFileRoute("/svarochnye-raboty")({
   component: SvarochnyeRabotyPage,
 });
 
+// Прайс скрыт до согласования цен с клиентом: поставить true, когда в
+// priceRows появятся реальные цифры вместо «по запросу».
+const SHOW_PRICES = false;
+
 const PAGE = "svarochnye-raboty";
 
 const priceRows: PriceRow[] = [
@@ -192,14 +196,16 @@ function SvarochnyeRabotyPage() {
         ]}
       />
 
-      <PriceTable
-        id="ceny"
-        eyebrow="Прайс"
-        title="Сколько это стоит"
-        lead="Ориентир по основным изделиям. Окончательная сумма — после замера, без неё цифры в интернете всегда врут."
-        rows={priceRows}
-        note={priceNote}
-      />
+      {SHOW_PRICES ? (
+        <PriceTable
+          id="ceny"
+          eyebrow="Прайс"
+          title="Сколько это стоит"
+          lead="Ориентир по основным изделиям. Окончательная сумма — после замера, без неё цифры в интернете всегда врут."
+          rows={priceRows}
+          note={priceNote}
+        />
+      ) : null}
 
       <ServiceGrid page={PAGE} eyebrow="Изделия" title="Что варим и ставим" items={services} />
 
