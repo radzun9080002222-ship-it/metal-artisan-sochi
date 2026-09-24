@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-23T12:14:22+03:00",
-    "period_from": "2026-08-25",
-    "period_to": "2026-09-23",
+    "updated_at": "2026-09-24T12:12:17+03:00",
+    "period_from": "2026-08-26",
+    "period_to": "2026-09-24",
     "week_from": "2026-09-21",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 10411.76,
+    "spend": 9479.67,
     "impressions": null,
-    "clicks": 65,
+    "clicks": 58,
     "ctr": null,
-    "cpc": 160.18,
+    "cpc": 163.44,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 50.0
+    "bounce_rate": 50.9
   },
   "weekly": {
     "spend": 0.0,
     "clicks": 0
   },
   "metrika": {
-    "visits": 64,
-    "users": 53,
-    "bounce_rate": 50.0,
+    "visits": 57,
+    "users": 46,
+    "bounce_rate": 50.9,
     "page_depth": 1.02,
-    "avg_duration_sec": 36
+    "avg_duration_sec": 39
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 10411.76
+      "cpl": 9479.67
     },
     {
       "id": 584982462,
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-25",
-      "spend": 932.09,
-      "impressions": null,
-      "clicks": 7,
-      "visits": 7,
-      "users": 7,
-      "bounce_rate": 42.9,
-      "page_depth": 1.0,
-      "avg_duration_sec": 9,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-26",
       "spend": 568.82,
@@ -675,72 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-24",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "бнс 430 какой каркас",
-      "keyword": "каркас БНС -арматурный -изготовление -производство -заказывать -купить -цена -стоимость -производитель -чертеж -кж -опт -краснодар -сочи -новороссийск -армавир -анапа -геленджик -туапсе",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 110.67,
-      "leads": null,
-      "date": "2026-08-25"
-    },
-    {
-      "query": "вязка арматуры в плитах перекрытия",
-      "keyword": "вязка арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 404.5,
-      "leads": null,
-      "date": "2026-08-25"
-    },
-    {
-      "query": "каркас буронабивной сваи чертеж",
-      "keyword": "каркас буронабивной сваи -арматурный -изготовление -купить",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 56.71,
-      "leads": null,
-      "date": "2026-08-25"
-    },
-    {
-      "query": "каркас бытовки из металла",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 41.0,
-      "leads": null,
-      "date": "2026-08-25"
-    },
-    {
-      "query": "каркас для свай 1000",
-      "keyword": "каркасы для свай -арматурный -изготовление -буронабивной",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 196.19,
-      "leads": null,
-      "date": "2026-08-25"
-    },
-    {
-      "query": "каркас из арматуры для крышки жби кольца",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 80.88,
-      "leads": null,
-      "date": "2026-08-25"
-    },
-    {
-      "query": "каркас лстк под баню",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 42.14,
-      "leads": null,
-      "date": "2026-08-25"
-    },
     {
       "query": "как гнуть арматуру каркас 20 на 30 способы",
       "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
