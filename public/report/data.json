@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-25T12:31:52+03:00",
-    "period_from": "2026-08-27",
-    "period_to": "2026-09-25",
+    "updated_at": "2026-09-26T12:16:48+03:00",
+    "period_from": "2026-08-28",
+    "period_to": "2026-09-26",
     "week_from": "2026-09-21",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 8910.86,
+    "spend": 7665.54,
     "impressions": null,
-    "clicks": 53,
+    "clicks": 46,
     "ctr": null,
-    "cpc": 168.13,
+    "cpc": 166.64,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 48.1
+    "bounce_rate": 51.1
   },
   "weekly": {
-    "spend": 0.0,
-    "clicks": 0
+    "spend": 91.42,
+    "clicks": 1
   },
   "metrika": {
-    "visits": 52,
-    "users": 42,
-    "bounce_rate": 48.1,
+    "visits": 45,
+    "users": 36,
+    "bounce_rate": 51.1,
     "page_depth": 1.02,
-    "avg_duration_sec": 38
+    "avg_duration_sec": 42
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 8910.86
+      "cpl": 7665.54
     },
     {
       "id": 584982462,
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-27",
-      "spend": 1336.74,
-      "impressions": null,
-      "clicks": 8,
-      "visits": 8,
-      "users": 7,
-      "bounce_rate": 37.5,
-      "page_depth": 1.0,
-      "avg_duration_sec": 9,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-28",
       "spend": 385.23,
@@ -675,90 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-26",
+      "spend": 91.42,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "армакаркас",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 155.44,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "арматурные каркасы горный алтай",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 84.8,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "диаметр проема сваи на 42 на сколько нужно вставлять каркас из арматуры",
-      "keyword": "арматурные каркасы для свай -буронабивной",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 46.59,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "изготовление армокаркасов москва",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 663.94,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "каркасы бнс из арматуры",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 105.76,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "купить арматурный каркас с швеллером для откатных ворот",
-      "keyword": "купить арматурный каркас",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 21.11,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "строим металлический каркас на болтах два этажа",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 200.87,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "фундамент из стеклопластиковой арматуры правила армирования",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 58.22,
-      "leads": null,
-      "date": "2026-08-27"
-    },
-    {
-      "query": "отверстие сваи 42 на сколько надо делать каркас из арматуры во внутрь",
-      "keyword": "вязка арматурных каркасов",
-      "impressions": null,
-      "clicks": 0,
-      "spend": 0.0,
-      "leads": null,
-      "date": "2026-08-27"
-    },
     {
       "query": "армокаркас для фундамента",
       "keyword": "армокаркас для свай -буронабивной",
@@ -1154,6 +1073,15 @@
       "spend": 558.28,
       "leads": null,
       "date": "2026-09-04"
+    },
+    {
+      "query": "вид каркаса арматуры в буронабивные сваи",
+      "keyword": "каркас буронабивной сваи -изготовление -купить -цена -арматурный",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 91.42,
+      "leads": null,
+      "date": "2026-09-26"
     }
   ],
   "notes": [
