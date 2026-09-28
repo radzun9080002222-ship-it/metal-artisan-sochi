@@ -3,10 +3,10 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-27T12:57:25+03:00",
-    "period_from": "2026-08-29",
-    "period_to": "2026-09-27",
-    "week_from": "2026-09-21",
+    "updated_at": "2026-09-28T13:46:32+03:00",
+    "period_from": "2026-08-30",
+    "period_to": "2026-09-28",
+    "week_from": "2026-09-28",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 7289.67,
+    "spend": 7286.13,
     "impressions": null,
-    "clicks": 44,
+    "clicks": 41,
     "ctr": null,
-    "cpc": 165.67,
+    "cpc": 177.71,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 50.0
+    "bounce_rate": 45.0
   },
   "weekly": {
-    "spend": 100.78,
-    "clicks": 2
+    "spend": 130.0,
+    "clicks": 1
   },
   "metrika": {
-    "visits": 42,
-    "users": 33,
-    "bounce_rate": 50.0,
+    "visits": 40,
+    "users": 31,
+    "bounce_rate": 45.0,
     "page_depth": 1.02,
-    "avg_duration_sec": 45
+    "avg_duration_sec": 48
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 7289.67
+      "cpl": 7286.13
     },
     {
       "id": 584982462,
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-29",
-      "spend": 133.54,
-      "impressions": null,
-      "clicks": 4,
-      "visits": 3,
-      "users": 3,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-08-30",
       "spend": 853.96,
@@ -675,45 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-28",
+      "spend": 130.0,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "алсер строй чебоксары",
-      "keyword": "Автотаргетинг",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 47.52,
-      "leads": null,
-      "date": "2026-08-29"
-    },
-    {
-      "query": "ейск сколько стоит связать армокаркас",
-      "keyword": "вязка арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 21.87,
-      "leads": null,
-      "date": "2026-08-29"
-    },
-    {
-      "query": "расчет металлического каркаса из профильной трубы для навеса",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 35.39,
-      "leads": null,
-      "date": "2026-08-29"
-    },
-    {
-      "query": "хозблок из металлокаркаса",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 28.77,
-      "leads": null,
-      "date": "2026-08-29"
-    },
     {
       "query": "как называются вертикальные металлические части каркаса при заливке фундамента",
       "keyword": "вязка арматурных каркасов",
@@ -1064,6 +1028,15 @@
       "spend": 9.36,
       "leads": null,
       "date": "2026-09-27"
+    },
+    {
+      "query": "свая буронабивная каркас цена сочи",
+      "keyword": "каркасы буронабивных свай купить",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 130.0,
+      "leads": null,
+      "date": "2026-09-28"
     }
   ],
   "notes": [
