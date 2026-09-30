@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-09-29T13:34:43+03:00",
-    "period_from": "2026-08-31",
-    "period_to": "2026-09-29",
+    "updated_at": "2026-09-30T13:24:27+03:00",
+    "period_from": "2026-09-01",
+    "period_to": "2026-09-30",
     "week_from": "2026-09-28",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 6432.17,
+    "spend": 5946.6,
     "impressions": null,
-    "clicks": 33,
+    "clicks": 29,
     "ctr": null,
-    "cpc": 194.91,
+    "cpc": 205.06,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 41.2
+    "bounce_rate": 43.3
   },
   "weekly": {
-    "spend": 130.0,
-    "clicks": 1
+    "spend": 185.56,
+    "clicks": 2
   },
   "metrika": {
-    "visits": 34,
-    "users": 26,
-    "bounce_rate": 41.2,
+    "visits": 30,
+    "users": 22,
+    "bounce_rate": 43.3,
     "page_depth": 1.03,
-    "avg_duration_sec": 55
+    "avg_duration_sec": 12
   },
   "goals": [
     {
@@ -51,7 +51,7 @@
       "name": "Клик по телефону",
       "kind": "contact",
       "count": 1,
-      "cpl": 6432.17
+      "cpl": 5946.6
     },
     {
       "id": 584982462,
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-08-31",
-      "spend": 541.13,
-      "impressions": null,
-      "clicks": 5,
-      "visits": 5,
-      "users": 5,
-      "bounce_rate": 20.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 308,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-09-01",
       "spend": 1638.38,
@@ -675,54 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-09-30",
+      "spend": 55.56,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "арматурные каркасы типа бнс",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 97.92,
-      "leads": null,
-      "date": "2026-08-31"
-    },
-    {
-      "query": "изготовление каркасов для буронабивных свай",
-      "keyword": "изготовление каркасов для буронабивных свай",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 179.41,
-      "leads": null,
-      "date": "2026-08-31"
-    },
-    {
-      "query": "как рассчитать каркас на армопояс",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 49.73,
-      "leads": null,
-      "date": "2026-08-31"
-    },
-    {
-      "query": "какой шаг распределителей на каркасе из арматуры должен быть",
-      "keyword": "арматурный каркас -изготовление -производство -заказ -купить -цена -свая -вязка -сварной -пространственный -чертеж -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 84.59,
-      "leads": null,
-      "date": "2026-08-31"
-    },
-    {
-      "query": "производство каркасов бнс в республике адыгея",
-      "keyword": "производство каркасов БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 129.48,
-      "leads": null,
-      "date": "2026-08-31"
-    },
     {
       "query": "арка межкомнатная из металла",
       "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
@@ -965,10 +920,20 @@
       "spend": 130.0,
       "leads": null,
       "date": "2026-09-28"
+    },
+    {
+      "query": "каркасы бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 55.56,
+      "leads": null,
+      "date": "2026-09-30"
     }
   ],
   "notes": [
     "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
-    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются."
+    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
+    "Накоплено 29 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
   ]
 }
