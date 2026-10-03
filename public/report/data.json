@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-10-02T13:25:36+03:00",
-    "period_from": "2026-09-03",
-    "period_to": "2026-10-02",
+    "updated_at": "2026-10-03T12:47:22+03:00",
+    "period_from": "2026-09-04",
+    "period_to": "2026-10-03",
     "week_from": "2026-09-28",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 3402.31,
+    "spend": 1032.27,
     "impressions": null,
-    "clicks": 16,
+    "clicks": 11,
     "ctr": null,
-    "cpc": 212.64,
+    "cpc": 93.84,
     "leads_total": 0,
     "contact_actions_total": 0,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 41.2
+    "bounce_rate": 30.0
   },
   "weekly": {
-    "spend": 289.5,
-    "clicks": 6
+    "spend": 373.21,
+    "clicks": 8
   },
   "metrika": {
-    "visits": 17,
-    "users": 14,
-    "bounce_rate": 41.2,
+    "visits": 10,
+    "users": 10,
+    "bounce_rate": 30.0,
     "page_depth": 1.0,
-    "avg_duration_sec": 8
+    "avg_duration_sec": 10
   },
   "goals": [
     {
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-09-03",
-      "spend": 2453.75,
-      "impressions": null,
-      "clicks": 7,
-      "visits": 8,
-      "users": 6,
-      "bounce_rate": 50.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 7,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-09-04",
       "spend": 558.28,
@@ -658,11 +638,11 @@
     },
     {
       "date": "2026-10-02",
-      "spend": 37.14,
+      "spend": 111.64,
       "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
       "bounce_rate": 0.0,
       "page_depth": 1.0,
       "avg_duration_sec": 15,
@@ -675,63 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-10-03",
+      "spend": 9.21,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "изготовление каркасных и модульных строений сочи",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 2,
-      "spend": 863.33,
-      "leads": null,
-      "date": "2026-09-03"
-    },
-    {
-      "query": "баня из железного каркаса",
-      "keyword": "армокаркас -свая -бнс -изготовление -заказывать",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 92.51,
-      "leads": null,
-      "date": "2026-09-03"
-    },
-    {
-      "query": "готовые кольца на свайный каркас",
-      "keyword": "каркасы для свай -арматурный -изготовление -буронабивной",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 126.12,
-      "leads": null,
-      "date": "2026-09-03"
-    },
-    {
-      "query": "журнал изготовления и освидетельствования арматурных каркасов гост",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 72.57,
-      "leads": null,
-      "date": "2026-09-03"
-    },
-    {
-      "query": "разрешенный процент стыковки в армокаркасе",
-      "keyword": "вязка арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 348.87,
-      "leads": null,
-      "date": "2026-09-03"
-    },
-    {
-      "query": "сочи каркас буронабивных свай",
-      "keyword": "каркас буронабивной сваи -арматурный -изготовление -купить",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 950.34,
-      "leads": null,
-      "date": "2026-09-03"
-    },
     {
       "query": "изготовление каркасных и модульных строений сочи",
       "keyword": "изготовление арматурных каркасов",
@@ -797,17 +743,35 @@
     },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 74.5,
+      "leads": null,
+      "date": "2026-10-02"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "производство арматурных каркасов -бнс",
       "impressions": null,
       "clicks": 1,
       "spend": 37.14,
       "leads": null,
       "date": "2026-10-02"
+    },
+    {
+      "query": "каркасы и сетки арматурные плоские собранные и сваренные связанные в арматурные изделия класс вр i диаметр 4 мм цена за т",
+      "keyword": "цена арматурного каркаса -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 9.21,
+      "leads": null,
+      "date": "2026-10-03"
     }
   ],
   "notes": [
     "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
     "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
-    "Накоплено 16 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
+    "Накоплено 11 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
   ]
 }
