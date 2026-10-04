@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-10-03T12:47:22+03:00",
-    "period_from": "2026-09-04",
-    "period_to": "2026-10-03",
+    "updated_at": "2026-10-04T13:30:59+03:00",
+    "period_from": "2026-09-05",
+    "period_to": "2026-10-04",
     "week_from": "2026-09-28",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 1032.27,
+    "spend": 842.18,
     "impressions": null,
     "clicks": 11,
     "ctr": null,
-    "cpc": 93.84,
+    "cpc": 76.56,
     "leads_total": 0,
     "contact_actions_total": 0,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 30.0
+    "bounce_rate": 20.0
   },
   "weekly": {
-    "spend": 373.21,
-    "clicks": 8
+    "spend": 741.4,
+    "clicks": 9
   },
   "metrika": {
     "visits": 10,
     "users": 10,
-    "bounce_rate": 30.0,
+    "bounce_rate": 20.0,
     "page_depth": 1.0,
-    "avg_duration_sec": 10
+    "avg_duration_sec": 12
   },
   "goals": [
     {
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-09-04",
-      "spend": 558.28,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-09-05",
       "spend": 0.0,
@@ -675,18 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-10-04",
+      "spend": 368.19,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "изготовление каркасных и модульных строений сочи",
-      "keyword": "изготовление арматурных каркасов",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 558.28,
-      "leads": null,
-      "date": "2026-09-04"
-    },
     {
       "query": "вид каркаса арматуры в буронабивные сваи",
       "keyword": "каркас буронабивной сваи -изготовление -купить -цена -арматурный",
@@ -767,6 +758,15 @@
       "spend": 9.21,
       "leads": null,
       "date": "2026-10-03"
+    },
+    {
+      "query": "металлокаркас для буронабивных свай",
+      "keyword": "армокаркасы для буронабивных свай",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 368.19,
+      "leads": null,
+      "date": "2026-10-04"
     }
   ],
   "notes": [
