@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-10-05T14:22:29+03:00",
-    "period_from": "2026-09-06",
-    "period_to": "2026-10-05",
+    "updated_at": "2026-10-06T14:10:52+03:00",
+    "period_from": "2026-09-07",
+    "period_to": "2026-10-06",
     "week_from": "2026-10-05",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 1074.84,
+    "spend": 1220.82,
     "impressions": null,
-    "clicks": 15,
+    "clicks": 18,
     "ctr": null,
-    "cpc": 71.66,
+    "cpc": 67.82,
     "leads_total": 0,
     "contact_actions_total": 0,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 15.4
+    "bounce_rate": 21.4
   },
   "weekly": {
-    "spend": 232.66,
-    "clicks": 4
+    "spend": 378.64,
+    "clicks": 7
   },
   "metrika": {
-    "visits": 13,
-    "users": 11,
-    "bounce_rate": 15.4,
+    "visits": 14,
+    "users": 12,
+    "bounce_rate": 21.4,
     "page_depth": 1.0,
-    "avg_duration_sec": 13
+    "avg_duration_sec": 12
   },
   "goals": [
     {
@@ -76,26 +76,6 @@
     }
   ],
   "daily": [
-    {
-      "date": "2026-09-06",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-09-07",
       "spend": 0.0,
@@ -675,6 +655,26 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-10-06",
+      "spend": 145.98,
+      "impressions": null,
+      "clicks": 3,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
@@ -803,11 +803,38 @@
       "spend": 86.29,
       "leads": null,
       "date": "2026-10-05"
+    },
+    {
+      "query": "из арматуры круглые сваи каркасы",
+      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 94.23,
+      "leads": null,
+      "date": "2026-10-06"
+    },
+    {
+      "query": "каркас под самонаборную сэндвич панель крыши с кобылками из металла",
+      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 50.57,
+      "leads": null,
+      "date": "2026-10-06"
+    },
+    {
+      "query": "каркасы бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 1.18,
+      "leads": null,
+      "date": "2026-10-06"
     }
   ],
   "notes": [
     "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
     "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
-    "Накоплено 15 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
+    "Накоплено 18 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
   ]
 }
