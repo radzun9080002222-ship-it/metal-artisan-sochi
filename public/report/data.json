@@ -3,10 +3,10 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-10-06T14:10:52+03:00",
-    "period_from": "2026-09-07",
-    "period_to": "2026-10-06",
-    "week_from": "2026-10-05",
+    "updated_at": "2026-11-06T13:59:08+03:00",
+    "period_from": "2026-10-08",
+    "period_to": "2026-11-06",
+    "week_from": "2026-11-02",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 1220.82,
+    "spend": 6057.34,
     "impressions": null,
-    "clicks": 18,
+    "clicks": 63,
     "ctr": null,
-    "cpc": 67.82,
+    "cpc": 96.15,
     "leads_total": 0,
-    "contact_actions_total": 0,
+    "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 21.4
+    "bounce_rate": 40.0
   },
   "weekly": {
-    "spend": 378.64,
-    "clicks": 7
+    "spend": 930.75,
+    "clicks": 11
   },
   "metrika": {
-    "visits": 14,
-    "users": 12,
-    "bounce_rate": 21.4,
-    "page_depth": 1.0,
-    "avg_duration_sec": 12
+    "visits": 60,
+    "users": 54,
+    "bounce_rate": 40.0,
+    "page_depth": 1.02,
+    "avg_duration_sec": 13
   },
   "goals": [
     {
@@ -71,500 +71,60 @@
       "id": 585122111,
       "name": "Переход в MAX",
       "kind": "contact",
-      "count": 0,
-      "cpl": null
+      "count": 3,
+      "cpl": 2019.11
     }
   ],
   "daily": [
     {
-      "date": "2026-09-07",
-      "spend": 0.0,
+      "date": "2026-10-08",
+      "spend": 66.26,
       "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-08",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-09",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-10",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-11",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-12",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-13",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-14",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-15",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-16",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-17",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-18",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-19",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-20",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-21",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-22",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-23",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-24",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-25",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-26",
-      "spend": 91.42,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-27",
-      "spend": 9.36,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-28",
-      "spend": 130.0,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-29",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-09-30",
-      "spend": 55.56,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-10-01",
-      "spend": 66.8,
-      "impressions": null,
-      "clicks": 3,
+      "clicks": 2,
       "visits": 2,
       "users": 2,
       "bounce_rate": 0.0,
       "page_depth": 1.0,
+      "avg_duration_sec": 22,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-09",
+      "spend": 151.02,
+      "impressions": null,
+      "clicks": 4,
+      "visits": 4,
+      "users": 4,
+      "bounce_rate": 25.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 11,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-10",
+      "spend": 828.48,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
       "avg_duration_sec": 15,
       "goals": {
         "584981732": 0,
@@ -577,8 +137,168 @@
       "contact_actions": 0
     },
     {
-      "date": "2026-10-02",
-      "spend": 111.64,
+      "date": "2026-10-11",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-12",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-13",
+      "spend": 83.53,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-14",
+      "spend": 134.96,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-15",
+      "spend": 69.53,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-16",
+      "spend": 411.33,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 32,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 2
+      },
+      "leads": 0,
+      "contact_actions": 2
+    },
+    {
+      "date": "2026-10-17",
+      "spend": 115.73,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-18",
+      "spend": 38.72,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-19",
+      "spend": 52.37,
       "impressions": null,
       "clicks": 2,
       "visits": 2,
@@ -597,10 +317,130 @@
       "contact_actions": 0
     },
     {
-      "date": "2026-10-03",
-      "spend": 9.21,
+      "date": "2026-10-20",
+      "spend": 527.53,
+      "impressions": null,
+      "clicks": 4,
+      "visits": 4,
+      "users": 4,
+      "bounce_rate": 75.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 4,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-21",
+      "spend": 426.81,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 92,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-22",
+      "spend": 421.68,
+      "impressions": null,
+      "clicks": 6,
+      "visits": 5,
+      "users": 5,
+      "bounce_rate": 40.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 9,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 1
+      },
+      "leads": 0,
+      "contact_actions": 1
+    },
+    {
+      "date": "2026-10-23",
+      "spend": 90.34,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-24",
+      "spend": 79.18,
       "impressions": null,
       "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-25",
+      "spend": 183.71,
+      "impressions": null,
+      "clicks": 5,
+      "visits": 5,
+      "users": 3,
+      "bounce_rate": 60.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 5,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-26",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
       "visits": 0,
       "users": 0,
       "bounce_rate": null,
@@ -617,8 +457,108 @@
       "contact_actions": 0
     },
     {
-      "date": "2026-10-04",
-      "spend": 368.19,
+      "date": "2026-10-27",
+      "spend": 78.73,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-28",
+      "spend": 309.23,
+      "impressions": null,
+      "clicks": 6,
+      "visits": 5,
+      "users": 5,
+      "bounce_rate": 60.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 6,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-29",
+      "spend": 515.65,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-30",
+      "spend": 392.28,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "page_depth": 1.5,
+      "avg_duration_sec": 29,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-10-31",
+      "spend": 48.36,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 1,
+      "users": 1,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-01",
+      "spend": 101.16,
       "impressions": null,
       "clicks": 1,
       "visits": 1,
@@ -637,15 +577,15 @@
       "contact_actions": 0
     },
     {
-      "date": "2026-10-05",
-      "spend": 232.66,
+      "date": "2026-11-02",
+      "spend": 132.93,
       "impressions": null,
-      "clicks": 4,
-      "visits": 4,
+      "clicks": 3,
+      "visits": 2,
       "users": 2,
       "bounce_rate": 0.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 16,
+      "avg_duration_sec": 15,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -657,15 +597,75 @@
       "contact_actions": 0
     },
     {
-      "date": "2026-10-06",
-      "spend": 145.98,
+      "date": "2026-11-03",
+      "spend": 22.75,
       "impressions": null,
-      "clicks": 3,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
+      "clicks": 1,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-04",
+      "spend": 218.52,
+      "impressions": null,
+      "clicks": 4,
+      "visits": 5,
+      "users": 4,
+      "bounce_rate": 60.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 0,
+      "avg_duration_sec": 5,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-05",
+      "spend": 499.45,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 4,
+      "users": 4,
+      "bounce_rate": 25.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-06",
+      "spend": 57.1,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -679,162 +679,485 @@
   ],
   "queries": [
     {
-      "query": "вид каркаса арматуры в буронабивные сваи",
-      "keyword": "каркас буронабивной сваи -изготовление -купить -цена -арматурный",
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 91.42,
+      "spend": 41.89,
       "leads": null,
-      "date": "2026-09-26"
+      "date": "2026-10-08"
     },
     {
-      "query": "прайс лист арматурный каркас краснодар цена за тн",
-      "keyword": "цена арматурного каркаса -бнс",
+      "query": "гост на каркасы для свай",
+      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
       "impressions": null,
       "clicks": 1,
-      "spend": 9.36,
+      "spend": 24.37,
       "leads": null,
-      "date": "2026-09-27"
+      "date": "2026-10-08"
     },
     {
-      "query": "свая буронабивная каркас цена сочи",
-      "keyword": "каркасы буронабивных свай купить",
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "производство арматурных каркасов -бнс",
       "impressions": null,
-      "clicks": 1,
-      "spend": 130.0,
+      "clicks": 3,
+      "spend": 89.01,
       "leads": null,
-      "date": "2026-09-28"
-    },
-    {
-      "query": "каркасы бнс",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 55.56,
-      "leads": null,
-      "date": "2026-09-30"
+      "date": "2026-10-09"
     },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 62.01,
+      "leads": null,
+      "date": "2026-10-09"
+    },
+    {
+      "query": "металлокаркас для сваи диаметром 530см",
+      "keyword": "армокаркас для свай -буронабивной -бнс",
       "impressions": null,
       "clicks": 2,
-      "spend": 39.05,
+      "spend": 828.48,
       "leads": null,
-      "date": "2026-10-01"
-    },
-    {
-      "query": "каркас арматурный от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 27.75,
-      "leads": null,
-      "date": "2026-10-01"
-    },
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 74.5,
-      "leads": null,
-      "date": "2026-10-02"
+      "date": "2026-10-10"
     },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "производство арматурных каркасов -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 37.14,
+      "spend": 63.01,
       "leads": null,
-      "date": "2026-10-02"
+      "date": "2026-10-13"
     },
     {
-      "query": "каркасы и сетки арматурные плоские собранные и сваренные связанные в арматурные изделия класс вр i диаметр 4 мм цена за т",
-      "keyword": "цена арматурного каркаса -бнс",
+      "query": "каркас арматурный от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 9.21,
+      "spend": 20.53,
       "leads": null,
-      "date": "2026-10-03"
+      "date": "2026-10-13"
     },
     {
-      "query": "металлокаркас для буронабивных свай",
-      "keyword": "армокаркасы для буронабивных свай",
+      "query": "каркас бнс",
+      "keyword": "каркас БНС -купить -изготовление -армавир -туапсе -кж -стоимость -цена -заказывать -геленджик -арматурный -чертеж -краснодар -производитель -сочи -новороссийск -опт -анапа -производство",
       "impressions": null,
       "clicks": 1,
-      "spend": 368.19,
+      "spend": 134.96,
       "leads": null,
-      "date": "2026-10-04"
+      "date": "2026-10-14"
     },
     {
-      "query": "арматурный каркас буронабивной сваи",
-      "keyword": "арматурный каркас для буронабивной сваи",
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "производство арматурных каркасов -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 33.85,
+      "spend": 36.82,
       "leads": null,
-      "date": "2026-10-05"
+      "date": "2026-10-15"
     },
     {
-      "query": "арматурный каркас буронабивной сваи пошагово",
-      "keyword": "арматурный каркас для буронабивной сваи",
+      "query": "изготовление каркасов металлических",
+      "keyword": "изготовление арматурных каркасов -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 46.04,
+      "spend": 32.7,
       "leads": null,
-      "date": "2026-10-05"
+      "date": "2026-10-15"
     },
     {
-      "query": "арматурный каркас буронабивной сваи пятка",
-      "keyword": "арматурный каркас для буронабивной сваи",
+      "query": "арматурные каркасы в краснодаре",
+      "keyword": "арматурные каркасы Краснодар -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 66.47,
+      "spend": 374.98,
       "leads": null,
-      "date": "2026-10-05"
+      "date": "2026-10-16"
     },
     {
-      "query": "армокаркасы на юге россии купить",
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 36.35,
+      "leads": null,
+      "date": "2026-10-16"
+    },
+    {
+      "query": "арматурные каркасы показать сварку",
+      "keyword": "сварные арматурные каркасы -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 115.73,
+      "leads": null,
+      "date": "2026-10-17"
+    },
+    {
+      "query": "возможно ли изготовить самодельный металлический каркас для вентилируемого фасада",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 38.72,
+      "leads": null,
+      "date": "2026-10-18"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 32.93,
+      "leads": null,
+      "date": "2026-10-19"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "производство арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 19.44,
+      "leads": null,
+      "date": "2026-10-19"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 31.1,
+      "leads": null,
+      "date": "2026-10-20"
+    },
+    {
+      "query": "армокаркасы купить",
       "keyword": "купить арматурный каркас -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 86.29,
+      "spend": 118.77,
       "leads": null,
-      "date": "2026-10-05"
+      "date": "2026-10-20"
     },
     {
-      "query": "из арматуры круглые сваи каркасы",
-      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 94.23,
-      "leads": null,
-      "date": "2026-10-06"
-    },
-    {
-      "query": "каркас под самонаборную сэндвич панель крыши с кобылками из металла",
-      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 50.57,
-      "leads": null,
-      "date": "2026-10-06"
-    },
-    {
-      "query": "каркасы бнс",
+      "query": "металлокаркас бнс",
       "keyword": "арматурные каркасы БНС",
       "impressions": null,
       "clicks": 1,
-      "spend": 1.18,
+      "spend": 299.2,
       "leads": null,
-      "date": "2026-10-06"
+      "date": "2026-10-20"
+    },
+    {
+      "query": "отклонения армокаркаса бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 78.46,
+      "leads": null,
+      "date": "2026-10-20"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 63.4,
+      "leads": null,
+      "date": "2026-10-21"
+    },
+    {
+      "query": "сваи сочи каркасы",
+      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 363.41,
+      "leads": null,
+      "date": "2026-10-21"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 32.21,
+      "leads": null,
+      "date": "2026-10-22"
+    },
+    {
+      "query": "арматурный каркас заказать",
+      "keyword": "арматурные каркасы на заказ -бнс -вязка",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 94.28,
+      "leads": null,
+      "date": "2026-10-22"
+    },
+    {
+      "query": "каркас арматурный от производителя заказать с гарантией",
+      "keyword": "арматурные каркасы на заказ -бнс -вязка",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 23.56,
+      "leads": null,
+      "date": "2026-10-22"
+    },
+    {
+      "query": "купить готовые арматурные каркасы для колонн севастополь",
+      "keyword": "купить арматурный каркас -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 116.01,
+      "leads": null,
+      "date": "2026-10-22"
+    },
+    {
+      "query": "проект каркаса из 16ой арматуры диаметр 300мм длина 4000мм для сваи бнс",
+      "keyword": "каркас БНС по КЖ",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 58.78,
+      "leads": null,
+      "date": "2026-10-22"
+    },
+    {
+      "query": "расположение стержней арматуры в каркасе для свай",
+      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 96.85,
+      "leads": null,
+      "date": "2026-10-22"
+    },
+    {
+      "query": "арматурный каркас для буронабивных свай купить",
+      "keyword": "каркасы буронабивных свай купить",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 3.41,
+      "leads": null,
+      "date": "2026-10-23"
+    },
+    {
+      "query": "изготовление каркасов металлических",
+      "keyword": "изготовление армокаркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 86.93,
+      "leads": null,
+      "date": "2026-10-23"
+    },
+    {
+      "query": "чертеж армокаркас над гаражными воротами",
+      "keyword": "армокаркас для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 79.18,
+      "leads": null,
+      "date": "2026-10-24"
+    },
+    {
+      "query": "расчет армокаркаса над гаражными воротами",
+      "keyword": "армокаркас для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 3,
+      "spend": 136.38,
+      "leads": null,
+      "date": "2026-10-25"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 28.31,
+      "leads": null,
+      "date": "2026-10-25"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "производство арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 19.02,
+      "leads": null,
+      "date": "2026-10-25"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 78.73,
+      "leads": null,
+      "date": "2026-10-27"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 3,
+      "spend": 78.98,
+      "leads": null,
+      "date": "2026-10-28"
+    },
+    {
+      "query": "проволочный каркас для свай",
+      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 31.35,
+      "leads": null,
+      "date": "2026-10-28"
+    },
+    {
+      "query": "пространственный каркас бнс",
+      "keyword": "арматурные каркасы БНС",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 104.96,
+      "leads": null,
+      "date": "2026-10-28"
+    },
+    {
+      "query": "чертеж для изготовление армокаркаса для сваи 300мм",
+      "keyword": "изготовление каркасов для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 93.93,
+      "leads": null,
+      "date": "2026-10-28"
+    },
+    {
+      "query": "арматурные каркасы для сваи в сочи",
+      "keyword": "арматурные каркасы Сочи -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 515.65,
+      "leads": null,
+      "date": "2026-10-29"
+    },
+    {
+      "query": "армокаркасы краснодар",
+      "keyword": "арматурные каркасы Краснодар -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 312.11,
+      "leads": null,
+      "date": "2026-10-30"
+    },
+    {
+      "query": "станица холмская краснодарский производство армокаркасов",
+      "keyword": "производство арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 80.18,
+      "leads": null,
+      "date": "2026-10-30"
+    },
+    {
+      "query": "изготовление каркасов металлических",
+      "keyword": "изготовление армокаркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 48.36,
+      "leads": null,
+      "date": "2026-10-31"
+    },
+    {
+      "query": "изготовление каркасов для буронабивных свай",
+      "keyword": "изготовление каркасов для буронабивных свай",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 101.16,
+      "leads": null,
+      "date": "2026-11-01"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 61.53,
+      "leads": null,
+      "date": "2026-11-02"
+    },
+    {
+      "query": "сварить металлический каркас на заказ",
+      "keyword": "изготовление армокаркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 71.4,
+      "leads": null,
+      "date": "2026-11-02"
+    },
+    {
+      "query": "производство каркасов жби",
+      "keyword": "производство арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 22.75,
+      "leads": null,
+      "date": "2026-11-03"
+    },
+    {
+      "query": "сварной каркас сваи 530мм рассчитать материал",
+      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 100.17,
+      "leads": null,
+      "date": "2026-11-04"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 41.35,
+      "leads": null,
+      "date": "2026-11-04"
+    },
+    {
+      "query": "изготовление каркасов металлических",
+      "keyword": "изготовление армокаркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 77.0,
+      "leads": null,
+      "date": "2026-11-04"
+    },
+    {
+      "query": "свайные каркасы условия хранения и эксплуатации",
+      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 135.59,
+      "leads": null,
+      "date": "2026-11-05"
+    },
+    {
+      "query": "уралсиб допуск на установку каркасов бнс",
+      "keyword": "каркас БНС -купить -изготовление -армавир -туапсе -кж -стоимость -цена -заказывать -геленджик -арматурный -чертеж -краснодар -производитель -сочи -новороссийск -опт -анапа -производство",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 363.86,
+      "leads": null,
+      "date": "2026-11-05"
+    },
+    {
+      "query": "изготовление каркасов металлических",
+      "keyword": "изготовление армокаркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 57.1,
+      "leads": null,
+      "date": "2026-11-06"
     }
   ],
   "notes": [
     "Расходы и клики получены из отчёта Метрики «Директ, расходы» строго по кампании БНС.",
-    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются.",
-    "Накоплено 18 кликов. Для выводов о масштабировании нужно не менее 30 — пока это наблюдения, а не статистика."
+    "Показы и CTR без доступа к Direct API недоступны и в отчёте не рассчитываются."
   ]
 }
