@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-06T14:58:36+03:00",
-    "period_from": "2026-10-08",
-    "period_to": "2026-11-06",
+    "updated_at": "2026-11-07T13:58:34+03:00",
+    "period_from": "2026-10-09",
+    "period_to": "2026-11-07",
     "week_from": "2026-11-02",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,11 +16,11 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 6057.34,
+    "spend": 6061.85,
     "impressions": null,
-    "clicks": 63,
+    "clicks": 62,
     "ctr": null,
-    "cpc": 96.15,
+    "cpc": 97.77,
     "leads_total": 0,
     "contact_actions_total": 3,
     "conversion_rate": 0.0,
@@ -28,12 +28,12 @@
     "bounce_rate": 39.3
   },
   "weekly": {
-    "spend": 930.75,
-    "clicks": 11
+    "spend": 1001.52,
+    "clicks": 12
   },
   "metrika": {
     "visits": 61,
-    "users": 55,
+    "users": 54,
     "bounce_rate": 39.3,
     "page_depth": 1.02,
     "avg_duration_sec": 13
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 2019.11
+      "cpl": 2020.62
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-08",
-      "spend": 66.26,
-      "impressions": null,
-      "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 22,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-09",
       "spend": 151.02,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-11-06",
-      "spend": 57.1,
+      "spend": 127.86,
       "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
+      "clicks": 2,
+      "visits": 3,
+      "users": 3,
       "bounce_rate": 0.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 15,
+      "avg_duration_sec": 16,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-07",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,24 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 41.89,
-      "leads": null,
-      "date": "2026-10-08"
-    },
-    {
-      "query": "гост на каркасы для свай",
-      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 24.37,
-      "leads": null,
-      "date": "2026-10-08"
-    },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "производство арматурных каркасов -бнс",
@@ -1152,6 +1134,15 @@
       "impressions": null,
       "clicks": 1,
       "spend": 57.1,
+      "leads": null,
+      "date": "2026-11-06"
+    },
+    {
+      "query": "каркас для бурозаливных свай купить",
+      "keyword": "каркасы буронабивных свай купить",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 70.77,
       "leads": null,
       "date": "2026-11-06"
     }
