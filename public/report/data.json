@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-07T13:58:34+03:00",
-    "period_from": "2026-10-09",
-    "period_to": "2026-11-07",
+    "updated_at": "2026-11-08T14:12:03+03:00",
+    "period_from": "2026-10-10",
+    "period_to": "2026-11-08",
     "week_from": "2026-11-02",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 6061.85,
+    "spend": 6164.18,
     "impressions": null,
     "clicks": 62,
     "ctr": null,
-    "cpc": 97.77,
+    "cpc": 99.42,
     "leads_total": 0,
     "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 39.3
+    "bounce_rate": 42.6
   },
   "weekly": {
-    "spend": 1001.52,
-    "clicks": 12
+    "spend": 1254.87,
+    "clicks": 16
   },
   "metrika": {
     "visits": 61,
     "users": 54,
-    "bounce_rate": 39.3,
+    "bounce_rate": 42.6,
     "page_depth": 1.02,
-    "avg_duration_sec": 13
+    "avg_duration_sec": 12
   },
   "goals": [
     {
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 2020.62
+      "cpl": 2054.73
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-09",
-      "spend": 151.02,
-      "impressions": null,
-      "clicks": 4,
-      "visits": 4,
-      "users": 4,
-      "bounce_rate": 25.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 11,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-10",
       "spend": 828.48,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-11-07",
-      "spend": 0.0,
+      "spend": 210.76,
       "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 50.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 7,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-08",
+      "spend": 42.59,
+      "impressions": null,
+      "clicks": 2,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,24 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "производство арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 3,
-      "spend": 89.01,
-      "leads": null,
-      "date": "2026-10-09"
-    },
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 62.01,
-      "leads": null,
-      "date": "2026-10-09"
-    },
     {
       "query": "металлокаркас для сваи диаметром 530см",
       "keyword": "армокаркас для свай -буронабивной -бнс",
@@ -1145,6 +1127,42 @@
       "spend": 70.77,
       "leads": null,
       "date": "2026-11-06"
+    },
+    {
+      "query": "каркас для свай 530",
+      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 17.63,
+      "leads": null,
+      "date": "2026-11-07"
+    },
+    {
+      "query": "металлокаркас под сэндвич панели",
+      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 193.13,
+      "leads": null,
+      "date": "2026-11-07"
+    },
+    {
+      "query": "арматурные сетки и каркасы от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 8.21,
+      "leads": null,
+      "date": "2026-11-08"
+    },
+    {
+      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 34.38,
+      "leads": null,
+      "date": "2026-11-08"
     }
   ],
   "notes": [
