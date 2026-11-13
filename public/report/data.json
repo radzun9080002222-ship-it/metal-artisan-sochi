@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-11T14:47:15+03:00",
-    "period_from": "2026-10-13",
-    "period_to": "2026-11-11",
+    "updated_at": "2026-11-13T15:03:09+03:00",
+    "period_from": "2026-10-15",
+    "period_to": "2026-11-13",
     "week_from": "2026-11-09",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,25 +16,25 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 5491.29,
+    "spend": 5447.96,
     "impressions": null,
-    "clicks": 64,
+    "clicks": 62,
     "ctr": null,
-    "cpc": 85.8,
+    "cpc": 87.87,
     "leads_total": 0,
     "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 40.9
+    "bounce_rate": 39.4
   },
   "weekly": {
-    "spend": 79.29,
-    "clicks": 2
+    "spend": 254.46,
+    "clicks": 3
   },
   "metrika": {
     "visits": 66,
-    "users": 56,
-    "bounce_rate": 40.9,
+    "users": 54,
+    "bounce_rate": 39.4,
     "page_depth": 1.02,
     "avg_duration_sec": 22
   },
@@ -72,50 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 1830.43
+      "cpl": 1815.99
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-13",
-      "spend": 83.53,
-      "impressions": null,
-      "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-10-14",
-      "spend": 134.96,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-15",
       "spend": 69.53,
@@ -661,6 +621,26 @@
       "spend": 60.18,
       "impressions": null,
       "clicks": 1,
+      "visits": 3,
+      "users": 2,
+      "bounce_rate": 33.3,
+      "page_depth": 1.0,
+      "avg_duration_sec": 10,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-12",
+      "spend": 175.17,
+      "impressions": null,
+      "clicks": 1,
       "visits": 1,
       "users": 1,
       "bounce_rate": 0.0,
@@ -675,36 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-11-13",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "производство арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 63.01,
-      "leads": null,
-      "date": "2026-10-13"
-    },
-    {
-      "query": "каркас арматурный от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 20.53,
-      "leads": null,
-      "date": "2026-10-13"
-    },
-    {
-      "query": "каркас бнс",
-      "keyword": "каркас БНС -купить -изготовление -армавир -туапсе -кж -стоимость -цена -заказывать -геленджик -арматурный -чертеж -краснодар -производитель -сочи -новороссийск -опт -анапа -производство",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 134.96,
-      "leads": null,
-      "date": "2026-10-14"
-    },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "производство арматурных каркасов -бнс",
@@ -1181,6 +1154,15 @@
       "spend": 60.18,
       "leads": null,
       "date": "2026-11-11"
+    },
+    {
+      "query": "изготовление арматурных каркасов краснодар",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 175.17,
+      "leads": null,
+      "date": "2026-11-12"
     }
   ],
   "notes": [
