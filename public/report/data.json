@@ -3,10 +3,10 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-15T14:52:46+03:00",
-    "period_from": "2026-10-17",
-    "period_to": "2026-11-15",
-    "week_from": "2026-11-09",
+    "updated_at": "2026-11-18T15:54:39+03:00",
+    "period_from": "2026-10-20",
+    "period_to": "2026-11-18",
+    "week_from": "2026-11-16",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 5264.71,
+    "spend": 5327.32,
     "impressions": null,
-    "clicks": 62,
+    "clicks": 67,
     "ctr": null,
-    "cpc": 84.91,
+    "cpc": 79.51,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 37.9
+    "bounce_rate": 45.8
   },
   "weekly": {
-    "spend": 552.07,
-    "clicks": 7
+    "spend": 269.42,
+    "clicks": 9
   },
   "metrika": {
-    "visits": 66,
-    "users": 54,
-    "bounce_rate": 37.9,
-    "page_depth": 1.02,
-    "avg_duration_sec": 22
+    "visits": 72,
+    "users": 57,
+    "bounce_rate": 45.8,
+    "page_depth": 1.01,
+    "avg_duration_sec": 20
   },
   "goals": [
     {
@@ -72,70 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 1,
-      "cpl": 5264.71
+      "cpl": 5327.32
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-17",
-      "spend": 115.73,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-10-18",
-      "spend": 38.72,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
-    {
-      "date": "2026-10-19",
-      "spend": 52.37,
-      "impressions": null,
-      "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 0.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 15,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-20",
       "spend": 527.53,
@@ -661,11 +601,71 @@
       "spend": 97.81,
       "impressions": null,
       "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 0.0,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 33.3,
       "page_depth": 1.0,
-      "avg_duration_sec": 15,
+      "avg_duration_sec": 10,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-16",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-17",
+      "spend": 183.63,
+      "impressions": null,
+      "clicks": 6,
+      "visits": 6,
+      "users": 4,
+      "bounce_rate": 100.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 0,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-18",
+      "spend": 85.79,
+      "impressions": null,
+      "clicks": 3,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 66.7,
+      "page_depth": 1.0,
+      "avg_duration_sec": 5,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,42 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "арматурные каркасы показать сварку",
-      "keyword": "сварные арматурные каркасы -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 115.73,
-      "leads": null,
-      "date": "2026-10-17"
-    },
-    {
-      "query": "возможно ли изготовить самодельный металлический каркас для вентилируемого фасада",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 38.72,
-      "leads": null,
-      "date": "2026-10-18"
-    },
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 32.93,
-      "leads": null,
-      "date": "2026-10-19"
-    },
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "производство арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 19.44,
-      "leads": null,
-      "date": "2026-10-19"
-    },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "изготовление арматурных каркасов -бнс",
@@ -1163,6 +1127,78 @@
       "spend": 82.55,
       "leads": null,
       "date": "2026-11-15"
+    },
+    {
+      "query": "купить автоматическую линию производства арматурных каркасов",
+      "keyword": "производство арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 0,
+      "spend": 0.0,
+      "leads": null,
+      "date": "2026-11-15"
+    },
+    {
+      "query": "купить в феодосии арматурные каркасы",
+      "keyword": "купить арматурный каркас -бнс",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 34.37,
+      "leads": null,
+      "date": "2026-11-17"
+    },
+    {
+      "query": "показать каркас из арматуры буронабивных свай 5 м глубиной",
+      "keyword": "арматурный каркас для буронабивной сваи",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 27.65,
+      "leads": null,
+      "date": "2026-11-17"
+    },
+    {
+      "query": "армокаркас для сваи радиусом 300 миллиметров",
+      "keyword": "армокаркас для свай -буронабивной -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 63.79,
+      "leads": null,
+      "date": "2026-11-17"
+    },
+    {
+      "query": "чертеж арматурного каркаса",
+      "keyword": "арматурный каркас по чертежам -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 57.82,
+      "leads": null,
+      "date": "2026-11-17"
+    },
+    {
+      "query": "арматурные сетки и каркасы заказать онлайн",
+      "keyword": "арматурные каркасы на заказ -бнс -вязка",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 19.51,
+      "leads": null,
+      "date": "2026-11-18"
+    },
+    {
+      "query": "купить в феодосии метало арматурный каркас для фундамента",
+      "keyword": "купить арматурный каркас -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 30.97,
+      "leads": null,
+      "date": "2026-11-18"
+    },
+    {
+      "query": "цена устройства арматурного каркаса размером 10 на 7м ставропольском крае",
+      "keyword": "цена арматурного каркаса -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 35.32,
+      "leads": null,
+      "date": "2026-11-18"
     }
   ],
   "notes": [
