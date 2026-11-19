@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-18T15:54:39+03:00",
-    "period_from": "2026-10-20",
-    "period_to": "2026-11-18",
+    "updated_at": "2026-11-19T15:45:43+03:00",
+    "period_from": "2026-10-21",
+    "period_to": "2026-11-19",
     "week_from": "2026-11-16",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,25 +16,25 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 5327.32,
+    "spend": 5052.16,
     "impressions": null,
-    "clicks": 67,
+    "clicks": 66,
     "ctr": null,
-    "cpc": 79.51,
+    "cpc": 76.55,
     "leads_total": 0,
     "contact_actions_total": 1,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 45.8
+    "bounce_rate": 43.1
   },
   "weekly": {
-    "spend": 269.42,
-    "clicks": 9
+    "spend": 521.8,
+    "clicks": 12
   },
   "metrika": {
     "visits": 72,
-    "users": 57,
-    "bounce_rate": 45.8,
+    "users": 55,
+    "bounce_rate": 43.1,
     "page_depth": 1.01,
     "avg_duration_sec": 20
   },
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 1,
-      "cpl": 5327.32
+      "cpl": 5052.16
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-20",
-      "spend": 527.53,
-      "impressions": null,
-      "clicks": 4,
-      "visits": 4,
-      "users": 4,
-      "bounce_rate": 75.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 4,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-21",
       "spend": 426.81,
@@ -658,14 +638,34 @@
     },
     {
       "date": "2026-11-18",
-      "spend": 85.79,
+      "spend": 260.6,
       "impressions": null,
-      "clicks": 3,
-      "visits": 3,
-      "users": 3,
-      "bounce_rate": 66.7,
+      "clicks": 5,
+      "visits": 5,
+      "users": 4,
+      "bounce_rate": 60.0,
       "page_depth": 1.0,
-      "avg_duration_sec": 5,
+      "avg_duration_sec": 6,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-19",
+      "spend": 77.57,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 2,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,42 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 31.1,
-      "leads": null,
-      "date": "2026-10-20"
-    },
-    {
-      "query": "армокаркасы купить",
-      "keyword": "купить арматурный каркас -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 118.77,
-      "leads": null,
-      "date": "2026-10-20"
-    },
-    {
-      "query": "металлокаркас бнс",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 299.2,
-      "leads": null,
-      "date": "2026-10-20"
-    },
-    {
-      "query": "отклонения армокаркаса бнс",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 78.46,
-      "leads": null,
-      "date": "2026-10-20"
-    },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "изготовление арматурных каркасов -бнс",
@@ -1174,11 +1138,29 @@
       "date": "2026-11-17"
     },
     {
+      "query": "цена устройства арматурного каркаса размером 10 на 7м ставропольском крае",
+      "keyword": "цена арматурного каркаса -бнс",
+      "impressions": null,
+      "clicks": 2,
+      "spend": 59.79,
+      "leads": null,
+      "date": "2026-11-18"
+    },
+    {
       "query": "арматурные сетки и каркасы заказать онлайн",
       "keyword": "арматурные каркасы на заказ -бнс -вязка",
       "impressions": null,
       "clicks": 1,
       "spend": 19.51,
+      "leads": null,
+      "date": "2026-11-18"
+    },
+    {
+      "query": "изготовление каркаса кр1",
+      "keyword": "изготовление арматурных каркасов -бнс",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 150.33,
       "leads": null,
       "date": "2026-11-18"
     },
@@ -1192,13 +1174,13 @@
       "date": "2026-11-18"
     },
     {
-      "query": "цена устройства арматурного каркаса размером 10 на 7м ставропольском крае",
-      "keyword": "цена арматурного каркаса -бнс",
+      "query": "адлер изготовление металлических каркасов",
+      "keyword": "изготовление армокаркасов -бнс",
       "impressions": null,
       "clicks": 1,
-      "spend": 35.32,
+      "spend": 77.57,
       "leads": null,
-      "date": "2026-11-18"
+      "date": "2026-11-19"
     }
   ],
   "notes": [
