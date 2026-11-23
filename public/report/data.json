@@ -3,10 +3,10 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-22T15:25:48+03:00",
-    "period_from": "2026-10-24",
-    "period_to": "2026-11-22",
-    "week_from": "2026-11-16",
+    "updated_at": "2026-11-23T17:19:00+03:00",
+    "period_from": "2026-10-25",
+    "period_to": "2026-11-23",
+    "week_from": "2026-11-23",
     "budget_week": 10000,
     "cpc_cap": 220,
     "schedule": "Круглосуточно, 7 дней в неделю",
@@ -16,25 +16,25 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 4246.95,
+    "spend": 4167.77,
     "impressions": null,
-    "clicks": 57,
+    "clicks": 56,
     "ctr": null,
-    "cpc": 74.51,
+    "cpc": 74.42,
     "leads_total": 0,
-    "contact_actions_total": 2,
+    "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 43.1
+    "bounce_rate": 40.9
   },
   "weekly": {
-    "spend": 655.42,
-    "clicks": 13
+    "spend": 0.0,
+    "clicks": 0
   },
   "metrika": {
-    "visits": 65,
-    "users": 48,
-    "bounce_rate": 43.1,
+    "visits": 66,
+    "users": 47,
+    "bounce_rate": 40.9,
     "page_depth": 1.02,
     "avg_duration_sec": 32
   },
@@ -71,31 +71,11 @@
       "id": 585122111,
       "name": "Переход в MAX",
       "kind": "contact",
-      "count": 2,
-      "cpl": 2123.47
+      "count": 3,
+      "cpl": 1389.26
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-24",
-      "spend": 79.18,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 1,
-      "users": 1,
-      "bounce_rate": 100.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 0,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-25",
       "spend": 183.71,
@@ -675,18 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-11-23",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 2,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 20,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 1
+      },
+      "leads": 0,
+      "contact_actions": 1
     }
   ],
   "queries": [
-    {
-      "query": "чертеж армокаркас над гаражными воротами",
-      "keyword": "армокаркас для свай -буронабивной -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 79.18,
-      "leads": null,
-      "date": "2026-10-24"
-    },
     {
       "query": "расчет армокаркаса над гаражными воротами",
       "keyword": "армокаркас для свай -буронабивной -бнс",
