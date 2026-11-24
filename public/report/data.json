@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-23T17:19:00+03:00",
-    "period_from": "2026-10-25",
-    "period_to": "2026-11-23",
+    "updated_at": "2026-11-24T17:44:30+03:00",
+    "period_from": "2026-10-26",
+    "period_to": "2026-11-24",
     "week_from": "2026-11-23",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 4167.77,
+    "spend": 3984.06,
     "impressions": null,
-    "clicks": 56,
+    "clicks": 51,
     "ctr": null,
-    "cpc": 74.42,
+    "cpc": 78.12,
     "leads_total": 0,
     "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 40.9
+    "bounce_rate": 38.1
   },
   "weekly": {
     "spend": 0.0,
     "clicks": 0
   },
   "metrika": {
-    "visits": 66,
-    "users": 47,
-    "bounce_rate": 40.9,
+    "visits": 63,
+    "users": 44,
+    "bounce_rate": 38.1,
     "page_depth": 1.02,
-    "avg_duration_sec": 32
+    "avg_duration_sec": 34
   },
   "goals": [
     {
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 1389.26
+      "cpl": 1328.02
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-25",
-      "spend": 183.71,
-      "impressions": null,
-      "clicks": 5,
-      "visits": 5,
-      "users": 3,
-      "bounce_rate": 60.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 5,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-26",
       "spend": 0.0,
@@ -675,36 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 1
+    },
+    {
+      "date": "2026-11-24",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 2,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 20,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "расчет армокаркаса над гаражными воротами",
-      "keyword": "армокаркас для свай -буронабивной -бнс",
-      "impressions": null,
-      "clicks": 3,
-      "spend": 136.38,
-      "leads": null,
-      "date": "2026-10-25"
-    },
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 28.31,
-      "leads": null,
-      "date": "2026-10-25"
-    },
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "производство арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 19.02,
-      "leads": null,
-      "date": "2026-10-25"
-    },
     {
       "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
       "keyword": "изготовление арматурных каркасов -бнс",
