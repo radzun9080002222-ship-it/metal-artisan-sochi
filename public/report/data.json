@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-24T17:44:30+03:00",
-    "period_from": "2026-10-26",
-    "period_to": "2026-11-24",
+    "updated_at": "2026-11-25T17:06:23+03:00",
+    "period_from": "2026-10-27",
+    "period_to": "2026-11-25",
     "week_from": "2026-11-23",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 3984.06,
+    "spend": 4019.73,
     "impressions": null,
-    "clicks": 51,
+    "clicks": 52,
     "ctr": null,
-    "cpc": 78.12,
+    "cpc": 77.3,
     "leads_total": 0,
     "contact_actions_total": 3,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 38.1
+    "bounce_rate": 36.4
   },
   "weekly": {
-    "spend": 0.0,
-    "clicks": 0
+    "spend": 35.66,
+    "clicks": 1
   },
   "metrika": {
-    "visits": 63,
-    "users": 44,
-    "bounce_rate": 38.1,
+    "visits": 66,
+    "users": 45,
+    "bounce_rate": 36.4,
     "page_depth": 1.02,
-    "avg_duration_sec": 34
+    "avg_duration_sec": 33
   },
   "goals": [
     {
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 3,
-      "cpl": 1328.02
+      "cpl": 1339.91
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-26",
-      "spend": 0.0,
-      "impressions": null,
-      "clicks": 0,
-      "visits": 0,
-      "users": 0,
-      "bounce_rate": null,
-      "page_depth": null,
-      "avg_duration_sec": null,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-27",
       "spend": 78.73,
@@ -675,6 +655,26 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-11-25",
+      "spend": 35.66,
+      "impressions": null,
+      "clicks": 1,
+      "visits": 3,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
@@ -1064,6 +1064,15 @@
       "spend": 133.62,
       "leads": null,
       "date": "2026-11-20"
+    },
+    {
+      "query": "профиль корытный с замковым соединением для шпунтовых свай",
+      "keyword": "каркасы для свай -буронабивной -бнс -арматурный -изготовление",
+      "impressions": null,
+      "clicks": 1,
+      "spend": 35.66,
+      "leads": null,
+      "date": "2026-11-25"
     }
   ],
   "notes": [
