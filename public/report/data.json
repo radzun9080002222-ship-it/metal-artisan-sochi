@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-26T16:43:50+03:00",
-    "period_from": "2026-10-28",
-    "period_to": "2026-11-26",
+    "updated_at": "2026-11-27T16:40:49+03:00",
+    "period_from": "2026-10-29",
+    "period_to": "2026-11-27",
     "week_from": "2026-11-23",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 4178.68,
+    "spend": 3869.45,
     "impressions": null,
-    "clicks": 53,
+    "clicks": 47,
     "ctr": null,
-    "cpc": 78.84,
+    "cpc": 82.33,
     "leads_total": 0,
     "contact_actions_total": 4,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 37.3
+    "bounce_rate": 33.8
   },
   "weekly": {
     "spend": 273.35,
     "clicks": 4
   },
   "metrika": {
-    "visits": 67,
-    "users": 46,
-    "bounce_rate": 37.3,
-    "page_depth": 1.01,
-    "avg_duration_sec": 39
+    "visits": 65,
+    "users": 41,
+    "bounce_rate": 33.8,
+    "page_depth": 1.02,
+    "avg_duration_sec": 40
   },
   "goals": [
     {
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 4,
-      "cpl": 1044.67
+      "cpl": 967.36
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-28",
-      "spend": 309.23,
-      "impressions": null,
-      "clicks": 6,
-      "visits": 5,
-      "users": 5,
-      "bounce_rate": 60.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 6,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-29",
       "spend": 515.65,
@@ -661,11 +641,31 @@
       "spend": 95.16,
       "impressions": null,
       "clicks": 2,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 50.0,
+      "visits": 3,
+      "users": 3,
+      "bounce_rate": 33.3,
       "page_depth": 1.0,
-      "avg_duration_sec": 7,
+      "avg_duration_sec": 10,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
+    },
+    {
+      "date": "2026-11-27",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 2,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "page_depth": 1.0,
+      "avg_duration_sec": 15,
       "goals": {
         "584981732": 0,
         "584982228": 0,
@@ -678,42 +678,6 @@
     }
   ],
   "queries": [
-    {
-      "query": "арматурный каркас для фундамента от производителя заказать с гарантией",
-      "keyword": "изготовление арматурных каркасов -бнс",
-      "impressions": null,
-      "clicks": 3,
-      "spend": 78.98,
-      "leads": null,
-      "date": "2026-10-28"
-    },
-    {
-      "query": "проволочный каркас для свай",
-      "keyword": "арматурные каркасы для свай -буронабивной -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 31.35,
-      "leads": null,
-      "date": "2026-10-28"
-    },
-    {
-      "query": "пространственный каркас бнс",
-      "keyword": "арматурные каркасы БНС",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 104.96,
-      "leads": null,
-      "date": "2026-10-28"
-    },
-    {
-      "query": "чертеж для изготовление армокаркаса для сваи 300мм",
-      "keyword": "изготовление каркасов для свай -буронабивной -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 93.93,
-      "leads": null,
-      "date": "2026-10-28"
-    },
     {
       "query": "арматурные каркасы для сваи в сочи",
       "keyword": "арматурные каркасы Сочи -бнс",
