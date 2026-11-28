@@ -3,9 +3,9 @@
     "campaign_id": 712813448,
     "campaign_name": "БНС | Краснодарский край | Поиск | ЕПК",
     "counter_id": 110755114,
-    "updated_at": "2026-11-27T16:40:49+03:00",
-    "period_from": "2026-10-29",
-    "period_to": "2026-11-27",
+    "updated_at": "2026-11-28T15:51:12+03:00",
+    "period_from": "2026-10-30",
+    "period_to": "2026-11-28",
     "week_from": "2026-11-23",
     "budget_week": 10000,
     "cpc_cap": 220,
@@ -16,27 +16,27 @@
     "filter_granularity": "day"
   },
   "totals": {
-    "spend": 3869.45,
+    "spend": 3353.8,
     "impressions": null,
-    "clicks": 47,
+    "clicks": 46,
     "ctr": null,
-    "cpc": 82.33,
+    "cpc": 72.91,
     "leads_total": 0,
     "contact_actions_total": 4,
     "conversion_rate": 0.0,
     "cpl": null,
-    "bounce_rate": 33.8
+    "bounce_rate": 33.3
   },
   "weekly": {
     "spend": 273.35,
     "clicks": 4
   },
   "metrika": {
-    "visits": 65,
+    "visits": 63,
     "users": 41,
-    "bounce_rate": 33.8,
+    "bounce_rate": 33.3,
     "page_depth": 1.02,
-    "avg_duration_sec": 40
+    "avg_duration_sec": 41
   },
   "goals": [
     {
@@ -72,30 +72,10 @@
       "name": "Переход в MAX",
       "kind": "contact",
       "count": 4,
-      "cpl": 967.36
+      "cpl": 838.45
     }
   ],
   "daily": [
-    {
-      "date": "2026-10-29",
-      "spend": 515.65,
-      "impressions": null,
-      "clicks": 1,
-      "visits": 2,
-      "users": 2,
-      "bounce_rate": 50.0,
-      "page_depth": 1.0,
-      "avg_duration_sec": 7,
-      "goals": {
-        "584981732": 0,
-        "584982228": 0,
-        "584982462": 0,
-        "584982463": 0,
-        "585122111": 0
-      },
-      "leads": 0,
-      "contact_actions": 0
-    },
     {
       "date": "2026-10-30",
       "spend": 392.28,
@@ -675,18 +655,29 @@
       },
       "leads": 0,
       "contact_actions": 0
+    },
+    {
+      "date": "2026-11-28",
+      "spend": 0.0,
+      "impressions": null,
+      "clicks": 0,
+      "visits": 0,
+      "users": 0,
+      "bounce_rate": null,
+      "page_depth": null,
+      "avg_duration_sec": null,
+      "goals": {
+        "584981732": 0,
+        "584982228": 0,
+        "584982462": 0,
+        "584982463": 0,
+        "585122111": 0
+      },
+      "leads": 0,
+      "contact_actions": 0
     }
   ],
   "queries": [
-    {
-      "query": "арматурные каркасы для сваи в сочи",
-      "keyword": "арматурные каркасы Сочи -бнс",
-      "impressions": null,
-      "clicks": 1,
-      "spend": 515.65,
-      "leads": null,
-      "date": "2026-10-29"
-    },
     {
       "query": "армокаркасы краснодар",
       "keyword": "арматурные каркасы Краснодар -бнс",
